@@ -1,0 +1,227 @@
+%% This BibTeX bibliography file was created using BibDesk.
+%% https://bibdesk.sourceforge.io/
+
+%% Created for Ben Crestel at 2020-02-11 14:34:58 -0500 
+
+
+%% Saved with string encoding Unicode (UTF-8) 
+
+
+@comment{jabref-meta: databaseType:bibtex;}
+
+
+
+@article{aghabozorgi2015time,
+	Author = {Aghabozorgi, Saeed and Shirkhorshidi, Ali Seyed and Wah, Teh Ying},
+	Date-Added = {2020-02-11 14:31:16 -0500},
+	Date-Modified = {2020-02-11 14:31:16 -0500},
+	Journal = {Information Systems},
+	Pages = {16--38},
+	Publisher = {Elsevier},
+	Title = {Time-series clustering--a decade review},
+	Volume = {53},
+	Year = {2015},
+	Bdsk-Url-1 = {https://wiki.smu.edu.sg/18191isss608g1/img_auth.php/f/fd/Time_Series_Clustering_A_Decade_Review.pdf}}
+
+@article{yinot,
+	Abstract = {Handling missing data is one of the most fundamental problems in machine learning.
+Among many approaches, the simplest and most intuitive way is zero imputation,
+which treats the value of a missing entry simply as zero. However, many studies
+have experimentally confirmed that zero imputation results in suboptimal performances in training neural networks. Yet, none of the existing work has explained
+what brings such performance degradations. In this paper, we introduce the variable sparsity problem (VSP), which describes a phenomenon where the output
+of a predictive model largely varies with respect to the rate of missingness in the
+given input, and show that it adversarially affects the model performance. We first
+theoretically analyze this phenomenon and propose a simple yet effective technique
+to handle missingness, which we refer to as Sparsity Normalization (SN), that
+directly targets and resolves the VSP. We further experimentally validate SN on
+diverse benchmark datasets, to show that debiasing the effect of input-level sparsity
+improves the performance and stabilizes the training of neural networks.},
+	Author = {Yi, Joonyoung and Lee, Juhyuk and Hwang, Sung Ju and Yang, Eunho},
+	Date-Added = {2020-02-06 14:04:23 -0500},
+	Date-Modified = {2020-02-06 14:07:25 -0500},
+	Keywords = {missing data, zero imputation, neural network},
+	Read = {1},
+	Title = {Why Not to Use Zero Imputation? Correcting Sparsity Bias in Training Neural Networks},
+	Bdsk-Url-1 = {https://openreview.net/pdf?id=BylsKkHYvH}}
+
+@article{bauckhage2015numpy,
+	Abstract = {In this note, we study least squares optimization for parameter estimation. By means of the basic example of a linear regression task, we explore different formulations of the ordinary least squares problem, show how to solve it using NumPy or SciPy, and provide suggestions for practical applications.},
+	Author = {Bauckhage, Christian},
+	Date-Added = {2020-02-05 15:21:33 -0500},
+	Date-Modified = {2020-02-06 06:12:13 -0500},
+	Journal = {researchgate. net, Mar},
+	Keywords = {linear regression, ols, numpy, scipy},
+	Title = {NumPy/SciPy Recipes for Data Science: Ordinary Least Squares Optimization},
+	Year = {2015},
+	Bdsk-File-1 = {YnBsaXN0MDDSAQIDBFxyZWxhdGl2ZVBhdGhZYWxpYXNEYXRhXxAjLi4vLi4vRG93bmxvYWRzL25wLXNwLXJlY2lwZXMtNS5wZGZPEQFkAAAAAAFkAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8TbnAtc3AtcmVjaXBlcy01LnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAACAAIAAAogY3UAAAAAAAAAAAAAAAAACURvd25sb2FkcwAAAgAwLzpVc2VyczpiZW5jcmVzdGVsOkRvd25sb2FkczpucC1zcC1yZWNpcGVzLTUucGRmAA4AKAATAG4AcAAtAHMAcAAtAHIAZQBjAGkAcABlAHMALQA1AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgAuVXNlcnMvYmVuY3Jlc3RlbC9Eb3dubG9hZHMvbnAtc3AtcmVjaXBlcy01LnBkZgATAAEvAAAVAAIAEf//AAAACAANABoAJABKAAAAAAAAAgEAAAAAAAAABQAAAAAAAAAAAAAAAAAAAbI=}}
+
+@article{DBLP:journals/corr/abs-1803-03635,
+	Annote = {Conjecture that over-parametrized network are easier to train b/c they contain smaller networks with similar high accuracy},
+	Archiveprefix = {arXiv},
+	Author = {Jonathan Frankle and Michael Carbin},
+	Bibsource = {dblp computer science bibliography, https://dblp.org},
+	Biburl = {https://dblp.org/rec/bib/journals/corr/abs-1803-03635},
+	Date-Added = {2020-02-05 14:40:58 -0500},
+	Date-Modified = {2020-02-05 14:42:58 -0500},
+	Eprint = {1803.03635},
+	Journal = {CoRR},
+	Keywords = {lottery ticket, over-parametrized, pruning},
+	Read = {1},
+	Timestamp = {Mon, 13 Aug 2018 16:48:29 +0200},
+	Title = {The Lottery Ticket Hypothesis: Training Pruned Neural Networks},
+	Url = {http://arxiv.org/abs/1803.03635},
+	Volume = {abs/1803.03635},
+	Year = {2018},
+	Bdsk-Url-1 = {http://arxiv.org/abs/1803.03635}}
+
+@article{DBLP:journals/corr/abs-1906-04705,
+	Abstract = {Least-mean squares (LMS) solvers such as Linear / Ridge / Lasso-Regression,
+SVD and Elastic-Net not only solve fundamental machine learning problems, but
+are also the building blocks in a variety of other methods, such as decision trees
+and matrix factorizations.
+We suggest an algorithm that gets a finite set of n d-dimensional real vectors and
+returns a weighted subset of d + 1 vectors whose sum is exactly the same. The
+proof in Caratheodory's Theorem (1907) computes such a subset in O(n
+2d
+2
+) time
+and thus not used in practice. Our algorithm computes this subset in O(nd) time,
+using O(log n) calls to Caratheodory's construction on small but "smart" subsets.
+This is based on a novel paradigm of fusion between different data summarization
+techniques, known as sketches and coresets.
+As an example application, we show how it can be used to boost the performance
+of existing LMS solvers, such as those in scikit-learn library, up to x100. Generalization for streaming and distributed (big) data is trivial. Extensive experimental
+results and complete open source code are also provided.},
+	Annote = {Claim major speed-ups compared to other sketching methods.
+Honorable Mention Outstanding Paper Award @ NeurIPS 2019},
+	Archiveprefix = {arXiv},
+	Author = {Alaa Maalouf and Ibrahim Jubran and Dan Feldman},
+	Bibsource = {dblp computer science bibliography, https://dblp.org},
+	Biburl = {https://dblp.org/rec/bib/journals/corr/abs-1906-04705},
+	Date-Added = {2020-02-05 14:29:15 -0500},
+	Date-Modified = {2020-02-05 14:32:07 -0500},
+	Eprint = {1906.04705},
+	Journal = {CoRR},
+	Keywords = {sketching, least mean squares, big data},
+	Read = {1},
+	Timestamp = {Fri, 14 Jun 2019 09:38:24 +0200},
+	Title = {Fast and Accurate Least-Mean-Squares Solvers},
+	Url = {http://arxiv.org/abs/1906.04705},
+	Volume = {abs/1906.04705},
+	Year = {2019},
+	Bdsk-Url-1 = {http://arxiv.org/abs/1906.04705}}
+
+@article{araya2017automated,
+	Annote = {Not clear how good of an idea that is. In the paper, they claim DNN are a good idea to approximate physics processes, but I'm not so sure how true that is.},
+	Author = {Araya-Polo, Mauricio and Dahlke, Taylor and Frogner, Charlie and Zhang, Chiyuan and Poggio, Tomaso and Hohl, Detlef},
+	Date-Added = {2020-01-14 14:49:38 -0500},
+	Date-Modified = {2020-01-14 22:41:34 -0500},
+	Journal = {The Leading Edge},
+	Keywords = {seismic processing, wasserstein, image segmentation, cnn},
+	Number = {3},
+	Pages = {208--214},
+	Publisher = {Society of Exploration Geophysicists},
+	Read = {1},
+	Title = {Automated fault detection without seismic processing},
+	Volume = {36},
+	Year = {2017}}
+
+@inproceedings{Graves:2006aa,
+	Abstract = {Many real-world sequence learning tasks require the prediction of sequences of labels
+from noisy, unsegmented input data. In
+speech recognition, for example, an acoustic
+signal is transcribed into words or sub-word
+units. Recurrent neural networks (RNNs) are
+powerful sequence learners that would seem
+well suited to such tasks. However, because
+they require pre-segmented training data,
+and post-processing to transform their outputs into label sequences, their applicability
+has so far been limited. This paper presents a
+novel method for training RNNs to label unsegmented sequences directly, thereby solving both problems. An experiment on the
+TIMIT speech corpus demonstrates its advantages over both a baseline HMM and a
+hybrid HMM-RNN.},
+	Annote = {Easy to digest summary of CTC: https://distill.pub/2017/ctc/. ``Connectionist Temporal Classification (CTC) is a way to get around not knowing the alignment between the input and the output''},
+	Author = {Graves, Alex and Fern{\'a}ndez, Santiago and Gomez, Faustino and Schmidhuber, J{\"u}rgen},
+	Booktitle = {Proceedings of the 23rd international conference on Machine learning},
+	Date-Added = {2019-12-10 13:50:44 -0800},
+	Date-Modified = {2019-12-11 17:08:31 -0800},
+	Keywords = {deep learning, speech-to-text, ocr, connectionist temporal classification, CTC},
+	Organization = {ACM},
+	Pages = {369--376},
+	Title = {Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks},
+	Year = {2006},
+	Bdsk-Url-1 = {https://www.cs.toronto.edu/~graves/icml_2006.pdf}}
+
+@article{mehra2019penalty,
+	Abstract = {Bilevel optimizations are at the center of several important machine learning problems such
+as hyperparameter tuning, data denoising, fewshot learning, data poisoning. Different from simultaneous or multi-objective optimization, obtaining the exact descent direction for continuous bilevel optimization requires computing the
+inverse of the hessian of the lower-level cost
+function, even for first order methods. In this
+paper, we propose a new method for solving
+bilevel optimization, using the penalty function,
+which avoids computing the inverse of the hessian. We prove convergence of the method under mild conditions and show that it computes
+the exact hypergradient asymptotically. Small
+space and time complexity of our method allows us to solve large-scale bilevel optimization problems involving deep neural networks
+with up to 3.8M upper-level and 1.4M lowerlevel variables. We present results of our method
+for data denoising on MNIST/CIFAR10/SVHN
+datasets, for few-shot learning on Omniglot/MiniImagenet datasets and for training-data poisoning
+on MNIST/Imagenet datasets. In all experiments,
+our method outperforms or is comparable to previously proposed methods both in terms of accuracy
+and run-time},
+	Author = {Mehra, Akshay and Hamm, Jihun},
+	Date-Modified = {2019-12-10 13:52:10 -0800},
+	Journal = {arXiv preprint arXiv:1911.03432},
+	Keywords = {bilevel optimization, penalty method,},
+	Read = {1},
+	Title = {Penalty Method for Inversion-Free Deep Bilevel Optimization},
+	Url = {https://arxiv.org/pdf/1911.03432.pdf},
+	Year = {2019},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1911.03432.pdf}}
+
+@article{pedregosa2016hyperparameter,
+	Abstract = {Most models in machine learning contain at least
+one hyperparameter to control for model complexity. Choosing an appropriate set of hyperparameters is both crucial in terms of model accuracy and computationally challenging. In this
+work we propose an algorithm for the optimization of continuous hyperparameters using inexact gradient information. An advantage of this
+method is that hyperparameters can be updated
+before model parameters have fully converged.
+We also give sufficient conditions for the global
+convergence of this method, based on regularity
+conditions of the involved functions and summability of errors. Finally, we validate the empirical
+performance of this method on the estimation of
+regularization constants of `2-regularized logistic regression and kernel Ridge regression. Empirical benchmarks indicate that our approach is
+highly competitive with respect to state of the art
+methods.},
+	Author = {Pedregosa, Fabian},
+	Date-Modified = {2019-12-10 13:52:14 -0800},
+	Journal = {arXiv preprint arXiv:1602.02355},
+	Keywords = {hyperparameter optimization, approximate gradient,},
+	Read = {1},
+	Title = {Hyperparameter optimization with approximate gradient},
+	Url = {https://arxiv.org/pdf/1602.02355.pdf},
+	Year = {2016},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1602.02355.pdf}}
+
+@article{lorraine2019optimizing,
+	Abstract = {We propose an algorithm for inexpensive
+gradient-based hyperparameter optimization
+that combines the implicit function theorem
+(IFT) with efficient inverse Hessian approximations. We present results on the relationship between the IFT and differentiating through optimization, motivating our algorithm. We use the proposed approach to
+train modern network architectures with millions of weights and millions of hyperparameters. We learn a data-augmentation network---
+where every weight is a hyperparameter tuned
+for validation performance---that outputs augmented training examples; we learn a distilled
+dataset where each feature in each datapoint
+is a hyperparameter; and we tune millions
+of regularization hyperparameters. Jointly
+tuning weights and hyperparameters with our
+approach is only a few times more costly in
+memory and compute than standard training.},
+	Annote = {Not super novel, more like putting together a lot of good ideas. But it's well explained and interesting. I'm still not sure about Laplacian approximation, though. Need to read the actual paper for that.},
+	Author = {Lorraine, Jonathan and Vicol, Paul and Duvenaud, David},
+	Date-Modified = {2019-12-10 13:52:07 -0800},
+	Journal = {arXiv preprint arXiv:1911.02590},
+	Keywords = {hyperparameter optimization, bilevel optimization, inverse Hessian approximation},
+	Read = {1},
+	Title = {Optimizing Millions of Hyperparameters by Implicit Differentiation},
+	Url = {https://arxiv.org/pdf/1911.02590.pdf},
+	Year = {2019},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1911.02590.pdf}}
