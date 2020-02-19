@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2020-02-11 14:34:58 -0500 
+%% Created for Ben Crestel at 2020-02-18 17:37:58 -0500 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,62 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@article{marcus2018deep,
+	Abstract = {Although deep learning has historical roots going back decades, neither the term ``deep
+learning'' nor the approach was popular just over five years ago, when the field was
+reignited by papers such as Krizhevsky, Sutskever and Hinton's now classic 2012
+(Krizhevsky, Sutskever, & Hinton, 2012)deep net model of Imagenet.
+What has the field discovered in the five subsequent years? Against a background of
+considerable progress in areas such as speech recognition, image recognition, and game
+playing, and considerable enthusiasm in the popular press, I present ten concerns for deep
+learning, and suggest that deep learning must be supplemented by other techniques if we
+are to reach artificial general intelligence.},
+	Author = {Marcus, Gary},
+	Date-Added = {2020-02-18 17:37:08 -0500},
+	Date-Modified = {2020-02-18 17:37:54 -0500},
+	Journal = {arXiv preprint arXiv:1801.00631},
+	Keywords = {deep learning, symbolic AI},
+	Read = {1},
+	Title = {Deep learning: A critical appraisal},
+	Year = {2018},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1801.00631.pdf}}
+
+@inproceedings{ma2019learning,
+	Abstract = {Time series clustering is an essential unsupervised technique in cases when category
+information is not available. It has been widely applied to genome data, anomaly
+detection, and in general, in any domain where pattern detection is important.
+Although feature-based time series clustering methods are robust to noise and
+outliers, and can reduce the dimensionality of the data, they typically rely on domain
+knowledge to manually construct high-quality features. Sequence to sequence
+(seq2seq) models can learn representations from sequence data in an unsupervised
+manner by designing appropriate learning objectives, such as reconstruction and
+context prediction. When applying seq2seq to time series clustering, obtaining a
+representation that effectively represents the temporal dynamics of the sequence,
+multi-scale features, and good clustering properties remains a challenge. How
+to best improve the ability of the encoder is still an open question. Here we
+propose a novel unsupervised temporal representation learning model, named
+Deep Temporal Clustering Representation (DTCR), which integrates the temporal
+reconstruction and K-means objective into the seq2seq model. This approach
+leads to improved cluster structures and thus obtains cluster-specific temporal
+representations. Also, to enhance the ability of encoder, we propose a fake-sample
+generation strategy and auxiliary classification task. Experiments conducted on
+extensive time series datasets show that DTCR is state-of-the-art compared to
+existing methods. The visualization analysis not only shows the effectiveness of
+cluster-specific representation but also shows the learning process is robust, even if
+K-means makes mistakes.},
+	Annote = {Propose to cluster time series in latent space, using a seq2seq model based on multi-layer Dilated RNN, a k-means loss term, and a GAN-type classifier (real/fake). The k-means losss applies to the centroids but also the encoder; for stability reason, the centroids are updated less frequently than the network weights (every 10 epochs in the paper). They added a classifier to improve the quality of the reconstruction; they generate fake time series by randomly permutating the entries of the real ones.
+Interesting paper overall. Seems a bit convoluted, but show SOTA results on a few of the UCR classification datasets.},
+	Author = {Ma, Qianli and Zheng, Jiawei and Li, Sen and Cottrell, Gary W},
+	Booktitle = {Advances in Neural Information Processing Systems},
+	Date-Added = {2020-02-11 16:23:10 -0500},
+	Date-Modified = {2020-02-11 16:23:52 -0500},
+	Keywords = {Deep Temporal Clustering Representation, DTCR, clustering, k-means, seq2seq},
+	Pages = {3776--3786},
+	Read = {1},
+	Title = {Learning Representations for Time Series Clustering},
+	Year = {2019},
+	Bdsk-Url-1 = {https://papers.nips.cc/paper/8634-learning-representations-for-time-series-clustering.pdf}}
 
 @article{aghabozorgi2015time,
 	Author = {Aghabozorgi, Saeed and Shirkhorshidi, Ali Seyed and Wah, Teh Ying},
@@ -53,7 +109,7 @@ improves the performance and stabilizes the training of neural networks.},
 	Keywords = {linear regression, ols, numpy, scipy},
 	Title = {NumPy/SciPy Recipes for Data Science: Ordinary Least Squares Optimization},
 	Year = {2015},
-	Bdsk-File-1 = {YnBsaXN0MDDSAQIDBFxyZWxhdGl2ZVBhdGhZYWxpYXNEYXRhXxAjLi4vLi4vRG93bmxvYWRzL25wLXNwLXJlY2lwZXMtNS5wZGZPEQFkAAAAAAFkAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8TbnAtc3AtcmVjaXBlcy01LnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAACAAIAAAogY3UAAAAAAAAAAAAAAAAACURvd25sb2FkcwAAAgAwLzpVc2VyczpiZW5jcmVzdGVsOkRvd25sb2FkczpucC1zcC1yZWNpcGVzLTUucGRmAA4AKAATAG4AcAAtAHMAcAAtAHIAZQBjAGkAcABlAHMALQA1AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgAuVXNlcnMvYmVuY3Jlc3RlbC9Eb3dubG9hZHMvbnAtc3AtcmVjaXBlcy01LnBkZgATAAEvAAAVAAIAEf//AAAACAANABoAJABKAAAAAAAAAgEAAAAAAAAABQAAAAAAAAAAAAAAAAAAAbI=}}
+	Bdsk-File-1 = {YnBsaXN0MDDSAQIDBFxyZWxhdGl2ZVBhdGhZYWxpYXNEYXRhXxAmLi4vLi4vLi4vRG93bmxvYWRzL25wLXNwLXJlY2lwZXMtNS5wZGZPEQFkAAAAAAFkAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8TbnAtc3AtcmVjaXBlcy01LnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAADAAIAAAogY3UAAAAAAAAAAAAAAAAACURvd25sb2FkcwAAAgAwLzpVc2VyczpiZW5jcmVzdGVsOkRvd25sb2FkczpucC1zcC1yZWNpcGVzLTUucGRmAA4AKAATAG4AcAAtAHMAcAAtAHIAZQBjAGkAcABlAHMALQA1AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgAuVXNlcnMvYmVuY3Jlc3RlbC9Eb3dubG9hZHMvbnAtc3AtcmVjaXBlcy01LnBkZgATAAEvAAAVAAIAEf//AAAACAANABoAJABNAAAAAAAAAgEAAAAAAAAABQAAAAAAAAAAAAAAAAAAAbU=}}
 
 @article{DBLP:journals/corr/abs-1803-03635,
 	Annote = {Conjecture that over-parametrized network are easier to train b/c they contain smaller networks with similar high accuracy},
