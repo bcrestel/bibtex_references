@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2020-10-05 15:58:06 -0400 
+%% Created for Ben Crestel at 2020-10-26 15:37:32 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,99 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@article{gneiting2005weather,
+	Author = {Gneiting, Tilmann and Raftery, Adrian E},
+	Date-Added = {2020-10-26 15:37:09 -0400},
+	Date-Modified = {2020-10-26 15:37:31 -0400},
+	Journal = {Science},
+	Keywords = {forecasting, uncertainty, ensemble, distributional forecast},
+	Number = {5746},
+	Pages = {248--249},
+	Publisher = {American Association for the Advancement of Science},
+	Title = {Weather forecasting with ensemble methods},
+	Volume = {310},
+	Year = {2005},
+	Bdsk-Url-1 = {https://sites.stat.washington.edu/raftery/Research/PDF/science2005.pdf}}
+
+@article{kuleshov2018accurate,
+	Abstract = {Methods for reasoning under uncertainty are a
+key building block of accurate and reliable machine learning systems. Bayesian methods provide a general framework to quantify uncertainty.
+However, because of model misspecification and
+the use of approximate inference, Bayesian uncertainty estimates are often inaccurate --- for
+example, a 90% credible interval may not contain the true outcome 90% of the time. Here, we
+propose a simple procedure for calibrating any
+regression algorithm; when applied to Bayesian
+and probabilistic models, it is guaranteed to
+produce calibrated uncertainty estimates given
+enough data. Our procedure is inspired by Platt
+scaling and extends previous work on classification. We evaluate this approach on Bayesian linear regression, feedforward, and recurrent neural networks, and find that it consistently outputs
+well-calibrated credible intervals while improving performance on time series forecasting and
+model-based reinforcement learning tasks.},
+	Annote = {1. Introduction
+Authors propose a new calibration methods for Bayesian neural networks, inspired by Platt scaling. They claim that given a sufficient amount of idd data, the calibration will be perfect.
+Not sure if it matters, but the authors specifically focus on solving the miscalibration of credible intervals (Bayesian). Could they generate well-calibrated credible intervals, but their predictive distribution still be incorrect?
+
+2. Calibrated Classification
+2.1 Calibration
+In section 2, they review calibration using binary classification.
+They characterize a distributional output by its cdf only. They define a distributional forecast as a map that takes covariates as input and return the cdf of the predictive distribution.
+Distinguish calibration vs sharpness. Sharp forecasts have probabilities close to 0 or 1 (binary classification). That is, it very confident about its predictions. ``Note that an ideal forecaster is both calibrated and predicts outcomes with 100% confidence''. => It sounds a bit weird, almost like anti-probablistic. Maybe they're talking about a context where there is no aleatoric uncertainty. Which would makes sense as they focus exclusively on Bayesian networks; so models that capture epistmic uncertainty.
+2.2 Training calibrated classifiers
+For binary classification, the evaluation is done via calibration curves (sometimes referred to as reliability diagram): by binning the predictions (i.e., H(x) \in [0,0.1],{\ldots}), the Mean Predicted Value, then the observed frequency against the predicted frequency (ideal is a straight line). They also discuss sharpness (predicted probabilities should be close to 0 or 1, instead of 0.5). => I'm surprised that they don't mention anything else (e.g., ECE, MCE). Although, their metrics are purely visual; there is nothing quantitative.
+
+3. Calibrated Regression
+3.1 Calibration
+Define calibration for a regression, intuitively, via the confidence interval. Formally, they use the inverse quantile function to say that the frequency at which the true value should fall below a certain quantile should be equal to that quantile (in the limit of infinite data).
+Refer to ``Probabilistic forecasts, calibration and sharpness'' (Gneiting et al, 2007) for probabilistic definition -> Ref paper.
+Calibration vs Sharpness: sharpness for regression is defined as tight confidence intervalls, or small variance for the predictive distribution. => Once again, this is pretty hand-wavy.
+3.2 Training calibrated regression models
+Similar to Platt scaling, you train a recalibration model (R) such that after being combined with the forecasting model (H), you get perfect calibration: R(H(x)). R: [0,1]->[0,1] is a model trained on a calibration dataset. That calibration dataset is made of (F, F_hat) where F is the value of the predicted cdf evaluated at the true value y_t, and F_hat is the actual frequency at which F(y_t) fell bellow the value F for all points y_t. => So R is taking the model output (F_x(y_t), or H(x_t)(y_t)) and return the actual frequency. One comment is that this approach doesn't modify H(x_t) directly, that is the predictive distribution, but only H(x_t)(y_t). Which seems a bit limiting.
+The intuition behind that recalibration is simply to move the predicted quantiles so that they match the oberved quantiles. => I doubt this could give decent results in low-data regime, which is most of the situations in forecasting.
+=> Definition of perfect R: R(p) = P[Y <= F_X^{-1}(p)] valid since then P[Y <= (R o F_X)^{-1}(p)] = P[F_x(Y) <= R^{-1}(p)] = R(R^{-1}(p)) = p
+Authors recommend to use isotonic regression for R (-> monotonically increasing function, typically piece-wise constant; non-parametric regression). 
+Scaling should be trained on hold-out dataset. Or authors propose to train with k-fold (or sequential validation), then at predict time, use an average of all models. => That's an interesting idea for backtesting; why only using the most recent fold. We could instead use all models, maybe with varying weights.
+3.5 Diagnostic tools
+Calibration: pick a number of quantiles, then calculate frequency of observed values below each quantile, and on a graph. Similar to the classificaiton case, ideal calibration would return a straight line.
+The authors propose a quantiative metric this time, taking the weights MSE between targeted quantiles and observed frequency: Sum_i w_i (q_i - q_i_hat)^2. Weights are 1 in the paper, but one could use weights given by the number of data falling into each quantile. => This resembles a bit the Expected Calibration Error (ECE), except that ECE takes the absolute error and here we use the squared difference.
+Sharpness: They define sharpness as the mean of the variances of all predictive distributions.
+},
+	Author = {Kuleshov, Volodymyr and Fenner, Nathan and Ermon, Stefano},
+	Date-Added = {2020-10-26 10:27:58 -0400},
+	Date-Modified = {2020-10-26 15:29:37 -0400},
+	Journal = {arXiv preprint arXiv:1807.00263},
+	Keywords = {uncertainty, deep learning, forecasting, reinforcement learning},
+	Read = {1},
+	Title = {Accurate uncertainties for deep learning using calibrated regression},
+	Year = {2018},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1807.00263.pdf}}
+
+@article{cawley2007preventing,
+	Author = {Cawley, Gavin C and Talbot, Nicola LC},
+	Date-Added = {2020-10-17 01:15:34 -0400},
+	Date-Modified = {2020-10-17 01:15:56 -0400},
+	Journal = {Journal of Machine Learning Research},
+	Keywords = {model selection, overfitting, hyperparameter, bayesian, regularization},
+	Number = {Apr},
+	Pages = {841--861},
+	Title = {Preventing over-fitting during model selection via Bayesian regularisation of the hyper-parameters},
+	Volume = {8},
+	Year = {2007},
+	Bdsk-Url-1 = {https://www.jmlr.org/papers/volume8/cawley07a/cawley07a.pdf}}
+
+@article{benjamini1995controlling,
+	Author = {Benjamini, Yoav and Hochberg, Yosef},
+	Date-Added = {2020-10-08 23:50:34 -0400},
+	Date-Modified = {2020-10-08 23:52:37 -0400},
+	Journal = {Journal of the Royal statistical society: series B (Methodological)},
+	Keywords = {statistical test, multiple comparison, false discovery rate, p-value},
+	Number = {1},
+	Pages = {289--300},
+	Publisher = {Wiley Online Library},
+	Title = {Controlling the false discovery rate: a practical and powerful approach to multiple testing},
+	Volume = {57},
+	Year = {1995},
+	Bdsk-Url-1 = {https://www.stat.purdue.edu/~doerge/BIOINFORM.D/FALL06/Benjamini%20and%20Y%20FDR.pdf}}
 
 @inproceedings{salinas2019high,
 	Author = {Salinas, David and Bohlke-Schneider, Michael and Callot, Laurent and Medico, Roberto and Gasthaus, Jan},
@@ -969,13 +1062,15 @@ Their appliations seem to be mostly periodic time series. It would need to be te
 @article{cawley2010over,
 	Author = {Cawley, Gavin C and Talbot, Nicola LC},
 	Date-Added = {2020-05-06 17:29:12 -0400},
-	Date-Modified = {2020-05-06 17:29:12 -0400},
+	Date-Modified = {2020-10-17 01:14:19 -0400},
 	Journal = {Journal of Machine Learning Research},
+	Keywords = {model selection,  cross validation, overfitting},
 	Number = {Jul},
 	Pages = {2079--2107},
 	Title = {On over-fitting in model selection and subsequent selection bias in performance evaluation},
 	Volume = {11},
-	Year = {2010}}
+	Year = {2010},
+	Bdsk-Url-1 = {https://jmlr.csail.mit.edu/papers/volume11/cawley10a/cawley10a.pdf}}
 
 @inproceedings{snoek2019can,
 	Author = {Snoek, Jasper and Ovadia, Yaniv and Fertig, Emily and Lakshminarayanan, Balaji and Nowozin, Sebastian and Sculley, D and Dillon, Joshua and Ren, Jie and Nado, Zachary},
@@ -1958,7 +2053,7 @@ improves the performance and stabilizes the training of neural networks.},
 	Keywords = {linear regression, numpy/scipy},
 	Title = {NumPy/SciPy Recipes for Data Science: Ordinary Least Squares Optimization},
 	Year = {2015},
-	Bdsk-File-1 = {YnBsaXN0MDDSAQIDBFxyZWxhdGl2ZVBhdGhZYWxpYXNEYXRhXxAmLi4vLi4vLi4vRG93bmxvYWRzL25wLXNwLXJlY2lwZXMtNS5wZGZPEQFkAAAAAAFkAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8TbnAtc3AtcmVjaXBlcy01LnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAADAAIAAAogY3UAAAAAAAAAAAAAAAAACURvd25sb2FkcwAAAgAwLzpVc2VyczpiZW5jcmVzdGVsOkRvd25sb2FkczpucC1zcC1yZWNpcGVzLTUucGRmAA4AKAATAG4AcAAtAHMAcAAtAHIAZQBjAGkAcABlAHMALQA1AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgAuVXNlcnMvYmVuY3Jlc3RlbC9Eb3dubG9hZHMvbnAtc3AtcmVjaXBlcy01LnBkZgATAAEvAAAVAAIAEf//AAAACAANABoAJABNAAAAAAAAAgEAAAAAAAAABQAAAAAAAAAAAAAAAAAAAbU=}}
+	Bdsk-File-1 = {YnBsaXN0MDDSAQIDBFxyZWxhdGl2ZVBhdGhZYWxpYXNEYXRhXxAjLi4vLi4vLi4vLlRyYXNoL25wLXNwLXJlY2lwZXMtNS5wZGZPEQFcAAAAAAFcAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8TbnAtc3AtcmVjaXBlcy01LnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAADAAIAAAogY3UAAAAAAAAAAAAAAAAABi5UcmFzaAACAC0vOlVzZXJzOmJlbmNyZXN0ZWw6LlRyYXNoOm5wLXNwLXJlY2lwZXMtNS5wZGYAAA4AKAATAG4AcAAtAHMAcAAtAHIAZQBjAGkAcABlAHMALQA1AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgArVXNlcnMvYmVuY3Jlc3RlbC8uVHJhc2gvbnAtc3AtcmVjaXBlcy01LnBkZgAAEwABLwAAFQACABH//wAAAAgADQAaACQASgAAAAAAAAIBAAAAAAAAAAUAAAAAAAAAAAAAAAAAAAGq}}
 
 @article{DBLP:journals/corr/abs-1803-03635,
 	Annote = {Conjecture that over-parametrized network are easier to train b/c they contain smaller networks with similar high accuracy},
