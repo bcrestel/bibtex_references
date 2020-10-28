@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2020-10-26 15:37:32 -0400 
+%% Created for Ben Crestel at 2020-10-28 10:39:04 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,140 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@incollection{feurer2019hyperparameter,
+	Author = {Feurer, Matthias and Hutter, Frank},
+	Booktitle = {Automated Machine Learning},
+	Date-Added = {2020-10-28 10:38:24 -0400},
+	Date-Modified = {2020-10-28 10:38:38 -0400},
+	Keywords = {hyperparameter, overfitting},
+	Pages = {3--33},
+	Publisher = {Springer, Cham},
+	Title = {Hyperparameter optimization},
+	Year = {2019},
+	Bdsk-Url-1 = {https://library.oapen.org/bitstream/handle/20.500.12657/23012/1007149.pdf?sequence=1#page=15}}
+
+@article{blum2015ladder,
+	Abstract = {The organizer of a machine learning competition faces the problem of maintaining
+an accurate leaderboard that faithfully represents the quality of the best submission of
+each competing team. What makes this estimation problem particularly challenging is its
+sequential and adaptive nature. As participants are allowed to repeatedly evaluate their
+submissions on the leaderboard, they may begin to overfit to the holdout data that supports
+the leaderboard. Few theoretical results give actionable advice on how to design a reliable
+leaderboard. Existing approaches therefore often resort to poorly understood heuristics such
+as limiting the bit precision of answers and the rate of re-submission.
+In this work, we introduce a notion of leaderboard accuracy tailored to the format of a
+competition. We introduce a natural algorithm called the Ladder and demonstrate that it simultaneously supports strong theoretical guarantees in a fully adaptive model of estimation,
+withstands practical adversarial attacks, and achieves high utility on real submission files
+from an actual competition hosted by Kaggle.
+Notably, we are able to sidestep a powerful recent hardness result for adaptive risk
+estimation that rules out algorithms such as ours under a seemingly very similar notion
+of accuracy. On a practical note, we provide a completely parameter-free variant of our
+algorithm that can be deployed in a real competition with no tuning required whatsoever.},
+	Annote = {The authors propose a simple method that seems to prevent over-fitting on the hold-out set, and provides better consistency between public and private leaderboard. Their method applies to the case of sequential, repeated submissions, when each model is submitted one after the other.
+In their parameter-free approach, they test whether the loss of the new model is statistically significantly lower than the current best loss (one-sided paired t-test). And if it is, they update their best loss, and if not, they keep the old one and don't publish the new loss.
+? I'm surprised how this can make a difference? Or maybe this doesn't apply to hp optimization where you run you search in parallel.},
+	Author = {Blum, Avrim and Hardt, Moritz},
+	Date-Added = {2020-10-27 22:39:17 -0400},
+	Date-Modified = {2020-10-27 22:43:14 -0400},
+	Journal = {arXiv preprint arXiv:1502.04585},
+	Keywords = {overfitting, model selection},
+	Read = {1},
+	Title = {The ladder: A reliable leaderboard for machine learning competitions},
+	Year = {2015},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1502.04585.pdf}}
+
+@article{freedman1983note,
+	Author = {Freedman, David A and Freedman, David A},
+	Date-Added = {2020-10-27 16:26:28 -0400},
+	Date-Modified = {2020-10-27 16:26:43 -0400},
+	Journal = {the american statistician},
+	Keywords = {model selection, overfitting},
+	Number = {2},
+	Pages = {152--155},
+	Publisher = {Taylor \& Francis Group},
+	Title = {A note on screening regression equations},
+	Volume = {37},
+	Year = {1983},
+	Bdsk-Url-1 = {http://pluto.mscc.huji.ac.il/~mszucker/REGR/freedman.pdf}}
+
+@inproceedings{rao2008dangers,
+	Author = {Rao, R Bharat and Fung, Glenn and Rosales, Romer},
+	Booktitle = {Proceedings of the 2008 SIAM international conference on data mining},
+	Date-Added = {2020-10-27 16:13:56 -0400},
+	Date-Modified = {2020-10-27 16:14:10 -0400},
+	Keywords = {cross validation, overfitting},
+	Organization = {SIAM},
+	Pages = {588--596},
+	Title = {On the dangers of cross-validation. An experimental evaluation},
+	Year = {2008},
+	Bdsk-Url-1 = {http://people.csail.mit.edu/romer/papers/CrossVal_SDM08.pdf}}
+
+@article{reunanen2003overfitting,
+	Author = {Reunanen, Juha},
+	Date-Added = {2020-10-27 16:12:51 -0400},
+	Date-Modified = {2020-10-27 22:46:35 -0400},
+	Journal = {Journal of Machine Learning Research},
+	Keywords = {overfitting, model selection},
+	Number = {Mar},
+	Pages = {1371--1382},
+	Title = {Overfitting in making comparisons between variable selection methods},
+	Volume = {3},
+	Year = {2003},
+	Bdsk-Url-1 = {https://www.jmlr.org/papers/volume3/reunanen03a/reunanen03a.pdf}}
+
+@article{dwork2015reusable,
+	Abstract = {Misapplication of statistical data analysis is a common cause of spurious discoveries in
+scientific research. Existing approaches to ensuring the validity of inferences drawn from data
+assume a fixed procedure to be performed, selected before the data are examined. In common
+practice, however, data analysis is an intrinsically adaptive process, with new analyses
+generated on the basis of data exploration, as well as the results of previous analyses on the
+same data. We demonstrate a new approach for addressing the challenges of adaptivity based
+on insights from privacy-preserving data analysis. As an application, we show how to safely
+reuse a holdout data set many times to validate the results of adaptively chosen analyses.},
+	Annote = {Main paper:
+
+``To preserve statistical validity, the only known safe approach is to collect new data for a fresh holdout set. This conservative approach is very costly and thus is frequently abused, resulting in overfitting to the holdout set''
+? Does it only work if all data generated from same distribution?
+? Does it only work with training and hold-out sets of the same size?
+
+The main paper is pretty short and therefore light on details. But they claim they solve the problem of multiple testing by computing a certain functional in a way that allow multiple hypothesis testing. They take the example of variable selection where they sequentially select the variables to use by taking the variable the most correlated with the target. Their mechanism is called Thresholdout and includes a first step that compares the value of the statistic on the training and validation set. => This raises again the question of whether this could work when the data-generating process is different between the training and validation sets (hold-out set).
+
+Appendix (or in this case, core of the paper):
+
+Setting is really ``adaptive data analysis'', that is, where ``datasets are used repeatedly, with previous analyses informing subsequent
+analyses'' (http://people.seas.harvard.edu/~madhusudan/courses/Spring2016/notes/thomas-notes-ada.pdf).
+? Does that fit the context of hyperparameter optimization?
+
+Always assume all data drawn from the same, fixed distribution (see Theorem 11). Plus their Thresholdout algo relies on a test of difference between the quantity evaluated on the training set and on the holdout set. 
+? I don't see how that would work with non-stationary data.
+
+Also works with Gaussian noise (instead of Laplacian noise).
+},
+	Author = {Dwork, Cynthia and Feldman, Vitaly and Hardt, Moritz and Pitassi, Toniann and Reingold, Omer and Roth, Aaron},
+	Date-Added = {2020-10-27 14:54:07 -0400},
+	Date-Modified = {2020-10-27 22:59:24 -0400},
+	Journal = {Science},
+	Keywords = {overfitting, backtesting},
+	Number = {6248},
+	Pages = {636--638},
+	Publisher = {American Association for the Advancement of Science},
+	Read = {1},
+	Title = {The reusable holdout: Preserving validity in adaptive data analysis},
+	Volume = {349},
+	Year = {2015},
+	Bdsk-Url-1 = {http://nematilab.info/bmijc/assets/091218_paper.pdf},
+	Bdsk-Url-2 = {https://science.sciencemag.org/content/sci/suppl/2015/08/05/349.6248.636.DC1/Dwork.SM.pdf}}
+
+@article{he2020bayesian,
+	Author = {He, Bobby and Lakshminarayanan, Balaji and Teh, Yee Whye},
+	Date-Added = {2020-10-27 09:26:34 -0400},
+	Date-Modified = {2020-10-27 09:27:00 -0400},
+	Journal = {arXiv preprint arXiv:2007.05864},
+	Keywords = {deep learning, bayesian, uncertainty, ensemble,},
+	Title = {Bayesian Deep Ensembles via the Neural Tangent Kernel},
+	Year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/abs/2007.05864}}
 
 @article{gneiting2005weather,
 	Author = {Gneiting, Tilmann and Raftery, Adrian E},
@@ -93,9 +227,9 @@ Sharpness: They define sharpness as the mean of the variances of all predictive 
 @article{benjamini1995controlling,
 	Author = {Benjamini, Yoav and Hochberg, Yosef},
 	Date-Added = {2020-10-08 23:50:34 -0400},
-	Date-Modified = {2020-10-08 23:52:37 -0400},
+	Date-Modified = {2020-10-27 22:45:09 -0400},
 	Journal = {Journal of the Royal statistical society: series B (Methodological)},
-	Keywords = {statistical test, multiple comparison, false discovery rate, p-value},
+	Keywords = {statistical test, multiple comparison, false discovery rate, p-value, **MUST-READ**},
 	Number = {1},
 	Pages = {289--300},
 	Publisher = {Wiley Online Library},
@@ -273,8 +407,9 @@ We conclude with high-level future research directions for knowledge graphs},
 @article{arjovsky2019invariant,
 	Author = {Arjovsky, Martin and Bottou, L{\'e}on and Gulrajani, Ishaan and Lopez-Paz, David},
 	Date-Added = {2020-08-27 14:01:20 -0400},
-	Date-Modified = {2020-08-27 14:01:20 -0400},
+	Date-Modified = {2020-10-27 22:45:23 -0400},
 	Journal = {arXiv preprint arXiv:1907.02893},
+	Keywords = {optimization},
 	Title = {Invariant risk minimization},
 	Year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1907.02893.pdf}}
@@ -807,7 +942,8 @@ what we would need to do uncertainty quantification.},
 	Author = {Tagasovska, Natasa and Lopez-Paz, David},
 	Booktitle = {Advances in Neural Information Processing Systems},
 	Date-Added = {2020-05-27 08:25:52 -0400},
-	Date-Modified = {2020-05-27 12:01:45 -0400},
+	Date-Modified = {2020-10-27 22:45:55 -0400},
+	Keywords = {uncertainty, deep learning},
 	Pages = {6414--6425},
 	Read = {1},
 	Title = {Single-Model Uncertainties for Deep Learning},
@@ -884,7 +1020,8 @@ most datasets, temperature scaling -- a singleparameter variant of Platt Scaling
 	Author = {Guo, Chuan and Pleiss, Geoff and Sun, Yu and Weinberger, Kilian Q},
 	Booktitle = {Proceedings of the 34th International Conference on Machine Learning-Volume 70},
 	Date-Added = {2020-05-25 11:44:37 -0400},
-	Date-Modified = {2020-05-25 11:45:15 -0400},
+	Date-Modified = {2020-10-27 22:45:44 -0400},
+	Keywords = {calibration, uncertainty, deep learning},
 	Organization = {JMLR. org},
 	Pages = {1321--1330},
 	Title = {On calibration of modern neural networks},
@@ -1062,9 +1199,9 @@ Their appliations seem to be mostly periodic time series. It would need to be te
 @article{cawley2010over,
 	Author = {Cawley, Gavin C and Talbot, Nicola LC},
 	Date-Added = {2020-05-06 17:29:12 -0400},
-	Date-Modified = {2020-10-17 01:14:19 -0400},
+	Date-Modified = {2020-10-27 22:45:09 -0400},
 	Journal = {Journal of Machine Learning Research},
-	Keywords = {model selection,  cross validation, overfitting},
+	Keywords = {model selection,  cross validation, overfitting, **MUST-READ**},
 	Number = {Jul},
 	Pages = {2079--2107},
 	Title = {On over-fitting in model selection and subsequent selection bias in performance evaluation},
@@ -1689,9 +1826,9 @@ classifiers over multiple data sets. Results of the latter can also be neatly pr
 introduced CD (critical difference) diagrams.},
 	Author = {Dem{\v{s}}ar, Janez},
 	Date-Added = {2020-04-21 11:53:43 -0400},
-	Date-Modified = {2020-08-02 19:30:44 -0400},
+	Date-Modified = {2020-10-28 09:14:52 -0400},
 	Journal = {Journal of Machine learning research},
-	Keywords = {classification, statistical test, model selection, cross validation},
+	Keywords = {classification, statistical test, model selection, cross validation, **MUST-READ**},
 	Number = {Jan},
 	Pages = {1--30},
 	Title = {Statistical comparisons of classifiers over multiple data sets},
