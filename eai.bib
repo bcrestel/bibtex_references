@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2020-10-28 10:39:04 -0400 
+%% Created for Ben Crestel at 2020-12-03 00:14:40 -0500 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -11,20 +11,74 @@
 
 
 
+@article{pizarro2002multiple,
+	author = {Pizarro, Joaqu{\i}n and Guerrero, Elisa and Galindo, Pedro L},
+	date-added = {2020-11-27 16:48:07 -0500},
+	date-modified = {2020-11-27 16:48:27 -0500},
+	journal = {Neurocomputing},
+	keywords = {model selection, multiple comparison, deep learning},
+	number = {1-4},
+	pages = {155--173},
+	publisher = {Elsevier},
+	title = {Multiple comparison procedures applied to model selection},
+	volume = {48},
+	year = {2002},
+	Bdsk-Url-1 = {https://sci2s.ugr.es/keel/pdf/specific/articulo/PizarroGuerreroGalindo.pdf}}
+
+@article{levesque2018bayesian,
+	author = {L{\'e}vesque, Julien-Charles},
+	date-added = {2020-11-27 16:34:01 -0500},
+	date-modified = {2020-11-27 16:34:26 -0500},
+	keywords = {bayesian, hyperparameter, model selection},
+	title = {Bayesian hyperparameter optimization: overfitting, ensembles and conditional spaces},
+	year = {2018},
+	Bdsk-Url-1 = {https://corpus.ulaval.ca/jspui/bitstream/20.500.11794/28364/1/33862.pdf}}
+
+@article{gneiting2007strictly,
+	abstract = {Scoring rules assess the quality of probabilistic forecasts, by assigning a numerical score based on the predictive distribution and on the
+event or value that materializes. A scoring rule is proper if the forecaster maximizes the expected score for an observation drawn from the
+distribution F if he or she issues the probabilistic forecast F, rather than G = F. It is strictly proper if the maximum is unique. In prediction
+problems, proper scoring rules encourage the forecaster to make careful assessments and to be honest. In estimation problems, strictly proper
+scoring rules provide attractive loss and utility functions that can be tailored to the problem at hand. This article reviews and develops the
+theory of proper scoring rules on general probability spaces, and proposes and discusses examples thereof. Proper scoring rules derive from
+convex functions and relate to information measures, entropy functions, and Bregman divergences. In the case of categorical variables, we
+prove a rigorous version of the Savage representation. Examples of scoring rules for probabilistic forecasts in the form of predictive densities
+include the logarithmic, spherical, pseudospherical, and quadratic scores. The continuous ranked probability score applies to probabilistic
+forecasts that take the form of predictive cumulative distribution functions. It generalizes the absolute error and forms a special case of
+a new and very general type of score, the energy score. Like many other scoring rules, the energy score admits a kernel representation
+in terms of negative definite functions, with links to inequalities of Hoeffding type, in both univariate and multivariate settings. Proper
+scoring rules for quantile and interval forecasts are also discussed. We relate proper scoring rules to Bayes factors and to cross-validation,
+and propose a novel form of cross-validation known as random-fold cross-validation. A case study on probabilistic weather forecasts in
+the North American Pacific Northwest illustrates the importance of propriety. We note optimum score approaches to point and quantile
+estimation, and propose the intuitively appealing interval score as a utility function in interval estimation that addresses width as well as
+coverage},
+	author = {Gneiting, Tilmann and Raftery, Adrian E},
+	date-added = {2020-10-30 12:42:59 -0400},
+	date-modified = {2020-10-30 12:43:33 -0400},
+	journal = {Journal of the American statistical Association},
+	keywords = {distributional forecast, uncertainty,},
+	number = {477},
+	pages = {359--378},
+	publisher = {Taylor \& Francis},
+	title = {Strictly proper scoring rules, prediction, and estimation},
+	volume = {102},
+	year = {2007},
+	Bdsk-Url-1 = {http://www.eecs.harvard.edu/cs286r/courses/fall10/papers/Gneiting07.pdf}}
+
 @incollection{feurer2019hyperparameter,
-	Author = {Feurer, Matthias and Hutter, Frank},
-	Booktitle = {Automated Machine Learning},
-	Date-Added = {2020-10-28 10:38:24 -0400},
-	Date-Modified = {2020-10-28 10:38:38 -0400},
-	Keywords = {hyperparameter, overfitting},
-	Pages = {3--33},
-	Publisher = {Springer, Cham},
-	Title = {Hyperparameter optimization},
-	Year = {2019},
+	author = {Feurer, Matthias and Hutter, Frank},
+	booktitle = {Automated Machine Learning},
+	date-added = {2020-10-28 10:38:24 -0400},
+	date-modified = {2020-10-28 10:38:38 -0400},
+	keywords = {hyperparameter, overfitting},
+	pages = {3--33},
+	publisher = {Springer, Cham},
+	title = {Hyperparameter optimization},
+	year = {2019},
 	Bdsk-Url-1 = {https://library.oapen.org/bitstream/handle/20.500.12657/23012/1007149.pdf?sequence=1#page=15}}
 
 @article{blum2015ladder,
-	Abstract = {The organizer of a machine learning competition faces the problem of maintaining
+	abstract = {The organizer of a machine learning competition faces the problem of maintaining
 an accurate leaderboard that faithfully represents the quality of the best submission of
 each competing team. What makes this estimation problem particularly challenging is its
 sequential and adaptive nature. As participants are allowed to repeatedly evaluate their
@@ -40,60 +94,60 @@ Notably, we are able to sidestep a powerful recent hardness result for adaptive 
 estimation that rules out algorithms such as ours under a seemingly very similar notion
 of accuracy. On a practical note, we provide a completely parameter-free variant of our
 algorithm that can be deployed in a real competition with no tuning required whatsoever.},
-	Annote = {The authors propose a simple method that seems to prevent over-fitting on the hold-out set, and provides better consistency between public and private leaderboard. Their method applies to the case of sequential, repeated submissions, when each model is submitted one after the other.
+	annote = {The authors propose a simple method that seems to prevent over-fitting on the hold-out set, and provides better consistency between public and private leaderboard. Their method applies to the case of sequential, repeated submissions, when each model is submitted one after the other.
 In their parameter-free approach, they test whether the loss of the new model is statistically significantly lower than the current best loss (one-sided paired t-test). And if it is, they update their best loss, and if not, they keep the old one and don't publish the new loss.
 ? I'm surprised how this can make a difference? Or maybe this doesn't apply to hp optimization where you run you search in parallel.},
-	Author = {Blum, Avrim and Hardt, Moritz},
-	Date-Added = {2020-10-27 22:39:17 -0400},
-	Date-Modified = {2020-10-27 22:43:14 -0400},
-	Journal = {arXiv preprint arXiv:1502.04585},
-	Keywords = {overfitting, model selection},
-	Read = {1},
-	Title = {The ladder: A reliable leaderboard for machine learning competitions},
-	Year = {2015},
+	author = {Blum, Avrim and Hardt, Moritz},
+	date-added = {2020-10-27 22:39:17 -0400},
+	date-modified = {2020-10-27 22:43:14 -0400},
+	journal = {arXiv preprint arXiv:1502.04585},
+	keywords = {overfitting, model selection},
+	read = {1},
+	title = {The ladder: A reliable leaderboard for machine learning competitions},
+	year = {2015},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1502.04585.pdf}}
 
 @article{freedman1983note,
-	Author = {Freedman, David A and Freedman, David A},
-	Date-Added = {2020-10-27 16:26:28 -0400},
-	Date-Modified = {2020-10-27 16:26:43 -0400},
-	Journal = {the american statistician},
-	Keywords = {model selection, overfitting},
-	Number = {2},
-	Pages = {152--155},
-	Publisher = {Taylor \& Francis Group},
-	Title = {A note on screening regression equations},
-	Volume = {37},
-	Year = {1983},
+	author = {Freedman, David A and Freedman, David A},
+	date-added = {2020-10-27 16:26:28 -0400},
+	date-modified = {2020-10-27 16:26:43 -0400},
+	journal = {the american statistician},
+	keywords = {model selection, overfitting},
+	number = {2},
+	pages = {152--155},
+	publisher = {Taylor \& Francis Group},
+	title = {A note on screening regression equations},
+	volume = {37},
+	year = {1983},
 	Bdsk-Url-1 = {http://pluto.mscc.huji.ac.il/~mszucker/REGR/freedman.pdf}}
 
 @inproceedings{rao2008dangers,
-	Author = {Rao, R Bharat and Fung, Glenn and Rosales, Romer},
-	Booktitle = {Proceedings of the 2008 SIAM international conference on data mining},
-	Date-Added = {2020-10-27 16:13:56 -0400},
-	Date-Modified = {2020-10-27 16:14:10 -0400},
-	Keywords = {cross validation, overfitting},
-	Organization = {SIAM},
-	Pages = {588--596},
-	Title = {On the dangers of cross-validation. An experimental evaluation},
-	Year = {2008},
+	author = {Rao, R Bharat and Fung, Glenn and Rosales, Romer},
+	booktitle = {Proceedings of the 2008 SIAM international conference on data mining},
+	date-added = {2020-10-27 16:13:56 -0400},
+	date-modified = {2020-10-27 16:14:10 -0400},
+	keywords = {cross validation, overfitting},
+	organization = {SIAM},
+	pages = {588--596},
+	title = {On the dangers of cross-validation. An experimental evaluation},
+	year = {2008},
 	Bdsk-Url-1 = {http://people.csail.mit.edu/romer/papers/CrossVal_SDM08.pdf}}
 
 @article{reunanen2003overfitting,
-	Author = {Reunanen, Juha},
-	Date-Added = {2020-10-27 16:12:51 -0400},
-	Date-Modified = {2020-10-27 22:46:35 -0400},
-	Journal = {Journal of Machine Learning Research},
-	Keywords = {overfitting, model selection},
-	Number = {Mar},
-	Pages = {1371--1382},
-	Title = {Overfitting in making comparisons between variable selection methods},
-	Volume = {3},
-	Year = {2003},
+	author = {Reunanen, Juha},
+	date-added = {2020-10-27 16:12:51 -0400},
+	date-modified = {2020-10-27 22:46:35 -0400},
+	journal = {Journal of Machine Learning Research},
+	keywords = {overfitting, model selection},
+	number = {Mar},
+	pages = {1371--1382},
+	title = {Overfitting in making comparisons between variable selection methods},
+	volume = {3},
+	year = {2003},
 	Bdsk-Url-1 = {https://www.jmlr.org/papers/volume3/reunanen03a/reunanen03a.pdf}}
 
 @article{dwork2015reusable,
-	Abstract = {Misapplication of statistical data analysis is a common cause of spurious discoveries in
+	abstract = {Misapplication of statistical data analysis is a common cause of spurious discoveries in
 scientific research. Existing approaches to ensuring the validity of inferences drawn from data
 assume a fixed procedure to be performed, selected before the data are examined. In common
 practice, however, data analysis is an intrinsically adaptive process, with new analyses
@@ -101,7 +155,7 @@ generated on the basis of data exploration, as well as the results of previous a
 same data. We demonstrate a new approach for addressing the challenges of adaptivity based
 on insights from privacy-preserving data analysis. As an application, we show how to safely
 reuse a holdout data set many times to validate the results of adaptively chosen analyses.},
-	Annote = {Main paper:
+	annote = {Main paper:
 
 ``To preserve statistical validity, the only known safe approach is to collect new data for a fresh holdout set. This conservative approach is very costly and thus is frequently abused, resulting in overfitting to the holdout set''
 ? Does it only work if all data generated from same distribution?
@@ -120,47 +174,47 @@ Always assume all data drawn from the same, fixed distribution (see Theorem 11).
 
 Also works with Gaussian noise (instead of Laplacian noise).
 },
-	Author = {Dwork, Cynthia and Feldman, Vitaly and Hardt, Moritz and Pitassi, Toniann and Reingold, Omer and Roth, Aaron},
-	Date-Added = {2020-10-27 14:54:07 -0400},
-	Date-Modified = {2020-10-27 22:59:24 -0400},
-	Journal = {Science},
-	Keywords = {overfitting, backtesting},
-	Number = {6248},
-	Pages = {636--638},
-	Publisher = {American Association for the Advancement of Science},
-	Read = {1},
-	Title = {The reusable holdout: Preserving validity in adaptive data analysis},
-	Volume = {349},
-	Year = {2015},
+	author = {Dwork, Cynthia and Feldman, Vitaly and Hardt, Moritz and Pitassi, Toniann and Reingold, Omer and Roth, Aaron},
+	date-added = {2020-10-27 14:54:07 -0400},
+	date-modified = {2020-10-27 22:59:24 -0400},
+	journal = {Science},
+	keywords = {overfitting, backtesting},
+	number = {6248},
+	pages = {636--638},
+	publisher = {American Association for the Advancement of Science},
+	read = {1},
+	title = {The reusable holdout: Preserving validity in adaptive data analysis},
+	volume = {349},
+	year = {2015},
 	Bdsk-Url-1 = {http://nematilab.info/bmijc/assets/091218_paper.pdf},
 	Bdsk-Url-2 = {https://science.sciencemag.org/content/sci/suppl/2015/08/05/349.6248.636.DC1/Dwork.SM.pdf}}
 
 @article{he2020bayesian,
-	Author = {He, Bobby and Lakshminarayanan, Balaji and Teh, Yee Whye},
-	Date-Added = {2020-10-27 09:26:34 -0400},
-	Date-Modified = {2020-10-27 09:27:00 -0400},
-	Journal = {arXiv preprint arXiv:2007.05864},
-	Keywords = {deep learning, bayesian, uncertainty, ensemble,},
-	Title = {Bayesian Deep Ensembles via the Neural Tangent Kernel},
-	Year = {2020},
+	author = {He, Bobby and Lakshminarayanan, Balaji and Teh, Yee Whye},
+	date-added = {2020-10-27 09:26:34 -0400},
+	date-modified = {2020-10-27 09:27:00 -0400},
+	journal = {arXiv preprint arXiv:2007.05864},
+	keywords = {deep learning, bayesian, uncertainty, ensemble,},
+	title = {Bayesian Deep Ensembles via the Neural Tangent Kernel},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/abs/2007.05864}}
 
 @article{gneiting2005weather,
-	Author = {Gneiting, Tilmann and Raftery, Adrian E},
-	Date-Added = {2020-10-26 15:37:09 -0400},
-	Date-Modified = {2020-10-26 15:37:31 -0400},
-	Journal = {Science},
-	Keywords = {forecasting, uncertainty, ensemble, distributional forecast},
-	Number = {5746},
-	Pages = {248--249},
-	Publisher = {American Association for the Advancement of Science},
-	Title = {Weather forecasting with ensemble methods},
-	Volume = {310},
-	Year = {2005},
+	author = {Gneiting, Tilmann and Raftery, Adrian E},
+	date-added = {2020-10-26 15:37:09 -0400},
+	date-modified = {2020-10-26 15:37:31 -0400},
+	journal = {Science},
+	keywords = {forecasting, uncertainty, ensemble, distributional forecast},
+	number = {5746},
+	pages = {248--249},
+	publisher = {American Association for the Advancement of Science},
+	title = {Weather forecasting with ensemble methods},
+	volume = {310},
+	year = {2005},
 	Bdsk-Url-1 = {https://sites.stat.washington.edu/raftery/Research/PDF/science2005.pdf}}
 
 @article{kuleshov2018accurate,
-	Abstract = {Methods for reasoning under uncertainty are a
+	abstract = {Methods for reasoning under uncertainty are a
 key building block of accurate and reliable machine learning systems. Bayesian methods provide a general framework to quantify uncertainty.
 However, because of model misspecification and
 the use of approximate inference, Bayesian uncertainty estimates are often inaccurate --- for
@@ -173,7 +227,7 @@ enough data. Our procedure is inspired by Platt
 scaling and extends previous work on classification. We evaluate this approach on Bayesian linear regression, feedforward, and recurrent neural networks, and find that it consistently outputs
 well-calibrated credible intervals while improving performance on time series forecasting and
 model-based reinforcement learning tasks.},
-	Annote = {1. Introduction
+	annote = {1. Introduction
 Authors propose a new calibration methods for Bayesian neural networks, inspired by Platt scaling. They claim that given a sufficient amount of idd data, the calibration will be perfect.
 Not sure if it matters, but the authors specifically focus on solving the miscalibration of credible intervals (Bayesian). Could they generate well-calibrated credible intervals, but their predictive distribution still be incorrect?
 
@@ -201,164 +255,164 @@ Calibration: pick a number of quantiles, then calculate frequency of observed va
 The authors propose a quantiative metric this time, taking the weights MSE between targeted quantiles and observed frequency: Sum_i w_i (q_i - q_i_hat)^2. Weights are 1 in the paper, but one could use weights given by the number of data falling into each quantile. => This resembles a bit the Expected Calibration Error (ECE), except that ECE takes the absolute error and here we use the squared difference.
 Sharpness: They define sharpness as the mean of the variances of all predictive distributions.
 },
-	Author = {Kuleshov, Volodymyr and Fenner, Nathan and Ermon, Stefano},
-	Date-Added = {2020-10-26 10:27:58 -0400},
-	Date-Modified = {2020-10-26 15:29:37 -0400},
-	Journal = {arXiv preprint arXiv:1807.00263},
-	Keywords = {uncertainty, deep learning, forecasting, reinforcement learning},
-	Read = {1},
-	Title = {Accurate uncertainties for deep learning using calibrated regression},
-	Year = {2018},
+	author = {Kuleshov, Volodymyr and Fenner, Nathan and Ermon, Stefano},
+	date-added = {2020-10-26 10:27:58 -0400},
+	date-modified = {2020-10-26 15:29:37 -0400},
+	journal = {arXiv preprint arXiv:1807.00263},
+	keywords = {uncertainty, deep learning, forecasting, reinforcement learning},
+	read = {1},
+	title = {Accurate uncertainties for deep learning using calibrated regression},
+	year = {2018},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1807.00263.pdf}}
 
 @article{cawley2007preventing,
-	Author = {Cawley, Gavin C and Talbot, Nicola LC},
-	Date-Added = {2020-10-17 01:15:34 -0400},
-	Date-Modified = {2020-10-17 01:15:56 -0400},
-	Journal = {Journal of Machine Learning Research},
-	Keywords = {model selection, overfitting, hyperparameter, bayesian, regularization},
-	Number = {Apr},
-	Pages = {841--861},
-	Title = {Preventing over-fitting during model selection via Bayesian regularisation of the hyper-parameters},
-	Volume = {8},
-	Year = {2007},
+	author = {Cawley, Gavin C and Talbot, Nicola LC},
+	date-added = {2020-10-17 01:15:34 -0400},
+	date-modified = {2020-10-17 01:15:56 -0400},
+	journal = {Journal of Machine Learning Research},
+	keywords = {model selection, overfitting, hyperparameter, bayesian, regularization},
+	number = {Apr},
+	pages = {841--861},
+	title = {Preventing over-fitting during model selection via Bayesian regularisation of the hyper-parameters},
+	volume = {8},
+	year = {2007},
 	Bdsk-Url-1 = {https://www.jmlr.org/papers/volume8/cawley07a/cawley07a.pdf}}
 
 @article{benjamini1995controlling,
-	Author = {Benjamini, Yoav and Hochberg, Yosef},
-	Date-Added = {2020-10-08 23:50:34 -0400},
-	Date-Modified = {2020-10-27 22:45:09 -0400},
-	Journal = {Journal of the Royal statistical society: series B (Methodological)},
-	Keywords = {statistical test, multiple comparison, false discovery rate, p-value, **MUST-READ**},
-	Number = {1},
-	Pages = {289--300},
-	Publisher = {Wiley Online Library},
-	Title = {Controlling the false discovery rate: a practical and powerful approach to multiple testing},
-	Volume = {57},
-	Year = {1995},
+	author = {Benjamini, Yoav and Hochberg, Yosef},
+	date-added = {2020-10-08 23:50:34 -0400},
+	date-modified = {2020-11-27 16:11:22 -0500},
+	journal = {Journal of the Royal statistical society: series B (Methodological)},
+	keywords = {statistical test, multiple comparison, false discovery rate, p-value},
+	number = {1},
+	pages = {289--300},
+	publisher = {Wiley Online Library},
+	title = {Controlling the false discovery rate: a practical and powerful approach to multiple testing},
+	volume = {57},
+	year = {1995},
 	Bdsk-Url-1 = {https://www.stat.purdue.edu/~doerge/BIOINFORM.D/FALL06/Benjamini%20and%20Y%20FDR.pdf}}
 
 @inproceedings{salinas2019high,
-	Author = {Salinas, David and Bohlke-Schneider, Michael and Callot, Laurent and Medico, Roberto and Gasthaus, Jan},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-10-05 15:57:38 -0400},
-	Date-Modified = {2020-10-05 15:58:02 -0400},
-	Keywords = {forecasting, uncertainty},
-	Pages = {6827--6837},
-	Title = {High-dimensional multivariate forecasting with low-rank Gaussian Copula Processes},
-	Year = {2019},
+	author = {Salinas, David and Bohlke-Schneider, Michael and Callot, Laurent and Medico, Roberto and Gasthaus, Jan},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-10-05 15:57:38 -0400},
+	date-modified = {2020-10-05 15:58:02 -0400},
+	keywords = {forecasting, uncertainty},
+	pages = {6827--6837},
+	title = {High-dimensional multivariate forecasting with low-rank Gaussian Copula Processes},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1910.03002.pdf}}
 
 @article{tay2020efficient,
-	Author = {Tay, Yi and Dehghani, Mostafa and Bahri, Dara and Metzler, Donald},
-	Date-Added = {2020-10-05 10:54:01 -0400},
-	Date-Modified = {2020-10-05 10:54:19 -0400},
-	Journal = {arXiv preprint arXiv:2009.06732},
-	Keywords = {transformer, nlp},
-	Title = {Efficient Transformers: A Survey},
-	Year = {2020},
+	author = {Tay, Yi and Dehghani, Mostafa and Bahri, Dara and Metzler, Donald},
+	date-added = {2020-10-05 10:54:01 -0400},
+	date-modified = {2020-10-05 10:54:19 -0400},
+	journal = {arXiv preprint arXiv:2009.06732},
+	keywords = {transformer, nlp},
+	title = {Efficient Transformers: A Survey},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2009.06732.pdf}}
 
 @article{gonccalves190forecasting,
-	Author = {Gon{\c{c}}alves, Carla and Cavalcante, Laura and Brito, Margarida and Bessa, Ricardo J and Gama, Jo{\~a}o},
-	Date-Added = {2020-10-02 09:53:10 -0400},
-	Date-Modified = {2020-10-02 09:53:31 -0400},
-	Journal = {Electric Power Systems Research},
-	Keywords = {forecasting, quantile, extreme value theory},
-	Pages = {106636},
-	Publisher = {Elsevier},
-	Title = {Forecasting conditional extreme quantiles for wind energy},
-	Volume = {190},
+	author = {Gon{\c{c}}alves, Carla and Cavalcante, Laura and Brito, Margarida and Bessa, Ricardo J and Gama, Jo{\~a}o},
+	date-added = {2020-10-02 09:53:10 -0400},
+	date-modified = {2020-10-02 09:53:31 -0400},
+	journal = {Electric Power Systems Research},
+	keywords = {forecasting, quantile, extreme value theory},
+	pages = {106636},
+	publisher = {Elsevier},
+	title = {Forecasting conditional extreme quantiles for wind energy},
+	volume = {190},
 	Bdsk-Url-1 = {https://www.smart4res.eu/wp-content/uploads/2020/07/PSCC_INESC_Gon%C3%A7alves.pdf}}
 
 @article{cauchois2020robust,
-	Author = {Cauchois, Maxime and Gupta, Suyash and Ali, Alnur and Duchi, John C},
-	Date-Added = {2020-10-02 09:50:07 -0400},
-	Date-Modified = {2020-10-02 09:50:32 -0400},
-	Journal = {arXiv preprint arXiv:2008.04267},
-	Keywords = {concept drift, uncertainty},
-	Title = {Robust Validation: Confident Predictions Even When Distributions Shift},
-	Year = {2020},
+	author = {Cauchois, Maxime and Gupta, Suyash and Ali, Alnur and Duchi, John C},
+	date-added = {2020-10-02 09:50:07 -0400},
+	date-modified = {2020-10-02 09:50:32 -0400},
+	journal = {arXiv preprint arXiv:2008.04267},
+	keywords = {concept drift, uncertainty},
+	title = {Robust Validation: Confident Predictions Even When Distributions Shift},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2008.04267.pdf}}
 
 @inproceedings{bengio2009curriculum,
-	Author = {Bengio, Yoshua and Louradour, J{\'e}r{\^o}me and Collobert, Ronan and Weston, Jason},
-	Booktitle = {Proceedings of the 26th annual international conference on machine learning},
-	Date-Added = {2020-10-01 22:15:20 -0400},
-	Date-Modified = {2020-10-01 22:15:39 -0400},
-	Keywords = {deep learning},
-	Pages = {41--48},
-	Title = {Curriculum learning},
-	Year = {2009},
+	author = {Bengio, Yoshua and Louradour, J{\'e}r{\^o}me and Collobert, Ronan and Weston, Jason},
+	booktitle = {Proceedings of the 26th annual international conference on machine learning},
+	date-added = {2020-10-01 22:15:20 -0400},
+	date-modified = {2020-10-01 22:15:39 -0400},
+	keywords = {deep learning},
+	pages = {41--48},
+	title = {Curriculum learning},
+	year = {2009},
 	Bdsk-Url-1 = {https://qmro.qmul.ac.uk/xmlui/bitstream/handle/123456789/15972/Bengio%2C%202009%20Curriculum%20Learning.pdf?sequence=1&isAllowed=y}}
 
 @article{rosenfeld2018incremental,
-	Author = {Rosenfeld, Amir and Tsotsos, John K},
-	Date-Added = {2020-10-01 22:14:33 -0400},
-	Date-Modified = {2020-10-01 22:14:54 -0400},
-	Journal = {IEEE transactions on pattern analysis and machine intelligence},
-	Keywords = {incremental learning, deep learning},
-	Publisher = {IEEE},
-	Title = {Incremental learning through deep adaptation},
-	Year = {2018},
+	author = {Rosenfeld, Amir and Tsotsos, John K},
+	date-added = {2020-10-01 22:14:33 -0400},
+	date-modified = {2020-10-01 22:14:54 -0400},
+	journal = {IEEE transactions on pattern analysis and machine intelligence},
+	keywords = {incremental learning, deep learning},
+	publisher = {IEEE},
+	title = {Incremental learning through deep adaptation},
+	year = {2018},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1705.04228.pdf}}
 
 @inproceedings{meng2020fast,
-	Author = {Meng, Si Yi and Vaswani, Sharan and Laradji, Issam Hadj and Schmidt, Mark and Lacoste-Julien, Simon},
-	Booktitle = {International Conference on Artificial Intelligence and Statistics},
-	Date-Added = {2020-09-28 17:23:54 -0400},
-	Date-Modified = {2020-09-28 17:24:13 -0400},
-	Keywords = {optimization},
-	Organization = {PMLR},
-	Pages = {1375--1386},
-	Title = {Fast and furious convergence: Stochastic second order methods under interpolation},
-	Year = {2020},
+	author = {Meng, Si Yi and Vaswani, Sharan and Laradji, Issam Hadj and Schmidt, Mark and Lacoste-Julien, Simon},
+	booktitle = {International Conference on Artificial Intelligence and Statistics},
+	date-added = {2020-09-28 17:23:54 -0400},
+	date-modified = {2020-09-28 17:24:13 -0400},
+	keywords = {optimization},
+	organization = {PMLR},
+	pages = {1375--1386},
+	title = {Fast and furious convergence: Stochastic second order methods under interpolation},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1910.04920.pdf}}
 
 @inproceedings{vaswani2019painless,
-	Author = {Vaswani, Sharan and Mishkin, Aaron and Laradji, Issam and Schmidt, Mark and Gidel, Gauthier and Lacoste-Julien, Simon},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-09-28 17:21:17 -0400},
-	Date-Modified = {2020-09-28 17:21:56 -0400},
-	Keywords = {optimization},
-	Pages = {3732--3745},
-	Title = {Painless stochastic gradient: Interpolation, line-search, and convergence rates},
-	Year = {2019},
+	author = {Vaswani, Sharan and Mishkin, Aaron and Laradji, Issam and Schmidt, Mark and Gidel, Gauthier and Lacoste-Julien, Simon},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-09-28 17:21:17 -0400},
+	date-modified = {2020-09-28 17:21:56 -0400},
+	keywords = {optimization},
+	pages = {3732--3745},
+	title = {Painless stochastic gradient: Interpolation, line-search, and convergence rates},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1905.09997.pdf}}
 
 @article{weinan2020neural,
-	Author = {Weinan, E, et al.},
-	Date-Added = {2020-09-24 23:31:21 -0400},
-	Date-Modified = {2020-09-24 23:32:49 -0400},
-	Keywords = {deep learning, machine learning},
-	Title = {Towards a Mathematical Understanding of Neural Network-Based Machine Learning: what we know and what we don't},
-	Year = {2020},
+	author = {Weinan, E, et al.},
+	date-added = {2020-09-24 23:31:21 -0400},
+	date-modified = {2020-09-24 23:32:49 -0400},
+	keywords = {deep learning, machine learning},
+	title = {Towards a Mathematical Understanding of Neural Network-Based Machine Learning: what we know and what we don't},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2009.10713v1.pdf}}
 
 @book{gelman2013bayesian,
-	Author = {Gelman, Andrew and Carlin, John B and Stern, Hal S and Dunson, David B and Vehtari, Aki and Rubin, Donald B},
-	Date-Added = {2020-09-24 15:32:46 -0400},
-	Date-Modified = {2020-09-24 15:34:31 -0400},
-	Keywords = {bayesian},
-	Publisher = {CRC press},
-	Title = {Bayesian data analysis},
-	Year = {2013},
+	author = {Gelman, Andrew and Carlin, John B and Stern, Hal S and Dunson, David B and Vehtari, Aki and Rubin, Donald B},
+	date-added = {2020-09-24 15:32:46 -0400},
+	date-modified = {2020-09-24 15:34:31 -0400},
+	keywords = {bayesian},
+	publisher = {CRC press},
+	title = {Bayesian data analysis},
+	year = {2013},
 	Bdsk-Url-1 = {http://www.stat.columbia.edu/~gelman/book/BDA3.pdf}}
 
 @article{murphy2007conjugate,
-	Author = {Murphy, Kevin P},
-	Date-Added = {2020-09-24 15:31:44 -0400},
-	Date-Modified = {2020-09-24 15:32:19 -0400},
-	Journal = {def},
-	Keywords = {bayesian, class notes},
-	Pages = {16},
-	Title = {Conjugate Bayesian analysis of the Gaussian distribution},
-	Volume = {1},
-	Year = {2007},
+	author = {Murphy, Kevin P},
+	date-added = {2020-09-24 15:31:44 -0400},
+	date-modified = {2020-09-24 15:32:19 -0400},
+	journal = {def},
+	keywords = {bayesian, class notes},
+	pages = {16},
+	title = {Conjugate Bayesian analysis of the Gaussian distribution},
+	volume = {1},
+	year = {2007},
 	Bdsk-Url-1 = {https://www.cs.ubc.ca/~murphyk/Papers/bayesGauss.pdf}}
 
 @article{hogan2020knowledge,
-	Abstract = {In this paper we provide a comprehensive introduction to knowledge graphs, which have recently garnered
+	abstract = {In this paper we provide a comprehensive introduction to knowledge graphs, which have recently garnered
 significant attention from both industry and academia in scenarios that require exploiting diverse, dynamic,
 large-scale collections of data. After some opening remarks, we motivate and contrast various graph-based data
 models and query languages that are used for knowledge graphs. We discuss the roles of schema, identity, and
@@ -367,55 +421,55 @@ of deductive and inductive techniques. We summarise methods for the creation, en
 refinement, and publication of knowledge graphs. We provide an overview of prominent open knowledge
 graphs and enterprise knowledge graphs, their applications, and how they use the aforementioned techniques.
 We conclude with high-level future research directions for knowledge graphs},
-	Author = {Hogan, Aidan and Blomqvist, Eva and Cochez, Michael and d'Amato, Claudia and de Melo, Gerard and Gutierrez, Claudio and Gayo, Jos{\'e} Emilio Labra and Kirrane, Sabrina and Neumaier, Sebastian and Polleres, Axel and others},
-	Date-Added = {2020-09-02 14:17:06 -0400},
-	Date-Modified = {2020-09-02 14:17:38 -0400},
-	Journal = {arXiv preprint arXiv:2003.02320},
-	Keywords = {knowledge graphs, database},
-	Title = {Knowledge graphs},
-	Year = {2020},
+	author = {Hogan, Aidan and Blomqvist, Eva and Cochez, Michael and d'Amato, Claudia and de Melo, Gerard and Gutierrez, Claudio and Gayo, Jos{\'e} Emilio Labra and Kirrane, Sabrina and Neumaier, Sebastian and Polleres, Axel and others},
+	date-added = {2020-09-02 14:17:06 -0400},
+	date-modified = {2020-09-02 14:17:38 -0400},
+	journal = {arXiv preprint arXiv:2003.02320},
+	keywords = {knowledge graphs, database},
+	title = {Knowledge graphs},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2003.02320.pdf}}
 
 @article{sandve2013ten,
-	Author = {Sandve, Geir Kjetil and Nekrutenko, Anton and Taylor, James and Hovig, Eivind},
-	Date-Added = {2020-08-28 15:26:12 -0400},
-	Date-Modified = {2020-08-28 15:26:35 -0400},
-	Journal = {PLoS Comput Biol},
-	Keywords = {reproducibility, scientific computing},
-	Number = {10},
-	Pages = {e1003285},
-	Publisher = {Public Library of Science},
-	Title = {Ten simple rules for reproducible computational research},
-	Volume = {9},
-	Year = {2013},
+	author = {Sandve, Geir Kjetil and Nekrutenko, Anton and Taylor, James and Hovig, Eivind},
+	date-added = {2020-08-28 15:26:12 -0400},
+	date-modified = {2020-08-28 15:26:35 -0400},
+	journal = {PLoS Comput Biol},
+	keywords = {reproducibility, scientific computing},
+	number = {10},
+	pages = {e1003285},
+	publisher = {Public Library of Science},
+	title = {Ten simple rules for reproducible computational research},
+	volume = {9},
+	year = {2013},
 	Bdsk-Url-1 = {https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003285}}
 
 @article{wilson2014best,
-	Author = {Wilson, Greg and Aruliah, Dhavide A and Brown, C Titus and Hong, Neil P Chue and Davis, Matt and Guy, Richard T and Haddock, Steven HD and Huff, Kathryn D and Mitchell, Ian M and Plumbley, Mark D and others},
-	Date-Added = {2020-08-28 15:17:36 -0400},
-	Date-Modified = {2020-08-28 15:18:24 -0400},
-	Journal = {PLoS Biol},
-	Keywords = {software engineering, scientific computing,},
-	Number = {1},
-	Pages = {e1001745},
-	Publisher = {Public Library of Science},
-	Title = {Best practices for scientific computing},
-	Volume = {12},
-	Year = {2014},
+	author = {Wilson, Greg and Aruliah, Dhavide A and Brown, C Titus and Hong, Neil P Chue and Davis, Matt and Guy, Richard T and Haddock, Steven HD and Huff, Kathryn D and Mitchell, Ian M and Plumbley, Mark D and others},
+	date-added = {2020-08-28 15:17:36 -0400},
+	date-modified = {2020-08-28 15:18:24 -0400},
+	journal = {PLoS Biol},
+	keywords = {software engineering, scientific computing,},
+	number = {1},
+	pages = {e1001745},
+	publisher = {Public Library of Science},
+	title = {Best practices for scientific computing},
+	volume = {12},
+	year = {2014},
 	Bdsk-Url-1 = {https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745}}
 
 @article{arjovsky2019invariant,
-	Author = {Arjovsky, Martin and Bottou, L{\'e}on and Gulrajani, Ishaan and Lopez-Paz, David},
-	Date-Added = {2020-08-27 14:01:20 -0400},
-	Date-Modified = {2020-10-27 22:45:23 -0400},
-	Journal = {arXiv preprint arXiv:1907.02893},
-	Keywords = {optimization},
-	Title = {Invariant risk minimization},
-	Year = {2019},
+	author = {Arjovsky, Martin and Bottou, L{\'e}on and Gulrajani, Ishaan and Lopez-Paz, David},
+	date-added = {2020-08-27 14:01:20 -0400},
+	date-modified = {2020-10-27 22:45:23 -0400},
+	journal = {arXiv preprint arXiv:1907.02893},
+	keywords = {optimization},
+	title = {Invariant risk minimization},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1907.02893.pdf}}
 
 @misc{spiliotis2020hierarchical,
-	Abstract = {Hierarchical forecasting methods have been widely used to
+	abstract = {Hierarchical forecasting methods have been widely used to
 support aligned decision-making by providing coherent forecasts at different aggregation levels. Traditional hierarchical forecasting approaches,
 such as the bottom-up and top-down methods, focus on a particular
 aggregation level to anchor the forecasts. During the past decades, these
@@ -435,41 +489,76 @@ The proposed method is evaluated both in terms of accuracy and bias
 using two different data sets coming from the tourism and retail industries. Our results suggest that the proposed method gives superior point
 forecasts than existing approaches, especially when the series comprising
 the hierarchy are not characterized by the same patterns.},
-	Archiveprefix = {arXiv},
-	Author = {Evangelos Spiliotis and Mahdi Abolghasemi and Rob J Hyndman and Fotios Petropoulos and Vassilios Assimakopoulos},
-	Date-Added = {2020-08-21 22:51:56 -0400},
-	Date-Modified = {2020-08-21 22:52:36 -0400},
-	Eprint = {2006.02043},
-	Keywords = {forecasting, hierarchical, reconciliation, machine learning},
-	Primaryclass = {cs.LG},
-	Title = {Hierarchical forecast reconciliation with machine learning},
-	Year = {2020},
+	archiveprefix = {arXiv},
+	author = {Evangelos Spiliotis and Mahdi Abolghasemi and Rob J Hyndman and Fotios Petropoulos and Vassilios Assimakopoulos},
+	date-added = {2020-08-21 22:51:56 -0400},
+	date-modified = {2020-08-21 22:52:36 -0400},
+	eprint = {2006.02043},
+	keywords = {forecasting, hierarchical, reconciliation, machine learning},
+	primaryclass = {cs.LG},
+	title = {Hierarchical forecast reconciliation with machine learning},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2006.02043.pdf}}
 
 @article{cerqueira2019evaluating,
-	Author = {Cerqueira, Vitor and Torgo, Luis and Mozetic, Igor},
-	Date-Added = {2020-08-07 09:33:42 -0400},
-	Date-Modified = {2020-08-07 09:34:11 -0400},
-	Journal = {arXiv preprint arXiv:1905.11744},
-	Keywords = {time series, model selection, forecasting},
-	Title = {Evaluating time series forecasting models: An empirical study on performance estimation methods},
-	Year = {2019},
+	abstract = {Performance estimation aims at estimating the loss that a predictive
+model will incur on unseen data. These procedures are part of the pipeline
+in every machine learning project and are used for assessing the overall
+generalisation ability of predictive models. In this paper we address the
+application of these methods to time series forecasting tasks. For independent and identically distributed data the most common approach is
+cross-validation. However, the dependency among observations in time
+series raises some caveats about the most appropriate way to estimate performance in this type of data and currently there is no settled way to do
+so. We compare different variants of cross-validation and of out-of-sample
+approaches using two case studies: One with 62 real-world time series and
+another with three synthetic time series. Results show noticeable differences in the performance estimation methods in the two scenarios. In
+particular, empirical experiments suggest that cross-validation approaches
+can be applied to stationary time series. However, in real-world scenarios,
+when different sources of non-stationary variation are at play, the most
+accurate estimates are produced by out-of-sample methods that preserve
+the temporal order of observations.},
+	annote = {Abstract:
+``In particular, empirical experiments suggest that cross-validation approaches can be applied to stationary time series. However, in real-world scenarios, when different sources of non-stationary variation are at play, the most accurate estimates are produced by out-of-sample methods that preserve the temporal order of observations.''
+
+Introduction: 
+``cross-validation is typically the most appropriate method. This is mainly due to its efficient use of data. However, there are some issues when the observations in the data are dependent, such as time series. These dependencies raise some caveats about using standard cross-validation in such data.''
+
+In the Hyndman article, they use cross-validation and obtain good results, except when the model is under-specified. But they were using very littel data (200 points). In that case, you pretty have no other option. Another scenario when that would make sense is if the data is stationary.
+
+The authors present the different data split approach amenable for time series problem: OOS, prequential, cross-validation. They discuss the usefulness of cross-validation: stationary time-series and/or small datasets.
+
+Section 3:
+Describe the different data used: real, and synthetic (identical to the ones used in Hyndman's paper)
+Compare different data split strategies in estimating the test set error
+
+Conclusion:
+``Consequently, we believe that in these scenarios, Rep-Holdout is a better option as performance estimation method relative to cross-validation approaches.''
+``Rep-Holdout OOS tested in nreps testing periods with a Monte Carlo simulation using 70% of the total observations t of the time series in each test. For each period, a random point is picked from the time series. The previous window comprising 60% of t is used for training and the following window of 10% of t is used for testing;''
+
+``In a stationary setting the cross-validation variants are shown to have a competitive estimation ability. However, when non-stationarities are present, they systematically provide worse estimations than the out-of-sample approaches''},
+	author = {Cerqueira, Vitor and Torgo, Luis and Mozetic, Igor},
+	date-added = {2020-08-07 09:33:42 -0400},
+	date-modified = {2020-12-03 00:14:06 -0500},
+	journal = {arXiv preprint arXiv:1905.11744},
+	keywords = {time series, model selection, forecasting},
+	read = {1},
+	title = {Evaluating time series forecasting models: An empirical study on performance estimation methods},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1905.11744.pdf}}
 
 @article{efron1986bootstrap,
-	Author = {Efron, Bradley and Tibshirani, Robert},
-	Date-Added = {2020-08-07 07:56:22 -0400},
-	Date-Modified = {2020-08-07 07:56:59 -0400},
-	Journal = {Statistical science},
-	Keywords = {bootstrap, statistical test, statistics, confidence interval},
-	Pages = {54--75},
-	Publisher = {JSTOR},
-	Title = {Bootstrap methods for standard errors, confidence intervals, and other measures of statistical accuracy},
-	Year = {1986},
+	author = {Efron, Bradley and Tibshirani, Robert},
+	date-added = {2020-08-07 07:56:22 -0400},
+	date-modified = {2020-08-07 07:56:59 -0400},
+	journal = {Statistical science},
+	keywords = {bootstrap, statistical test, statistics, confidence interval},
+	pages = {54--75},
+	publisher = {JSTOR},
+	title = {Bootstrap methods for standard errors, confidence intervals, and other measures of statistical accuracy},
+	year = {1986},
 	Bdsk-Url-1 = {https://projecteuclid.org/download/pdf_1/euclid.ss/1177013815}}
 
 @article{bergmeir2018note,
-	Abstract = {One of the most widely used standard procedures for model evaluation in classification and regression is
+	abstract = {One of the most widely used standard procedures for model evaluation in classification and regression is
 K-fold cross-validation (CV). However, when it comes to time series forecasting, because of the inherent
 serial correlation and potential non-stationarity of the data, its application is not straightforward and
 often omitted by practitioners in favor of an out-of-sample (OOS) evaluation. In this paper, we show
@@ -478,57 +567,85 @@ methods renders the use of standard K-fold CV possible. We present theoretical i
 our arguments. Furthermore, we present a simulation study where we show empirically that K-fold CV
 performs favorably compared to both OOS evaluation and other time-series-specific techniques such as
 non-dependent cross-validation.},
-	Author = {Bergmeir, Christoph and Hyndman, Rob J and Koo, Bonsoo},
-	Date-Added = {2020-08-06 00:25:19 -0400},
-	Date-Modified = {2020-09-24 15:17:16 -0400},
-	Journal = {Computational Statistics \& Data Analysis},
-	Keywords = {model selection, cross validation, time series},
-	Pages = {70--83},
-	Publisher = {Elsevier},
-	Title = {A note on the validity of cross-validation for evaluating time series prediction},
-	Volume = {120},
-	Year = {2018},
+	annote = {``Usually, practitioners resort to usual out-of-sample (OOS) evaluation instead, where a section from the end of the series is withheld for evaluation. However, in this way, the benefits of CV, especially for small datasets, cannot be exploited''
+
+In that paper, they have no problem using training data that is in the future compared to test data, even overlapping data. In the method, they propose, they place all data in rows (last column = target, first p columns = lagged values), then in their cross-validation they randomly leave out some of the rows. So there is overlap between the training set and the test set. They also present a verion that does not overlap:
+``Non-dependent cross-validation. The same folds are used as for the 5-fold CV, but rows are removed from the training set if they have a lag distance smaller than p from a row in the test set, where p is the maximal model order''
+
+
+Metrics:
+''We evaluate this by assessing the error between PEˆ and PE, across all series involved in the experiments. We use a mean absolute error (MAE) to assess the size of the effect and call this measure ``mean absolute predictive accuracy error'' (MAPAE).'' 
+
+``Furthermore, to see if any bias is present, we use the mean of the predictive accuracy error (MPAE)''
+
+
+Models:
+In their experiments, they use AR models, and MLP.
+
+
+Data:
+`` In the first two experiments, we generate data from stationary AR(3) processes and invertible MA(1) processes, respectively''.
+``The purpose of use-case 1 with AR(3) processes is to illustrate how the methods perform when the true model or very similar models as the DGP are used for forecasting. Use-case 2 shows a situation in which the true model is not among the forecasting models, but the models can still reasonably well fit the data. This is the case for an MA process which can approximate an AR process with a large number of lags. In practice, usually a relatively low number of AR lags is sufficient to model such data''
+``The third use-case can be seen as the construction of a counterexample, i.e., as a situation where the cross-validation procedures break down. We use a seasonal AR process as the DGP with a significant lag 12 (seasonal lag 1). As the models taken into account only use up to the first five lags, the models should not be able to fit well such data.''
+``For each of the three use-cases, 1000 Monte Carlo trials are performed. Series are generated with a total length of 200 values, and we use 70% of the data (140 observations) as in-set, the rest (60 observations) is withheld as the out-set'' -> that's a small out-set (test set); probably some variance there.
+
+Conclusion:
+``In this work we have investigated the use of cross-validation procedures for time series prediction evaluation when purely autoregressive models are used, which is a very common use-case when using Machine Learning procedures for time series forecasting.''
+''In a theoretical proof, we showed that a normal K-fold cross-validation procedure can be used if the lag structure of the models is adequately specified.''
+''In the experiments, we showed empirically that even if the lag structure is not correct, as long as the data are fitted well by the model, cross-validation without any modification is a better choice than OOS evaluation. Only if the models are heavily misspecified, are the cross-validation procedures to be avoided as in such a case they may yield a systematic underestimation of the error''
+-> works better if we know the correct model in advance},
+	author = {Bergmeir, Christoph and Hyndman, Rob J and Koo, Bonsoo},
+	date-added = {2020-08-06 00:25:19 -0400},
+	date-modified = {2020-12-03 00:09:59 -0500},
+	journal = {Computational Statistics \& Data Analysis},
+	keywords = {model selection, cross validation, time series},
+	pages = {70--83},
+	publisher = {Elsevier},
+	read = {1},
+	title = {A note on the validity of cross-validation for evaluating time series prediction},
+	volume = {120},
+	year = {2018},
 	Bdsk-Url-1 = {https://www.monash.edu/business/econometrics-and-business-statistics/research/publications/ebs/wp10-15.pdf}}
 
 @inproceedings{dietterich2000ensemble,
-	Abstract = {Ensemble methods are learning algorithms that construct a
+	abstract = {Ensemble methods are learning algorithms that construct a
 set of classifiers and then classify new data points by taking a (weighted) vote of their predictions. The original ensemble method is Bayesian
 averaging, but more recent algorithms include error-correcting output
 coding, Bagging, and boosting. This paper reviews these methods and
 explains why ensembles can often perform better than any single classifier. Some previous studies comparing ensemble methods are reviewed,
 and some new experiments are presented to uncover the reasons that
 Adaboost does not overfit rapidly},
-	Author = {Dietterich, Thomas G},
-	Booktitle = {International workshop on multiple classifier systems},
-	Date-Added = {2020-08-02 19:54:07 -0400},
-	Date-Modified = {2020-08-02 19:54:44 -0400},
-	Keywords = {ensemble},
-	Organization = {Springer},
-	Pages = {1--15},
-	Title = {Ensemble methods in machine learning},
-	Year = {2000},
+	author = {Dietterich, Thomas G},
+	booktitle = {International workshop on multiple classifier systems},
+	date-added = {2020-08-02 19:54:07 -0400},
+	date-modified = {2020-08-02 19:54:44 -0400},
+	keywords = {ensemble},
+	organization = {Springer},
+	pages = {1--15},
+	title = {Ensemble methods in machine learning},
+	year = {2000},
 	Bdsk-Url-1 = {ftp://nozdr.ru/biblio/kolxoz/Cs/CsLn/M/Multiple%20Classifier%20Systems,%201%20conf.,%20MCS%202000(LNCS1857,%20Springer,%202000)(ISBN%203540677046)(411s)_CsLn_.pdf#page=8}}
 
 @inproceedings{nadeau2000inference,
-	Abstract = {In order to to compare learning algorithms, experimental results reported
+	abstract = {In order to to compare learning algorithms, experimental results reported
 in the machine learning litterature often use statistical tests of significance. Unfortunately, most of these tests do not take into account the
 variability due to the choice of training set. We perform a theoretical
 investigation of the variance of the cross-validation estimate of the generalization error that takes into account the variability due to the choice
 of training sets. This allows us to propose two new ways to estimate
 this variance. We show, via simulations, that these new statistics perform
 well relative to the statistics considered by Dietterich (Dietterich, 1998). },
-	Author = {Nadeau, Claude and Bengio, Yoshua},
-	Booktitle = {Advances in neural information processing systems},
-	Date-Added = {2020-08-02 19:35:14 -0400},
-	Date-Modified = {2020-08-02 19:38:56 -0400},
-	Keywords = {model selection, statistical test},
-	Pages = {307--313},
-	Title = {Inference for the generalization error},
-	Year = {2000},
+	author = {Nadeau, Claude and Bengio, Yoshua},
+	booktitle = {Advances in neural information processing systems},
+	date-added = {2020-08-02 19:35:14 -0400},
+	date-modified = {2020-08-02 19:38:56 -0400},
+	keywords = {model selection, statistical test},
+	pages = {307--313},
+	title = {Inference for the generalization error},
+	year = {2000},
 	Bdsk-Url-1 = {http://papers.nips.cc/paper/1661-inference-for-the-generalization-error.pdf}}
 
 @article{arlot2010survey,
-	Abstract = {Used to estimate the risk of an estimator or to perform model
+	abstract = {Used to estimate the risk of an estimator or to perform model
 selection, cross-validation is a widespread strategy because of its simplicity and its (apparent) universality. Many results exist on model selection
 performances of cross-validation procedures. This survey intends to relate
 these results to the most recent advances of model selection theory, with
@@ -536,20 +653,20 @@ a particular emphasis on distinguishing empirical statements from rigorous
 theoretical results. As a conclusion, guidelines are provided for choosing the
 best cross-validation procedure according to the particular features of the
 problem in hand.},
-	Author = {Arlot, Sylvain and Celisse, Alain and others},
-	Date-Added = {2020-08-02 19:32:22 -0400},
-	Date-Modified = {2020-08-02 19:32:55 -0400},
-	Journal = {Statistics surveys},
-	Keywords = {model selection, cross validation},
-	Pages = {40--79},
-	Publisher = {The author, under a Creative Commons Attribution License},
-	Title = {A survey of cross-validation procedures for model selection},
-	Volume = {4},
-	Year = {2010},
+	author = {Arlot, Sylvain and Celisse, Alain and others},
+	date-added = {2020-08-02 19:32:22 -0400},
+	date-modified = {2020-08-02 19:32:55 -0400},
+	journal = {Statistics surveys},
+	keywords = {model selection, cross validation},
+	pages = {40--79},
+	publisher = {The author, under a Creative Commons Attribution License},
+	title = {A survey of cross-validation procedures for model selection},
+	volume = {4},
+	year = {2010},
 	Bdsk-Url-1 = {https://projecteuclid.org/download/pdfview_1/euclid.ssu/1268143839}}
 
 @article{adams2007bayesian,
-	Abstract = {Changepoints are abrupt variations in the
+	abstract = {Changepoints are abrupt variations in the
 generative parameters of a data sequence.
 Online detection of changepoints is useful in
 modelling and prediction of time series in
@@ -565,37 +682,37 @@ current ``run,'' or time since the last changepoint, using a simple message-pass
 a variety of types of data. We illustrate this
 modularity by demonstrating the algorithm
 on three different real-world data sets.},
-	Author = {Adams, Ryan Prescott and MacKay, David JC},
-	Date-Added = {2020-07-24 09:15:54 -0400},
-	Date-Modified = {2020-07-24 09:16:19 -0400},
-	Journal = {arXiv preprint arXiv:0710.3742},
-	Keywords = {change point detection, bayesian},
-	Title = {Bayesian online changepoint detection},
-	Year = {2007},
+	author = {Adams, Ryan Prescott and MacKay, David JC},
+	date-added = {2020-07-24 09:15:54 -0400},
+	date-modified = {2020-07-24 09:16:19 -0400},
+	journal = {arXiv preprint arXiv:0710.3742},
+	keywords = {change point detection, bayesian},
+	title = {Bayesian online changepoint detection},
+	year = {2007},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/0710.3742.pdf}}
 
 @article{lopez2019detection,
-	Abstract = {In this paper we address the problem of selection bias under multiple testing in the context of
+	abstract = {In this paper we address the problem of selection bias under multiple testing in the context of
 investment strategies. We introduce an unsupervised learning algorithm that determines the
 number of effectively uncorrelated trials carried out in the context of a discovery. This estimate
 is critical for estimating the familywise false positive probability, and for filtering out false
 investment strategies. },
-	Annote = {Proposes a way to reduce the Sharpe Ratio in order to avoid false positive in finanical backtests. This reduction is based on the number of trials that were conducted prior to identifying the chosen strategy.},
-	Author = {L{\'o}pez de Prado, Marcos and Lewis, Michael J},
-	Date-Added = {2020-07-09 16:18:16 -0400},
-	Date-Modified = {2020-07-09 16:18:51 -0400},
-	Journal = {Quantitative Finance},
-	Keywords = {overfitting, finance, backtesting},
-	Number = {9},
-	Pages = {1555--1565},
-	Publisher = {Taylor \& Francis},
-	Title = {Detection of false investment strategies using unsupervised learning methods},
-	Volume = {19},
-	Year = {2019},
+	annote = {Proposes a way to reduce the Sharpe Ratio in order to avoid false positive in finanical backtests. This reduction is based on the number of trials that were conducted prior to identifying the chosen strategy.},
+	author = {L{\'o}pez de Prado, Marcos and Lewis, Michael J},
+	date-added = {2020-07-09 16:18:16 -0400},
+	date-modified = {2020-07-09 16:18:51 -0400},
+	journal = {Quantitative Finance},
+	keywords = {overfitting, finance, backtesting},
+	number = {9},
+	pages = {1555--1565},
+	publisher = {Taylor \& Francis},
+	title = {Detection of false investment strategies using unsupervised learning methods},
+	volume = {19},
+	year = {2019},
 	Bdsk-Url-1 = {http://smallake.kr/wp-content/uploads/2020/04/SSRN-id3167017.pdf}}
 
 @article{meinshausen2006quantile,
-	Abstract = {Random forests were introduced as a machine learning tool in Breiman (2001) and have
+	abstract = {Random forests were introduced as a machine learning tool in Breiman (2001) and have
 since proven to be very popular and powerful for high-dimensional regression and classification. For regression, random forests give an accurate approximation of the conditional
 mean of a response variable. It is shown here that random forests provide information
 about the full conditional distribution of the response variable, not only about the conditional mean. Conditional quantiles can be inferred with quantile regression forests, a
@@ -603,22 +720,22 @@ generalisation of random forests. Quantile regression forests give a non-paramet
 accurate way of estimating conditional quantiles for high-dimensional predictor variables.
 The algorithm is shown to be consistent. Numerical examples suggest that the algorithm
 is competitive in terms of predictive power.},
-	Annote = {Shows a way to estimate the full conditional distribution for a random forest, by calculating empirical cdf from all the points in a leaf, instead of just using the mean},
-	Author = {Meinshausen, Nicolai},
-	Date-Added = {2020-07-09 11:53:48 -0400},
-	Date-Modified = {2020-07-09 11:54:57 -0400},
-	Journal = {Journal of Machine Learning Research},
-	Keywords = {quantile, random forest, distributional forecast},
-	Number = {Jun},
-	Pages = {983--999},
-	Read = {1},
-	Title = {Quantile regression forests},
-	Volume = {7},
-	Year = {2006},
+	annote = {Shows a way to estimate the full conditional distribution for a random forest, by calculating empirical cdf from all the points in a leaf, instead of just using the mean},
+	author = {Meinshausen, Nicolai},
+	date-added = {2020-07-09 11:53:48 -0400},
+	date-modified = {2020-07-09 11:54:57 -0400},
+	journal = {Journal of Machine Learning Research},
+	keywords = {quantile, random forest, distributional forecast},
+	number = {Jun},
+	pages = {983--999},
+	read = {1},
+	title = {Quantile regression forests},
+	volume = {7},
+	year = {2006},
 	Bdsk-Url-1 = {http://www.jmlr.org/papers/volume7/meinshausen06a/meinshausen06a.pdf}}
 
 @article{dietterich1998approximate,
-	Abstract = {This paper reviews ve approximate statistical tests for determining whether one learning algorithm out-performs another on a particular learning task. These tests are compared experimentally to determine their probability of incorrectly detecting a dierence when no dierence
+	abstract = {This paper reviews ve approximate statistical tests for determining whether one learning algorithm out-performs another on a particular learning task. These tests are compared experimentally to determine their probability of incorrectly detecting a dierence when no dierence
 exists (type I error). Two widely-used statistical tests are shown to have high probability of
 Type I error in certain situations and should never be used. These tests are (a) a test for the
 dierence of two proportions and (b) a paired-dierences t test based on taking several random
@@ -631,21 +748,21 @@ more powerful than McNemar's test. The choice of the best test is determined by 
 once, McNemar's test is the only test with acceptable Type I error. For algorithms that can
 be executed ten times, the 5x2cv test is recommended, because it is slightly more powerful and
 because it directly measures variation due to the choice of training set.},
-	Author = {Dietterich, Thomas G},
-	Date-Added = {2020-06-10 07:52:19 -0400},
-	Date-Modified = {2020-08-02 19:30:35 -0400},
-	Journal = {Neural computation},
-	Keywords = {model selection, statistical test, cross validation},
-	Number = {7},
-	Pages = {1895--1923},
-	Publisher = {MIT Press},
-	Title = {Approximate statistical tests for comparing supervised classification learning algorithms},
-	Volume = {10},
-	Year = {1998},
+	author = {Dietterich, Thomas G},
+	date-added = {2020-06-10 07:52:19 -0400},
+	date-modified = {2020-11-27 16:32:12 -0500},
+	journal = {Neural computation},
+	keywords = {model selection, statistical test, cross validation, **MUST-READ**},
+	number = {7},
+	pages = {1895--1923},
+	publisher = {MIT Press},
+	title = {Approximate statistical tests for comparing supervised classification learning algorithms},
+	volume = {10},
+	year = {1998},
 	Bdsk-Url-1 = {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.37.3325&rep=rep1&type=pdf}}
 
 @inproceedings{maddox2019simple,
-	Abstract = {We propose SWA-Gaussian (SWAG), a simple, scalable, and general purpose
+	abstract = {We propose SWA-Gaussian (SWAG), a simple, scalable, and general purpose
 approach for uncertainty representation and calibration in deep learning. Stochastic
 Weight Averaging (SWA), which computes the first moment of stochastic gradient
 descent (SGD) iterates with a modified learning rate schedule, has recently been
@@ -659,35 +776,35 @@ distribution of SGD iterates. Moreover, we demonstrate that SWAG performs
 well on a wide variety of tasks, including out of sample detection, calibration,
 and transfer learning, in comparison to many popular alternatives including MC
 dropout, KFAC Laplace, SGLD, and temperature scaling.},
-	Author = {Maddox, Wesley J and Izmailov, Pavel and Garipov, Timur and Vetrov, Dmitry P and Wilson, Andrew Gordon},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-06-04 09:32:41 -0400},
-	Date-Modified = {2020-06-04 09:33:26 -0400},
-	Keywords = {bayesian, deep learning, uncertainty},
-	Pages = {13132--13143},
-	Title = {A simple baseline for bayesian uncertainty in deep learning},
-	Year = {2019},
+	author = {Maddox, Wesley J and Izmailov, Pavel and Garipov, Timur and Vetrov, Dmitry P and Wilson, Andrew Gordon},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-06-04 09:32:41 -0400},
+	date-modified = {2020-06-04 09:33:26 -0400},
+	keywords = {bayesian, deep learning, uncertainty},
+	pages = {13132--13143},
+	title = {A simple baseline for bayesian uncertainty in deep learning},
+	year = {2019},
 	Bdsk-Url-1 = {https://papers.nips.cc/paper/9472-a-simple-baseline-for-bayesian-uncertainty-in-deep-learning.pdf}}
 
 @article{weinan2017proposal,
-	Abstract = {We discuss the idea of using continuous dynamical systems to model general
+	abstract = {We discuss the idea of using continuous dynamical systems to model general
 high-dimensional nonlinear functions used in machine learning. We also discuss the
 connection with deep learning.},
-	Author = {Weinan, E},
-	Date-Added = {2020-06-02 21:57:32 -0400},
-	Date-Modified = {2020-06-02 21:58:07 -0400},
-	Journal = {Communications in Mathematics and Statistics},
-	Keywords = {neural ODE},
-	Number = {1},
-	Pages = {1--11},
-	Publisher = {Springer},
-	Title = {A proposal on machine learning via dynamical systems},
-	Volume = {5},
-	Year = {2017},
+	author = {Weinan, E},
+	date-added = {2020-06-02 21:57:32 -0400},
+	date-modified = {2020-06-02 21:58:07 -0400},
+	journal = {Communications in Mathematics and Statistics},
+	keywords = {neural ODE},
+	number = {1},
+	pages = {1--11},
+	publisher = {Springer},
+	title = {A proposal on machine learning via dynamical systems},
+	volume = {5},
+	year = {2017},
 	Bdsk-Url-1 = {https://link.springer.com/content/pdf/10.1007/s40304-017-0103-z.pdf}}
 
 @article{haber2017stable,
-	Abstract = {Deep neural networks have become invaluable tools for supervised machine learning, e.g.,
+	abstract = {Deep neural networks have become invaluable tools for supervised machine learning, e.g.,
 classification of text or images. While often offering superior results over traditional techniques
 and successfully expressing complicated patterns in data, deep architectures are known to be
 challenging to design and train such that they generalize well to new data. Critical issues with
@@ -700,21 +817,21 @@ and well-posedness of deep learning and use this new understanding to develop ne
 architectures. We relate the exploding and vanishing gradient phenomenon to the stability of
 the discrete ODE and present several strategies for stabilizing deep learning for very deep networks. While our new architectures restrict the solution space, several numerical experiments
 show their competitiveness with state-of-the-art networks.},
-	Author = {Haber, Eldad and Ruthotto, Lars},
-	Date-Added = {2020-06-02 21:55:57 -0400},
-	Date-Modified = {2020-06-02 21:56:24 -0400},
-	Journal = {Inverse Problems},
-	Keywords = {neural ODE},
-	Number = {1},
-	Pages = {014004},
-	Publisher = {IOP Publishing},
-	Title = {Stable architectures for deep neural networks},
-	Volume = {34},
-	Year = {2017},
+	author = {Haber, Eldad and Ruthotto, Lars},
+	date-added = {2020-06-02 21:55:57 -0400},
+	date-modified = {2020-06-02 21:56:24 -0400},
+	journal = {Inverse Problems},
+	keywords = {neural ODE},
+	number = {1},
+	pages = {014004},
+	publisher = {IOP Publishing},
+	title = {Stable architectures for deep neural networks},
+	volume = {34},
+	year = {2017},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1705.03341.pdf}}
 
 @inproceedings{chen2018neural,
-	Abstract = {We introduce a new family of deep neural network models. Instead of specifying a
+	abstract = {We introduce a new family of deep neural network models. Instead of specifying a
 discrete sequence of hidden layers, we parameterize the derivative of the hidden
 state using a neural network. The output of the network is computed using a blackbox differential equation solver. These continuous-depth models have constant
 memory cost, adapt their evaluation strategy to each input, and can explicitly trade
@@ -724,18 +841,18 @@ continuous normalizing flows, a generative model that can train by maximum
 likelihood, without partitioning or ordering the data dimensions. For training, we
 show how to scalably backpropagate through any ODE solver, without access to its
 internal operations. This allows end-to-end training of ODEs within larger models.},
-	Author = {Chen, Tian Qi and Rubanova, Yulia and Bettencourt, Jesse and Duvenaud, David K},
-	Booktitle = {Advances in neural information processing systems},
-	Date-Added = {2020-06-02 15:28:55 -0400},
-	Date-Modified = {2020-06-02 15:29:22 -0400},
-	Keywords = {neural ODE},
-	Pages = {6571--6583},
-	Title = {Neural ordinary differential equations},
-	Year = {2018},
+	author = {Chen, Tian Qi and Rubanova, Yulia and Bettencourt, Jesse and Duvenaud, David K},
+	booktitle = {Advances in neural information processing systems},
+	date-added = {2020-06-02 15:28:55 -0400},
+	date-modified = {2020-06-02 15:29:22 -0400},
+	keywords = {neural ODE},
+	pages = {6571--6583},
+	title = {Neural ordinary differential equations},
+	year = {2018},
 	Bdsk-Url-1 = {https://papers.nips.cc/paper/7892-neural-ordinary-differential-equations.pdf}}
 
 @article{gholami2019anode,
-	Abstract = {Residual neural networks can be viewed as the
+	abstract = {Residual neural networks can be viewed as the
 forward Euler discretization of an Ordinary Differential Equation (ODE) with a unit time step. This has recently motivated
 researchers to explore other discretization approaches and train
 ODE based networks. However, an important challenge of neural
@@ -758,17 +875,17 @@ furthermore, discuss a memory efficient algorithm which can
 further reduce this footprint with a trade-off of additional
 computational cost. We show results on Cifar-10/100 datasets
 using ResNet and SqueezeNext neural networks.},
-	Author = {Gholami, Amir and Keutzer, Kurt and Biros, George},
-	Date-Added = {2020-06-02 15:24:13 -0400},
-	Date-Modified = {2020-06-02 15:24:46 -0400},
-	Journal = {arXiv preprint arXiv:1902.10298},
-	Keywords = {neural ODE},
-	Title = {Anode: Unconditionally accurate memory-efficient gradients for neural odes},
-	Year = {2019},
+	author = {Gholami, Amir and Keutzer, Kurt and Biros, George},
+	date-added = {2020-06-02 15:24:13 -0400},
+	date-modified = {2020-06-02 15:24:46 -0400},
+	journal = {arXiv preprint arXiv:1902.10298},
+	keywords = {neural ODE},
+	title = {Anode: Unconditionally accurate memory-efficient gradients for neural odes},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1902.10298.pdf}}
 
 @article{onken2020discretize,
-	Abstract = {We compare the discretize-optimize (Disc-Opt) and optimize-discretize (Opt-Disc) approaches for
+	abstract = {We compare the discretize-optimize (Disc-Opt) and optimize-discretize (Opt-Disc) approaches for
 time-series regression and continuous normalizing flows using neural ODEs. Neural ODEs, first
 described in Chen et al. (2018), are ordinary differential equations (ODEs) with neural network
 components; these models have competitively solved a variety of machine learning applications.
@@ -784,17 +901,17 @@ by design, Opt-Disc approaches may appear advantageous. Through our numerical ex
 we demonstrate that with careful numerical treatment, Disc-Opt methods can achieve similar performance as Opt-Disc at inference with drastically reduced training costs. Disc-Opt reduced costs
 in six out of seven separate problems with training time reduction ranging from 39% to 97%, and
 in one case, Disc-Opt reduced training from nine days to less than one day.},
-	Author = {Onken, Derek and Ruthotto, Lars},
-	Date-Added = {2020-06-02 15:23:00 -0400},
-	Date-Modified = {2020-06-02 15:23:30 -0400},
-	Journal = {arXiv preprint arXiv:2005.13420},
-	Keywords = {neural ODE},
-	Title = {Discretize-Optimize vs. Optimize-Discretize for Time-Series Regression and Continuous Normalizing Flows},
-	Year = {2020},
+	author = {Onken, Derek and Ruthotto, Lars},
+	date-added = {2020-06-02 15:23:00 -0400},
+	date-modified = {2020-06-02 15:23:30 -0400},
+	journal = {arXiv preprint arXiv:2005.13420},
+	keywords = {neural ODE},
+	title = {Discretize-Optimize vs. Optimize-Discretize for Time-Series Regression and Continuous Normalizing Flows},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2005.13420.pdf}}
 
 @article{hatalis2017smooth,
-	Abstract = {Uncertainty analysis in the form of probabilistic
+	abstract = {Uncertainty analysis in the form of probabilistic
 forecasting can significantly improve decision making processes
 in the smart power grid for better integrating renewable energy sources such as wind. Whereas point forecasting provides
 a single expected value, probabilistic forecasts provide more
@@ -813,22 +930,22 @@ regression, and support vector quantile regression are used for
 comparison where results demonstrate the proposed approach
 leads to improved performance while preventing the problem of
 overlapping quantile estimates},
-	Annote = {It seems that this paper just put together a few pieces, but it's an interesting summary.
+	annote = {It seems that this paper just put together a few pieces, but it's an interesting summary.
 In particular, they discuss:
 * a smooth approximation to the pinball loss, for more efficient training
 * a ranking technique to work around quantile crossing},
-	Author = {Hatalis, Kostas and Lamadrid, Alberto J and Scheinberg, Katya and Kishore, Shalinee},
-	Date-Added = {2020-06-02 10:19:55 -0400},
-	Date-Modified = {2020-06-03 23:45:46 -0400},
-	Journal = {arXiv preprint arXiv:1710.01720},
-	Keywords = {uncertainty, pinball loss},
-	Read = {1},
-	Title = {Smooth pinball neural network for probabilistic forecasting of wind power},
-	Year = {2017},
+	author = {Hatalis, Kostas and Lamadrid, Alberto J and Scheinberg, Katya and Kishore, Shalinee},
+	date-added = {2020-06-02 10:19:55 -0400},
+	date-modified = {2020-06-03 23:45:46 -0400},
+	journal = {arXiv preprint arXiv:1710.01720},
+	keywords = {uncertainty, pinball loss},
+	read = {1},
+	title = {Smooth pinball neural network for probabilistic forecasting of wind power},
+	year = {2017},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1710.01720.pdf}}
 
 @inproceedings{lakshminarayanan2017simple,
-	Abstract = {Deep neural networks (NNs) are powerful black box predictors that have recently
+	abstract = {Deep neural networks (NNs) are powerful black box predictors that have recently
 achieved impressive performance on a wide spectrum of tasks. Quantifying predictive uncertainty in NNs is a challenging and yet unsolved problem. Bayesian
 NNs, which learn a distribution over weights, are currently the state-of-the-art
 for estimating predictive uncertainty; however these require significant modifications to the training procedure and are computationally expensive compared to
@@ -842,18 +959,18 @@ evaluate the predictive uncertainty on test examples from known and unknown
 distributions, and show that our method is able to express higher uncertainty on
 out-of-distribution examples. We demonstrate the scalability of our method by
 evaluating predictive uncertainty estimates on ImageNet.},
-	Author = {Lakshminarayanan, Balaji and Pritzel, Alexander and Blundell, Charles},
-	Booktitle = {Advances in neural information processing systems},
-	Date-Added = {2020-05-28 08:18:21 -0400},
-	Date-Modified = {2020-05-28 08:19:00 -0400},
-	Keywords = {uncertainty, ensemble},
-	Pages = {6402--6413},
-	Title = {Simple and scalable predictive uncertainty estimation using deep ensembles},
-	Year = {2017},
+	author = {Lakshminarayanan, Balaji and Pritzel, Alexander and Blundell, Charles},
+	booktitle = {Advances in neural information processing systems},
+	date-added = {2020-05-28 08:18:21 -0400},
+	date-modified = {2020-05-28 08:19:00 -0400},
+	keywords = {uncertainty, ensemble},
+	pages = {6402--6413},
+	title = {Simple and scalable predictive uncertainty estimation using deep ensembles},
+	year = {2017},
 	Bdsk-Url-1 = {http://papers.nips.cc/paper/7219-simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles.pdf}}
 
 @inproceedings{liu2019accurate,
-	Abstract = {Ensemble learning is a standard approach to building machine learning systems
+	abstract = {Ensemble learning is a standard approach to building machine learning systems
 that capture complex phenomena in real-world data. An important aspect of
 these systems is the complete and valid quantification of model uncertainty. We
 introduce a Bayesian nonparametric ensemble (BNE) approach that augments an
@@ -866,7 +983,7 @@ noise and error. We show that our method achieves accurate uncertainty estimates
 under complex observational noise, and illustrate its real-world utility in terms of
 uncertainty decomposition and model bias detection for an ensemble in predict air
 pollution exposures in Eastern Massachusetts, USA.},
-	Annote = {They provide a complete decomposition of uncertainty in their model, which they illustrate in a nice diagram
+	annote = {They provide a complete decomposition of uncertainty in their model, which they illustrate in a nice diagram
 
 							Overall Uncertainty
 						/					\
@@ -876,18 +993,18 @@ pollution exposures in Eastern Massachusetts, USA.},
 						/		\
 					prediction		distribution
 },
-	Author = {Liu, Jeremiah and Paisley, John and Kioumourtzoglou, Marianthi-Anna and Coull, Brent},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-05-27 11:28:17 -0400},
-	Date-Modified = {2020-05-27 11:31:53 -0400},
-	Keywords = {uncertainty, bayesian, ensemble},
-	Pages = {8950--8961},
-	Title = {Accurate Uncertainty Estimation and Decomposition in Ensemble Learning},
-	Year = {2019},
+	author = {Liu, Jeremiah and Paisley, John and Kioumourtzoglou, Marianthi-Anna and Coull, Brent},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-05-27 11:28:17 -0400},
+	date-modified = {2020-05-27 11:31:53 -0400},
+	keywords = {uncertainty, bayesian, ensemble},
+	pages = {8950--8961},
+	title = {Accurate Uncertainty Estimation and Decomposition in Ensemble Learning},
+	year = {2019},
 	Bdsk-Url-1 = {https://papers.nips.cc/paper/9097-accurate-uncertainty-estimation-and-decomposition-in-ensemble-learning.pdf}}
 
 @inproceedings{tagasovska2019single,
-	Abstract = {We provide single-model estimates of aleatoric and epistemic uncertainty for deep
+	abstract = {We provide single-model estimates of aleatoric and epistemic uncertainty for deep
 neural networks. To estimate aleatoric uncertainty, we propose Simultaneous
 Quantile Regression (SQR), a loss function to learn all the conditional quantiles
 of a given target variable. These quantiles can be used to compute well-calibrated
@@ -897,7 +1014,7 @@ training samples to zero. These certificates map out-of-distribution examples to
 non-zero values, signaling epistemic uncertainty. Our uncertainty estimators are
 computationally attractive, as they do not require ensembling or retraining deep
 models, and achieve competitive performance.},
-	Annote = {They propose a model to handle both epistemic and aleatoric uncertainty.
+	annote = {They propose a model to handle both epistemic and aleatoric uncertainty.
 
 y_true - y_predict,W = F_true(x1, x2)  - F_W*(x1)	=> approximation uncertainty
 				+ F_W*(x1) - F_W(x1)		=> epistemic uncertainty
@@ -939,19 +1056,19 @@ The solution is to impose orthogonality.
 They apply their technique to out-of-dsitribution detection, and compare favorably with the BALD method (used in active learning).
 However, I don't see how that technique could be used to estimate the variance error due to the epistemic uncertainty. Which is
 what we would need to do uncertainty quantification.},
-	Author = {Tagasovska, Natasa and Lopez-Paz, David},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-05-27 08:25:52 -0400},
-	Date-Modified = {2020-10-27 22:45:55 -0400},
-	Keywords = {uncertainty, deep learning},
-	Pages = {6414--6425},
-	Read = {1},
-	Title = {Single-Model Uncertainties for Deep Learning},
-	Year = {2019},
+	author = {Tagasovska, Natasa and Lopez-Paz, David},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-05-27 08:25:52 -0400},
+	date-modified = {2020-10-27 22:45:55 -0400},
+	keywords = {uncertainty, deep learning},
+	pages = {6414--6425},
+	read = {1},
+	title = {Single-Model Uncertainties for Deep Learning},
+	year = {2019},
 	Bdsk-Url-1 = {https://papers.nips.cc/paper/8870-single-model-uncertainties-for-deep-learning.pdf}}
 
 @article{krueger2016zoneout,
-	Abstract = {We propose zoneout, a novel method for regularizing RNNs. At each timestep,
+	abstract = {We propose zoneout, a novel method for regularizing RNNs. At each timestep,
 zoneout stochastically forces some hidden units to maintain their previous values.
 Like dropout, zoneout uses random noise to train a pseudo-ensemble, improving
 generalization. But by preserving instead of dropping hidden units, gradient
@@ -962,17 +1079,17 @@ improvements across tasks. We achieve competitive results with relatively simple
 models in character- and word-level language modelling on the Penn Treebank
 and Text8 datasets, and combining with recurrent batch normalization (Cooijmans
 et al., 2016) yields state-of-the-art results on permuted sequential MNIST},
-	Author = {Krueger, David and Maharaj, Tegan and Kram{\'a}r, J{\'a}nos and Pezeshki, Mohammad and Ballas, Nicolas and Ke, Nan Rosemary and Goyal, Anirudh and Bengio, Yoshua and Courville, Aaron and Pal, Chris},
-	Date-Added = {2020-05-26 22:19:34 -0400},
-	Date-Modified = {2020-05-26 22:20:31 -0400},
-	Journal = {arXiv preprint arXiv:1606.01305},
-	Keywords = {regularization, rnn},
-	Title = {Zoneout: Regularizing rnns by randomly preserving hidden activations},
-	Year = {2016},
+	author = {Krueger, David and Maharaj, Tegan and Kram{\'a}r, J{\'a}nos and Pezeshki, Mohammad and Ballas, Nicolas and Ke, Nan Rosemary and Goyal, Anirudh and Bengio, Yoshua and Courville, Aaron and Pal, Chris},
+	date-added = {2020-05-26 22:19:34 -0400},
+	date-modified = {2020-05-26 22:20:31 -0400},
+	journal = {arXiv preprint arXiv:1606.01305},
+	keywords = {regularization, rnn},
+	title = {Zoneout: Regularizing rnns by randomly preserving hidden activations},
+	year = {2016},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1606.01305.pdf}}
 
 @inproceedings{zhu2017deep,
-	Abstract = {Reliable uncertainty estimation for time series prediction is critical in many fields, including physics, biology,
+	abstract = {Reliable uncertainty estimation for time series prediction is critical in many fields, including physics, biology,
 and manufacturing. At Uber, probabilistic time series forecasting is used for robust prediction of number of trips during
 special events, driver incentive allocation, as well as real-time
 anomaly detection across millions of metrics. Classical time
@@ -984,7 +1101,7 @@ that provides time series prediction along with uncertainty
 estimation. We provide detailed experiments of the proposed
 solution on completed trips data, and successfully apply it to
 large-scale time series anomaly detection at Uber.},
-	Annote = {Also see the blog post: https://eng.uber.com/neural-networks-uncertainty-estimation/
+	annote = {Also see the blog post: https://eng.uber.com/neural-networks-uncertainty-estimation/
 
 They detail a forecasting model to handle uncertainty (epistemic and aleatoric):
 * epistemic uncertainty (defined as model uncertainty and model misspecification) is handled via Dropout
@@ -993,20 +1110,20 @@ They detail a forecasting model to handle uncertainty (epistemic and aleatoric):
 Overall the model has a pre-trained encoder-decoder part. The encoder is used to generate features that are passed to a fully-connected network.
 Variational Dropout is applied to the encoder, while standard Dropout is applied to the fc model.
 },
-	Author = {Zhu, Lingxue and Laptev, Nikolay},
-	Booktitle = {2017 IEEE International Conference on Data Mining Workshops (ICDMW)},
-	Date-Added = {2020-05-26 20:52:07 -0400},
-	Date-Modified = {2020-05-27 12:04:34 -0400},
-	Keywords = {time series, forecasting, bayesian, uncertainty},
-	Organization = {IEEE},
-	Pages = {103--110},
-	Read = {1},
-	Title = {Deep and confident prediction for time series at uber},
-	Year = {2017},
+	author = {Zhu, Lingxue and Laptev, Nikolay},
+	booktitle = {2017 IEEE International Conference on Data Mining Workshops (ICDMW)},
+	date-added = {2020-05-26 20:52:07 -0400},
+	date-modified = {2020-05-27 12:04:34 -0400},
+	keywords = {time series, forecasting, bayesian, uncertainty},
+	organization = {IEEE},
+	pages = {103--110},
+	read = {1},
+	title = {Deep and confident prediction for time series at uber},
+	year = {2017},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1709.01907.pdf}}
 
 @inproceedings{guo2017calibration,
-	Abstract = {Confidence calibration -- the problem of predicting probability estimates representative of the
+	abstract = {Confidence calibration -- the problem of predicting probability estimates representative of the
 true correctness likelihood -- is important for
 classification models in many applications. We
 discover that modern neural networks, unlike
@@ -1017,19 +1134,19 @@ post-processing calibration methods on state-ofthe-art architectures with image 
 classification datasets. Our analysis and experiments not only offer insights into neural network learning, but also provide a simple and
 straightforward recipe for practical settings: on
 most datasets, temperature scaling -- a singleparameter variant of Platt Scaling -- is surprisingly effective at calibrating predictions.},
-	Author = {Guo, Chuan and Pleiss, Geoff and Sun, Yu and Weinberger, Kilian Q},
-	Booktitle = {Proceedings of the 34th International Conference on Machine Learning-Volume 70},
-	Date-Added = {2020-05-25 11:44:37 -0400},
-	Date-Modified = {2020-10-27 22:45:44 -0400},
-	Keywords = {calibration, uncertainty, deep learning},
-	Organization = {JMLR. org},
-	Pages = {1321--1330},
-	Title = {On calibration of modern neural networks},
-	Year = {2017},
+	author = {Guo, Chuan and Pleiss, Geoff and Sun, Yu and Weinberger, Kilian Q},
+	booktitle = {Proceedings of the 34th International Conference on Machine Learning-Volume 70},
+	date-added = {2020-05-25 11:44:37 -0400},
+	date-modified = {2020-10-27 22:45:44 -0400},
+	keywords = {calibration, uncertainty, deep learning},
+	organization = {JMLR. org},
+	pages = {1321--1330},
+	title = {On calibration of modern neural networks},
+	year = {2017},
 	Bdsk-Url-1 = {https://dl.acm.org/doi/pdf/10.5555/3305381.3305518?download=true}}
 
 @inproceedings{vaswani2017attention,
-	Abstract = {The dominant sequence transduction models are based on complex recurrent or
+	abstract = {The dominant sequence transduction models are based on complex recurrent or
 convolutional neural networks that include an encoder and a decoder. The best
 performing models also connect the encoder and decoder through an attention
 mechanism. We propose a new simple network architecture, the Transformer,
@@ -1041,18 +1158,18 @@ ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task,
 our model establishes a new single-model state-of-the-art BLEU score of 41.0 after
 training for 3.5 days on eight GPUs, a small fraction of the training costs of the
 best models from the literature.},
-	Author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
-	Booktitle = {Advances in neural information processing systems},
-	Date-Added = {2020-05-25 10:27:11 -0400},
-	Date-Modified = {2020-09-24 18:45:53 -0400},
-	Keywords = {deep learning, attention},
-	Pages = {5998--6008},
-	Title = {Attention is all you need},
-	Year = {2017},
+	author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
+	booktitle = {Advances in neural information processing systems},
+	date-added = {2020-05-25 10:27:11 -0400},
+	date-modified = {2020-09-24 18:45:53 -0400},
+	keywords = {deep learning, attention},
+	pages = {5998--6008},
+	title = {Attention is all you need},
+	year = {2017},
 	Bdsk-Url-1 = {http://papers.nips.cc/paper/7181-attention-is-all-you-need.pdf}}
 
 @article{rasul2020multi,
-	Abstract = {Time series forecasting is often fundamental to
+	abstract = {Time series forecasting is often fundamental to
 scientific and engineering problems and enables
 decision making. With ever increasing data set
 sizes, a trivial solution to scale up predictions is to
@@ -1071,23 +1188,23 @@ while remaining computationally tractable. We
 show that it improves over the state-of-the-art for
 standard metrics on many real-world data sets
 with several thousand interacting time-series},
-	Annote = {Paper a bit hard to read. They have a blog post that is much clearer: https://research.zalando.com/2020/03/
+	annote = {Paper a bit hard to read. They have a blog post that is much clearer: https://research.zalando.com/2020/03/
 
 In its simplest form, their model is a multivariate version (MIMO) of DeepAR that does not constrain on the distribution to sample from (DeepAR asks you to pick a fixed distribution). Instead their parametrize the sampling stage via a normalizing flow, that is a sequence of simple, invertible transformations that map a given sample (typically isotropic Gaussian) to the predicted sample. That normalizing flow is parametrized by the output of a LSTM (like DeepAR).
 
 They also have a mode where they replace the RNN part with an attention-based model},
-	Author = {Rasul, Kashif and Sheikh, Abdul-Saboor and Schuster, Ingmar and Bergmann, Urs and Vollgraf, Roland},
-	Date-Added = {2020-05-25 10:20:39 -0400},
-	Date-Modified = {2020-05-25 10:25:05 -0400},
-	Journal = {arXiv preprint arXiv:2002.06103},
-	Keywords = {time series, forecasting, distributional forecast,},
-	Read = {1},
-	Title = {Multi-variate Probabilistic Time Series Forecasting via Conditioned Normalizing Flows},
-	Year = {2020},
+	author = {Rasul, Kashif and Sheikh, Abdul-Saboor and Schuster, Ingmar and Bergmann, Urs and Vollgraf, Roland},
+	date-added = {2020-05-25 10:20:39 -0400},
+	date-modified = {2020-05-25 10:25:05 -0400},
+	journal = {arXiv preprint arXiv:2002.06103},
+	keywords = {time series, forecasting, distributional forecast,},
+	read = {1},
+	title = {Multi-variate Probabilistic Time Series Forecasting via Conditioned Normalizing Flows},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2002.06103.pdf}}
 
 @article{chen2018confidence,
-	Abstract = {We propose a novel confidence scoring mechanism for deep neural networks based on a
+	abstract = {We propose a novel confidence scoring mechanism for deep neural networks based on a
 two-model paradigm involving a base model
 and a meta-model. The confidence score is
 learned by the meta-model observing the base
@@ -1100,19 +1217,19 @@ of rejecting samples with low confidence. Experimental results are presented usi
 added noise. We discuss the importance of
 confidence scoring to bridge the gap between
 experimental and real-world applications},
-	Annote = {hey use Linear Classifier Probes [4] to extract inform-ation from within the hidden layers of an image classifier, and use these probes data, along withthe output of the classifier, to train a a confidence score predictor. They compare the select-ive prediction technique described in [24] against multiple variations of their model: with probesdata from the hidden layers or with only the output of the classifier; using a logistic regression ora gradient boosting model as their meta-model. The classifier and the meta-model are trainedon separate datasets. Performance is computed on a held-out test set. Besides this standard set-up, theyalsoattempttoverifytheperformanceoftheirconfidencescorepredictorunderdif-ferent regimes by corrupting their dataset. In one experiment, they introduce noise in the labelsof the training set, to reduce the accuracy of the classifier. In their second experiment, to assessthe performance of their confidence score under dataset shift, they pass, at test time, imageswith labels that were not in the training set. From their experiments, they conclude that a gradi-ent boosting model using the probes data slightly outperforms the other models. The differencein performance widens a bit more when testing on out-of-distribution data, and with a classifiertrained on noisy labels. They also tried to apply temperature scaling [27] as a pre-processingstep to the SGR method [24], but reported no improvement},
-	Author = {Chen, Tongfei and Navr{\'a}til, Ji{\v{r}}{\'\i} and Iyengar, Vijay and Shanmugam, Karthikeyan},
-	Date-Added = {2020-05-22 08:38:29 -0400},
-	Date-Modified = {2020-05-22 08:48:13 -0400},
-	Journal = {arXiv preprint arXiv:1805.05396},
-	Keywords = {confidence score},
-	Read = {1},
-	Title = {Confidence scoring using whitebox meta-models with linear classifier probes},
-	Year = {2018},
+	annote = {hey use Linear Classifier Probes [4] to extract inform-ation from within the hidden layers of an image classifier, and use these probes data, along withthe output of the classifier, to train a a confidence score predictor. They compare the select-ive prediction technique described in [24] against multiple variations of their model: with probesdata from the hidden layers or with only the output of the classifier; using a logistic regression ora gradient boosting model as their meta-model. The classifier and the meta-model are trainedon separate datasets. Performance is computed on a held-out test set. Besides this standard set-up, theyalsoattempttoverifytheperformanceoftheirconfidencescorepredictorunderdif-ferent regimes by corrupting their dataset. In one experiment, they introduce noise in the labelsof the training set, to reduce the accuracy of the classifier. In their second experiment, to assessthe performance of their confidence score under dataset shift, they pass, at test time, imageswith labels that were not in the training set. From their experiments, they conclude that a gradi-ent boosting model using the probes data slightly outperforms the other models. The differencein performance widens a bit more when testing on out-of-distribution data, and with a classifiertrained on noisy labels. They also tried to apply temperature scaling [27] as a pre-processingstep to the SGR method [24], but reported no improvement},
+	author = {Chen, Tongfei and Navr{\'a}til, Ji{\v{r}}{\'\i} and Iyengar, Vijay and Shanmugam, Karthikeyan},
+	date-added = {2020-05-22 08:38:29 -0400},
+	date-modified = {2020-05-22 08:48:13 -0400},
+	journal = {arXiv preprint arXiv:1805.05396},
+	keywords = {confidence score},
+	read = {1},
+	title = {Confidence scoring using whitebox meta-models with linear classifier probes},
+	year = {2018},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1805.05396.pdf}}
 
 @inproceedings{geifman2017selective,
-	Abstract = {Selective classification techniques (also known as reject option) have not yet been
+	abstract = {Selective classification techniques (also known as reject option) have not yet been
 considered in the context of deep neural networks (DNNs). These techniques
 can potentially significantly improve DNNs prediction performance by trading-off
 coverage. In this paper we propose a method to construct a selective classifier
@@ -1122,29 +1239,29 @@ risk (with high probability). Empirical results over CIFAR and ImageNet convinci
 operate DNNs in mission-critical applications. For example, using our method an
 unprecedented 2% error in top-5 ImageNet classification can be guaranteed with
 probability 99.9%, and almost 60% test coverage.},
-	Annote = {The authors leverages the field of selective prediction (or reject option) to design a Selec-tionwithGuaranteedRisk(SGR)algorithmthatwillreturnaselectionfunctiongivenatrainedclas-sifier,arisktarget,aconfidenceparameter,andaconfidence-ratefunction. Thisconfidence-ratefunctions can be, for instance, derived from an approximate Bayesian inference methods, likeBayesian dropout, or a softmax response (SR). The resulting selection function calculated theacceptable threshold for the confidence-rate, given the risk parameters specified by the user.The selection function can then be used to decide whether a prediction should be trusted or not.Overall, it is an interesting method that is simple, requires no training, yet provides mathematicalguarantees about the properties of the confidence score.},
-	Author = {Geifman, Yonatan and El-Yaniv, Ran},
-	Booktitle = {Advances in neural information processing systems},
-	Date-Added = {2020-05-22 08:28:41 -0400},
-	Date-Modified = {2020-05-22 08:48:36 -0400},
-	Keywords = {classification},
-	Pages = {4878--4887},
-	Read = {1},
-	Title = {Selective classification for deep neural networks},
-	Year = {2017},
+	annote = {The authors leverages the field of selective prediction (or reject option) to design a Selec-tionwithGuaranteedRisk(SGR)algorithmthatwillreturnaselectionfunctiongivenatrainedclas-sifier,arisktarget,aconfidenceparameter,andaconfidence-ratefunction. Thisconfidence-ratefunctions can be, for instance, derived from an approximate Bayesian inference methods, likeBayesian dropout, or a softmax response (SR). The resulting selection function calculated theacceptable threshold for the confidence-rate, given the risk parameters specified by the user.The selection function can then be used to decide whether a prediction should be trusted or not.Overall, it is an interesting method that is simple, requires no training, yet provides mathematicalguarantees about the properties of the confidence score.},
+	author = {Geifman, Yonatan and El-Yaniv, Ran},
+	booktitle = {Advances in neural information processing systems},
+	date-added = {2020-05-22 08:28:41 -0400},
+	date-modified = {2020-05-22 08:48:36 -0400},
+	keywords = {classification},
+	pages = {4878--4887},
+	read = {1},
+	title = {Selective classification for deep neural networks},
+	year = {2017},
 	Bdsk-Url-1 = {https://papers.nips.cc/paper/7073-selective-classification-for-deep-neural-networks.pdf}}
 
 @article{angelopoulosidentifying,
-	Author = {Angelopoulos, Anastasios Nikolas and Pathak, Reese and Varma, Rohit and Jordan, Michael I},
-	Date-Added = {2020-05-21 14:54:52 -0400},
-	Date-Modified = {2020-05-21 14:55:21 -0400},
-	Journal = {Harvard Data Science Review},
-	Keywords = {statistics, bias},
-	Title = {On Identifying and Mitigating Bias in the Estimation of the COVID-19 Case Fatality Rate},
+	author = {Angelopoulos, Anastasios Nikolas and Pathak, Reese and Varma, Rohit and Jordan, Michael I},
+	date-added = {2020-05-21 14:54:52 -0400},
+	date-modified = {2020-05-21 14:55:21 -0400},
+	journal = {Harvard Data Science Review},
+	keywords = {statistics, bias},
+	title = {On Identifying and Mitigating Bias in the Estimation of the COVID-19 Case Fatality Rate},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2003.08592.pdf}}
 
 @inproceedings{ren2019time,
-	Abstract = {Large companies need to monitor various metrics (for example,
+	abstract = {Large companies need to monitor various metrics (for example,
 Page Views and Revenue) of their applications and services in real
 time. At Microsoft, we develop a time-series anomaly detection service which helps customers to monitor the time-series continuously
 and alert for potential incidents on time. In this paper, we introduce the pipeline and algorithm of our anomaly detection service,
@@ -1157,7 +1274,7 @@ visual saliency detection domain to time-series anomaly detection.
 Moreover, we innovatively combine SR and CNN together to improve the performance of SR model. Our approach achieves superior
 experimental results compared with state-of-the-art baselines on
 both public datasets and Microsoft production data.},
-	Annote = {Introduce the pipeline and algorithm of our anomaly detection service
+	annote = {Introduce the pipeline and algorithm of our anomaly detection service
 
 Pipelines comprise of 3 major modules:
 *  data ingestion, 
@@ -1175,76 +1292,76 @@ Their method is based on
 
 Overall an interesting paper. They also mention a lot of the standard methods.
 Their appliations seem to be mostly periodic time series. It would need to be tested on non-stationary time series. But in the case of trend stationarity, it seems the Fourier transform would be able to handle that.},
-	Author = {Ren, Hansheng and Xu, Bixiong and Wang, Yujing and Yi, Chao and Huang, Congrui and Kou, Xiaoyu and Xing, Tony and Yang, Mao and Tong, Jie and Zhang, Qi},
-	Booktitle = {Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
-	Date-Added = {2020-05-21 11:39:12 -0400},
-	Date-Modified = {2020-05-21 14:42:36 -0400},
-	Keywords = {anomaly detection, time series},
-	Pages = {3009--3017},
-	Read = {1},
-	Title = {Time-Series Anomaly Detection Service at Microsoft},
-	Year = {2019},
+	author = {Ren, Hansheng and Xu, Bixiong and Wang, Yujing and Yi, Chao and Huang, Congrui and Kou, Xiaoyu and Xing, Tony and Yang, Mao and Tong, Jie and Zhang, Qi},
+	booktitle = {Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
+	date-added = {2020-05-21 11:39:12 -0400},
+	date-modified = {2020-05-21 14:42:36 -0400},
+	keywords = {anomaly detection, time series},
+	pages = {3009--3017},
+	read = {1},
+	title = {Time-Series Anomaly Detection Service at Microsoft},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1906.03821.pdf}}
 
 @mastersthesis{melancon2019uncertainty,
-	Author = {Gauthier Melan{\c c}on, Gabrielle},
-	Date-Added = {2020-05-15 10:49:21 -0400},
-	Date-Modified = {2020-05-21 14:57:06 -0400},
-	Keywords = {uncertainty},
-	Read = {1},
-	School = {Ecole Polytechnique de Montr\'eal},
-	Title = {Quantifying Uncertainty in Systems - Two Practical Use Cases Using Machine Learning to Predict and Explain Systems Failure},
-	Year = {2019}}
+	author = {Gauthier Melan{\c c}on, Gabrielle},
+	date-added = {2020-05-15 10:49:21 -0400},
+	date-modified = {2020-05-21 14:57:06 -0400},
+	keywords = {uncertainty},
+	read = {1},
+	school = {Ecole Polytechnique de Montr\'eal},
+	title = {Quantifying Uncertainty in Systems - Two Practical Use Cases Using Machine Learning to Predict and Explain Systems Failure},
+	year = {2019}}
 
 @article{cawley2010over,
-	Author = {Cawley, Gavin C and Talbot, Nicola LC},
-	Date-Added = {2020-05-06 17:29:12 -0400},
-	Date-Modified = {2020-10-27 22:45:09 -0400},
-	Journal = {Journal of Machine Learning Research},
-	Keywords = {model selection,  cross validation, overfitting, **MUST-READ**},
-	Number = {Jul},
-	Pages = {2079--2107},
-	Title = {On over-fitting in model selection and subsequent selection bias in performance evaluation},
-	Volume = {11},
-	Year = {2010},
+	author = {Cawley, Gavin C and Talbot, Nicola LC},
+	date-added = {2020-05-06 17:29:12 -0400},
+	date-modified = {2020-10-27 22:45:09 -0400},
+	journal = {Journal of Machine Learning Research},
+	keywords = {model selection, cross validation, overfitting, **MUST-READ**},
+	number = {Jul},
+	pages = {2079--2107},
+	title = {On over-fitting in model selection and subsequent selection bias in performance evaluation},
+	volume = {11},
+	year = {2010},
 	Bdsk-Url-1 = {https://jmlr.csail.mit.edu/papers/volume11/cawley10a/cawley10a.pdf}}
 
 @inproceedings{snoek2019can,
-	Author = {Snoek, Jasper and Ovadia, Yaniv and Fertig, Emily and Lakshminarayanan, Balaji and Nowozin, Sebastian and Sculley, D and Dillon, Joshua and Ren, Jie and Nado, Zachary},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-05-03 00:53:17 -0400},
-	Date-Modified = {2020-05-26 20:53:19 -0400},
-	Keywords = {concept drift, uncertainty, bayesian, ensemble},
-	Pages = {13969--13980},
-	Read = {1},
-	Title = {Can you trust your model's uncertainty? Evaluating predictive uncertainty under dataset shift},
-	Year = {2019},
+	author = {Snoek, Jasper and Ovadia, Yaniv and Fertig, Emily and Lakshminarayanan, Balaji and Nowozin, Sebastian and Sculley, D and Dillon, Joshua and Ren, Jie and Nado, Zachary},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-05-03 00:53:17 -0400},
+	date-modified = {2020-05-26 20:53:19 -0400},
+	keywords = {concept drift, uncertainty, bayesian, ensemble},
+	pages = {13969--13980},
+	read = {1},
+	title = {Can you trust your model's uncertainty? Evaluating predictive uncertainty under dataset shift},
+	year = {2019},
 	Bdsk-Url-1 = {https://papers.nips.cc/paper/9547-can-you-trust-your-models-uncertainty-evaluating-predictive-uncertainty-under-dataset-shift.pdf}}
 
 @book{spirtes2000causation,
-	Annote = {That's afaik the best reference for the (Fast Causal Inference) FCI algorithm },
-	Author = {Spirtes, Peter and Glymour, Clark N and Scheines, Richard and Heckerman, David},
-	Date-Added = {2020-05-01 14:44:46 -0400},
-	Date-Modified = {2020-05-21 14:43:47 -0400},
-	Keywords = {causality},
-	Publisher = {MIT press},
-	Read = {1},
-	Title = {Causation, prediction, and search},
-	Year = {2000}}
+	annote = {That's afaik the best reference for the (Fast Causal Inference) FCI algorithm },
+	author = {Spirtes, Peter and Glymour, Clark N and Scheines, Richard and Heckerman, David},
+	date-added = {2020-05-01 14:44:46 -0400},
+	date-modified = {2020-05-21 14:43:47 -0400},
+	keywords = {causality},
+	publisher = {MIT press},
+	read = {1},
+	title = {Causation, prediction, and search},
+	year = {2000}}
 
 @inproceedings{ballard1987modular,
-	Author = {Ballard, Dana H},
-	Booktitle = {AAAI},
-	Date-Added = {2020-04-30 15:39:59 -0400},
-	Date-Modified = {2020-05-21 14:57:35 -0400},
-	Keywords = {autoencoder, deep learning},
-	Pages = {279--284},
-	Read = {1},
-	Title = {Modular Learning in Neural Networks.},
-	Year = {1987}}
+	author = {Ballard, Dana H},
+	booktitle = {AAAI},
+	date-added = {2020-04-30 15:39:59 -0400},
+	date-modified = {2020-05-21 14:57:35 -0400},
+	keywords = {autoencoder, deep learning},
+	pages = {279--284},
+	read = {1},
+	title = {Modular Learning in Neural Networks.},
+	year = {1987}}
 
 @book{goodfellow2016deep,
-	Abstract = {Table of Contents
+	abstract = {Table of Contents
 Acknowledgements
 Notation
 1 Introduction
@@ -1272,18 +1389,18 @@ Part III: Deep Learning Research
 20 Deep Generative Models
 Bibliography
 Index},
-	Author = {Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
-	Date-Added = {2020-04-30 15:36:47 -0400},
-	Date-Modified = {2020-05-21 14:44:17 -0400},
-	Keywords = {deep learning},
-	Publisher = {MIT press},
-	Read = {1},
-	Title = {Deep learning},
-	Year = {2016},
+	author = {Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
+	date-added = {2020-04-30 15:36:47 -0400},
+	date-modified = {2020-05-21 14:44:17 -0400},
+	keywords = {deep learning},
+	publisher = {MIT press},
+	read = {1},
+	title = {Deep learning},
+	year = {2016},
 	Bdsk-Url-1 = {http://www.deeplearningbook.org/}}
 
 @article{xu2010principal,
-	Abstract = {We consider the dimensionality-reduction problem (finding a subspace approximation of observed data) for
+	abstract = {We consider the dimensionality-reduction problem (finding a subspace approximation of observed data) for
 contaminated data in the high dimensional regime, where the number of observations is of the same magnitude as
 the number of variables of each observation, and the data set contains some (arbitrarily) corrupted observations. We
 propose a High-dimensional Robust Principal Component Analysis (HR-PCA) algorithm that is tractable, robust
@@ -1291,18 +1408,18 @@ to contaminated points, and easily kernelizable. The resulting subspace has a bo
 one, achieves maximal robustness -- a breakdown point of 50% while all existing algorithms have a breakdown
 point of zero, and unlike ordinary PCA algorithms, achieves optimality in the limit case where the proportion of
 corrupted points goes to zero.},
-	Author = {Xu, Huan and Caramanis, Constantine and Mannor, Shie},
-	Date-Added = {2020-04-30 14:27:10 -0400},
-	Date-Modified = {2020-05-21 14:57:57 -0400},
-	Journal = {arXiv preprint arXiv:1002.4658},
-	Keywords = {pca, high dimension},
-	Read = {1},
-	Title = {Principal component analysis with contaminated data: The high dimensional case},
-	Year = {2010},
+	author = {Xu, Huan and Caramanis, Constantine and Mannor, Shie},
+	date-added = {2020-04-30 14:27:10 -0400},
+	date-modified = {2020-05-21 14:57:57 -0400},
+	journal = {arXiv preprint arXiv:1002.4658},
+	keywords = {pca, high dimension},
+	read = {1},
+	title = {Principal component analysis with contaminated data: The high dimensional case},
+	year = {2010},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1002.4658.pdf}}
 
 @article{goldberg2014word2vec,
-	Abstract = {The word2vec software of Tomas Mikolov and colleagues1 has gained a lot
+	abstract = {The word2vec software of Tomas Mikolov and colleagues1 has gained a lot
 of traction lately, and provides state-of-the-art word embeddings. The learning
 models behind the software are described in two research papers [1, 2]. We
 found the description of the models in these papers to be somewhat cryptic
@@ -1311,17 +1428,17 @@ the neural-networks language-modeling crowd, we had to struggle quite a bit to
 figure out the rationale behind the equations.
 This note is an attempt to explain equation (4) (negative sampling) in ``Distributed Representations of Words and Phrases and their Compositionality'' by
 Tomas Mikolov, Ilya Sutskever, Kai Chen, Greg Corrado and Jeffrey Dean [2].},
-	Author = {Goldberg, Yoav and Levy, Omer},
-	Date-Added = {2020-04-30 12:27:28 -0400},
-	Date-Modified = {2020-04-30 12:27:55 -0400},
-	Journal = {arXiv preprint arXiv:1402.3722},
-	Keywords = {nlp, word2vec, negative-sampling},
-	Title = {word2vec Explained: deriving Mikolov et al.'s negative-sampling word-embedding method},
-	Year = {2014},
+	author = {Goldberg, Yoav and Levy, Omer},
+	date-added = {2020-04-30 12:27:28 -0400},
+	date-modified = {2020-04-30 12:27:55 -0400},
+	journal = {arXiv preprint arXiv:1402.3722},
+	keywords = {nlp, word2vec, negative-sampling},
+	title = {word2vec Explained: deriving Mikolov et al.'s negative-sampling word-embedding method},
+	year = {2014},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1402.3722v1.pdf}}
 
 @article{runge2019detecting,
-	Abstract = {Identifying causal relationships and quantifying their strength from observational time series data are key
+	abstract = {Identifying causal relationships and quantifying their strength from observational time series data are key
 problems in disciplines dealing with complex dynamical systems such as the Earth system or the human body.
 Data-driven causal inference in such systems is challenging since datasets are often high dimensional and nonlinear with
 limited sample sizes. Here, we introduce a novel method that flexibly combines linear or nonlinear conditional independence tests with a causal discovery algorithm to estimate causal networks from large-scale time series datasets.
@@ -1329,27 +1446,27 @@ We validate the method on time series of well-understood physical mechanisms in 
 heart and using large-scale synthetic datasets mimicking the typical properties of real-world data. The experiments
 demonstrate that our method outperforms state-of-the-art techniques in detection power, which opens up entirely
 new possibilities to discover and quantify causal networks from time series across a range of research fields.},
-	Annote = {Paper where is introduced the PCMCI algorithm, which is an example of causal network learning algorithm specialized for time series data.
+	annote = {Paper where is introduced the PCMCI algorithm, which is an example of causal network learning algorithm specialized for time series data.
 The authors also provide an implementation of their algorithm on github: https://github.com/jakobrunge/tigramite
 Additional material: https://advances.sciencemag.org/content/advances/suppl/2019/11/21/5.11.eaau4996.DC1/aau4996_SM.pdf
 
 The claim to fame of PCMCI is its capacity to handle high-dimensional datasets and highly interdependent time series, along with linear and nonlinear relationship in the data. In the paper, they also show some robustness to nonstationarity. The main shortcomings remain the reliance on the Causality Sufficiency hypothesis. The PCMCI algorithm builds on top of the PC algorithm. The latter is a Markov discovery algorithm that relies on the causal Markov property to identify parents of a variable. However, as shown in the paper, the PC algorithm cannot be used as is with time series. So the authors add a momentary condition independence (MCI) test after the PC step. The PC step (PC1) iteratively removes links that are independent conditioned on the most important drivers in the previous step. After that PC1 step, each variable is left with the causal parents and potentially some false positives. The MCI step tests each potential causal link and assess causal strenght. The MCI step conditions on the parents and the parents of the potential parent tested (to account for autocorrelation). The significance level to reject/accept the independence test in the MCI step is the one parameter of the method that can be adjusted; it can selected via typical techniques (information theory, or cross-validation). Any kinf of conditional independence test can be used in this algorithm, whether linear (e.g., linear partical correlation) or nonlinear (e.g., GPDC, or CMI).},
-	Author = {Runge, Jakob and Nowack, Peer and Kretschmer, Marlene and Flaxman, Seth and Sejdinovic, Dino},
-	Date-Added = {2020-04-28 13:14:57 -0400},
-	Date-Modified = {2020-05-21 14:44:37 -0400},
-	Journal = {Science Advances},
-	Keywords = {causality, time series},
-	Number = {11},
-	Pages = {eaau4996},
-	Publisher = {American Association for the Advancement of Science},
-	Read = {1},
-	Title = {Detecting and quantifying causal associations in large nonlinear time series datasets},
-	Volume = {5},
-	Year = {2019},
+	author = {Runge, Jakob and Nowack, Peer and Kretschmer, Marlene and Flaxman, Seth and Sejdinovic, Dino},
+	date-added = {2020-04-28 13:14:57 -0400},
+	date-modified = {2020-05-21 14:44:37 -0400},
+	journal = {Science Advances},
+	keywords = {causality, time series},
+	number = {11},
+	pages = {eaau4996},
+	publisher = {American Association for the Advancement of Science},
+	read = {1},
+	title = {Detecting and quantifying causal associations in large nonlinear time series datasets},
+	volume = {5},
+	year = {2019},
 	Bdsk-Url-1 = {https://advances.sciencemag.org/content/advances/5/11/eaau4996.full.pdf}}
 
 @article{runge2019inferring,
-	Abstract = {The heart of the scientific enterprise is a rational effort to understand the causes behind
+	abstract = {The heart of the scientific enterprise is a rational effort to understand the causes behind
 the phenomena we observe. In large-scale complex dynamical systems such as the Earth
 system, real experiments are rarely feasible. However, a rapidly increasing amount of
 observational and simulated data opens up the use of novel data-driven causal methods
@@ -1357,23 +1474,23 @@ beyond the commonly adopted correlation techniques. Here, we give an overview of
 inference frameworks and identify promising generic application cases common in Earth
 system sciences and beyond. We discuss challenges and initiate the benchmark platform
 causeme.net to close the gap between method users and developers.},
-	Annote = {Because intervention are hard (impossible?) to put in place in Earth science, there is a strong need to rely on recent data-driven methods (observational causal discovery). They give a few examples of situations where causality was used in Earth science, in particular examples where Granger causality and/or correlation-based methods failed to identify the correct causal links. Next, they introduced the main methods for causality inference with time seriesa. Many (?) causal inference methods for time series are grounded on a few common assumptions: time-order (past events influence future events, not the other way around), causal sufficiency (no unobserved common factor exists), for graphical models the Causal Markov condition (conditional independence on all variables who don't have a direct impact),{\ldots} They first introduce Granger causality, which is probably the foundational method of causal inference in time series. The high-level idea to assess whether variable X causes variable Y is to test whether knowledge of past values of X help improve or not the prediction of future values of Y (reduction in residual variance). Different variations of that idea have been developped over the years, mainly depending on the type of model that is used to predict Y: AR, nonlinear, or transfer entropy (a non-parametric statistic measuring the amount of directed time-asymmetric transfer of information between 2 random processes; the amount of information is measured using Shannon's entropy). One potential limitation of Granger causality is that it can only detect ``lagged causality'', i.e., causal relation coming from past data; if the idea is to apply a causality screening prior to forecast, then this is probably sufficient as we'll only rely on past information. On the other hand, Granger causality typically fails to identify conditionally independent links. Also, multivariate extensions of GC fail if too many variables are considered. Next, they discuss nonlinear state-space methods, in particular convergent cross-mapping (CCM) methods. These methods look for interactions in the underlying dynamic process that generated the data. They don't say much about that class of methods, except that CCM is not well suited for multivariate, purely stochastic processes, as it doesn't explicitly condition on other variables. Causal network learning algorithms use probabilistic graphical models (think Bayesian networks) to infer causality structure. They work well in large-scale applications. There are 2 main families of methods depending whether one starts from an empty graph and add links, or one starts from a fully connected graph and remove links. The decision to add/remove links is based on the results of some tests (e.g., conditional independence statistical test, or some score function,{\ldots}). They highlight 2 methods: PCMCI, designed to handle auto-correlated and nonlinear time series, and FCI which does not rely on the Causal Sufficiency assumption. Lastly, the structural causal model (SCM) framework, promoted by Judea Pearl. Causal graphs cannot always identify the direction of contemporaneous causality links (i.e., within the Markov equivalence class). SCM allows to make assumptions about the possible causal relationships we accept.},
-	Author = {Runge, Jakob and Bathiany, Sebastian and Bollt, Erik and Camps-Valls, Gustau and Coumou, Dim and Deyle, Ethan and Glymour, Clark and Kretschmer, Marlene and Mahecha, Miguel D and Mu{\~n}oz-Mar{\'\i}, Jordi and others},
-	Date-Added = {2020-04-28 08:16:26 -0400},
-	Date-Modified = {2020-04-28 13:16:12 -0400},
-	Journal = {Nature communications},
-	Keywords = {causality, time series},
-	Number = {1},
-	Pages = {1--13},
-	Publisher = {Nature Publishing Group},
-	Read = {1},
-	Title = {Inferring causation from time series in Earth system sciences},
-	Volume = {10},
-	Year = {2019},
+	annote = {Because intervention are hard (impossible?) to put in place in Earth science, there is a strong need to rely on recent data-driven methods (observational causal discovery). They give a few examples of situations where causality was used in Earth science, in particular examples where Granger causality and/or correlation-based methods failed to identify the correct causal links. Next, they introduced the main methods for causality inference with time seriesa. Many (?) causal inference methods for time series are grounded on a few common assumptions: time-order (past events influence future events, not the other way around), causal sufficiency (no unobserved common factor exists), for graphical models the Causal Markov condition (conditional independence on all variables who don't have a direct impact),{\ldots} They first introduce Granger causality, which is probably the foundational method of causal inference in time series. The high-level idea to assess whether variable X causes variable Y is to test whether knowledge of past values of X help improve or not the prediction of future values of Y (reduction in residual variance). Different variations of that idea have been developped over the years, mainly depending on the type of model that is used to predict Y: AR, nonlinear, or transfer entropy (a non-parametric statistic measuring the amount of directed time-asymmetric transfer of information between 2 random processes; the amount of information is measured using Shannon's entropy). One potential limitation of Granger causality is that it can only detect ``lagged causality'', i.e., causal relation coming from past data; if the idea is to apply a causality screening prior to forecast, then this is probably sufficient as we'll only rely on past information. On the other hand, Granger causality typically fails to identify conditionally independent links. Also, multivariate extensions of GC fail if too many variables are considered. Next, they discuss nonlinear state-space methods, in particular convergent cross-mapping (CCM) methods. These methods look for interactions in the underlying dynamic process that generated the data. They don't say much about that class of methods, except that CCM is not well suited for multivariate, purely stochastic processes, as it doesn't explicitly condition on other variables. Causal network learning algorithms use probabilistic graphical models (think Bayesian networks) to infer causality structure. They work well in large-scale applications. There are 2 main families of methods depending whether one starts from an empty graph and add links, or one starts from a fully connected graph and remove links. The decision to add/remove links is based on the results of some tests (e.g., conditional independence statistical test, or some score function,{\ldots}). They highlight 2 methods: PCMCI, designed to handle auto-correlated and nonlinear time series, and FCI which does not rely on the Causal Sufficiency assumption. Lastly, the structural causal model (SCM) framework, promoted by Judea Pearl. Causal graphs cannot always identify the direction of contemporaneous causality links (i.e., within the Markov equivalence class). SCM allows to make assumptions about the possible causal relationships we accept.},
+	author = {Runge, Jakob and Bathiany, Sebastian and Bollt, Erik and Camps-Valls, Gustau and Coumou, Dim and Deyle, Ethan and Glymour, Clark and Kretschmer, Marlene and Mahecha, Miguel D and Mu{\~n}oz-Mar{\'\i}, Jordi and others},
+	date-added = {2020-04-28 08:16:26 -0400},
+	date-modified = {2020-04-28 13:16:12 -0400},
+	journal = {Nature communications},
+	keywords = {causality, time series},
+	number = {1},
+	pages = {1--13},
+	publisher = {Nature Publishing Group},
+	read = {1},
+	title = {Inferring causation from time series in Earth system sciences},
+	volume = {10},
+	year = {2019},
 	Bdsk-Url-1 = {https://www.nature.com/articles/s41467-019-10105-3.pdf}}
 
 @inproceedings{varoquaux2019comparing,
-	Abstract = {Are two sets of observations drawn from the same distribution? This problem is
+	abstract = {Are two sets of observations drawn from the same distribution? This problem is
 a two-sample test. Kernel methods lead to many appealing properties. Indeed
 state-of-the-art approaches use the L2 distance between kernel-based distribution
 representatives to derive their test statistics. Here, we show that Lp distances
@@ -1392,19 +1509,19 @@ than state-of-the-art quadratic-time kernel-based tests. Experiments on artifici
 and real-world problems demonstrate improved power/time tradeoff than the state
 of the art, based on `2 norms, and in some cases, better outright power than even
 the most expensive quadratic-time tests},
-	Author = {Varoquaux, Gael and others},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-04-27 08:00:12 -0400},
-	Date-Modified = {2020-05-21 14:57:26 -0400},
-	Keywords = {statistical test, out of distribution},
-	Pages = {12306--12316},
-	Read = {1},
-	Title = {Comparing distributions: $$\backslash$ell\_1 $ geometry improves kernel two-sample testing},
-	Year = {2019},
+	author = {Varoquaux, Gael and others},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-04-27 08:00:12 -0400},
+	date-modified = {2020-05-21 14:57:26 -0400},
+	keywords = {statistical test, out of distribution},
+	pages = {12306--12316},
+	read = {1},
+	title = {Comparing distributions: $$\backslash$ell\_1 $ geometry improves kernel two-sample testing},
+	year = {2019},
 	Bdsk-Url-1 = {https://papers.nips.cc/paper/9398-comparing-distributions-ell_1-geometry-improves-kernel-two-sample-testing.pdf}}
 
 @article{josse2019consistency,
-	Abstract = {In many application settings, the data have missing features which
+	abstract = {In many application settings, the data have missing features which
 make data analysis challenging. An abundant literature addresses
 missing data in an inferential framework: estimating parameters and
 their variance from incomplete tables. Here, we consider supervisedlearning settings: predicting a target when missing values appear in
@@ -1422,31 +1539,31 @@ handle the half-discrete nature of incomplete variables. After comparing theoret
 in trees, we recommend using the ``missing incorporated in attribute''
 method as it can handle both non-informative and informative missing
 values.},
-	Author = {Josse, Julie and Prost, Nicolas and Scornet, Erwan and Varoquaux, Ga{\"e}l},
-	Date-Added = {2020-04-27 07:55:03 -0400},
-	Date-Modified = {2020-04-27 07:55:31 -0400},
-	Journal = {arXiv preprint arXiv:1902.06931},
-	Keywords = {missing data, tree, supervised learning},
-	Title = {On the consistency of supervised learning with missing values},
-	Year = {2019},
+	author = {Josse, Julie and Prost, Nicolas and Scornet, Erwan and Varoquaux, Ga{\"e}l},
+	date-added = {2020-04-27 07:55:03 -0400},
+	date-modified = {2020-04-27 07:55:31 -0400},
+	journal = {arXiv preprint arXiv:1902.06931},
+	keywords = {missing data, tree, supervised learning},
+	title = {On the consistency of supervised learning with missing values},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1902.06931.pdf}}
 
 @article{gonccalves2014comparative,
-	Author = {Gon{\c{c}}alves Jr, Paulo M and de Carvalho Santos, Silas GT and Barros, Roberto SM and Vieira, Davi CL},
-	Date-Added = {2020-04-24 09:55:22 -0400},
-	Date-Modified = {2020-04-24 09:56:27 -0400},
-	Journal = {Expert Systems with Applications},
-	Keywords = {concept drift, experiments design},
-	Number = {18},
-	Pages = {8144--8156},
-	Publisher = {Elsevier},
-	Title = {A comparative study on concept drift detectors},
-	Volume = {41},
-	Year = {2014},
+	author = {Gon{\c{c}}alves Jr, Paulo M and de Carvalho Santos, Silas GT and Barros, Roberto SM and Vieira, Davi CL},
+	date-added = {2020-04-24 09:55:22 -0400},
+	date-modified = {2020-04-24 09:56:27 -0400},
+	journal = {Expert Systems with Applications},
+	keywords = {concept drift, experiments design},
+	number = {18},
+	pages = {8144--8156},
+	publisher = {Elsevier},
+	title = {A comparative study on concept drift detectors},
+	volume = {41},
+	year = {2014},
 	Bdsk-Url-1 = {https://www.researchgate.net/profile/Roberto_Barros/publication/264081451_A_Comparative_Study_on_Concept_Drift_Detectors/links/5acf5340a6fdcc87840fd665/A-Comparative-Study-on-Concept-Drift-Detectors.pdf}}
 
 @inproceedings{zhao2019visual,
-	Abstract = {Technical and fundamental analysis are traditional tools
+	abstract = {Technical and fundamental analysis are traditional tools
 used to analyze stocks; however, the finance literature has
 shown that the price movement of each individual stock is
 highly correlated with that of other stocks, especially those
@@ -1459,18 +1576,18 @@ network, with an attention mechanism over the market feature maps, to model temp
 model outperforms strong baselines in both short-term and
 long-term stock return prediction tasks. We also show another
 use for our market image: to construct concise and dense market embeddings suitable for downstream prediction tasks.},
-	Author = {Zhao, Ran and Deng, Yuntian and Dredze, Mark and Verma, Arun and Rosenberg, David and Stent, Amanda},
-	Booktitle = {The Thirty-Second International Flairs Conference},
-	Date-Added = {2020-04-23 13:26:14 -0400},
-	Date-Modified = {2020-05-21 14:55:55 -0400},
-	Keywords = {time series, forecasting, cnn, rnn, attention},
-	Read = {1},
-	Title = {Visual Attention Model for Cross-sectional Stock Return Prediction and End-to-End Multimodal Market Representation Learning},
-	Year = {2019},
+	author = {Zhao, Ran and Deng, Yuntian and Dredze, Mark and Verma, Arun and Rosenberg, David and Stent, Amanda},
+	booktitle = {The Thirty-Second International Flairs Conference},
+	date-added = {2020-04-23 13:26:14 -0400},
+	date-modified = {2020-05-21 14:55:55 -0400},
+	keywords = {time series, forecasting, cnn, rnn, attention},
+	read = {1},
+	title = {Visual Attention Model for Cross-sectional Stock Return Prediction and End-to-End Multimodal Market Representation Learning},
+	year = {2019},
 	Bdsk-Url-1 = {http://www.cs.jhu.edu/~mdredze/publications/2019_zhao_flairs.pdf}}
 
 @article{bai2018empirical,
-	Abstract = {For most deep learning practitioners, sequence
+	abstract = {For most deep learning practitioners, sequence
 modeling is synonymous with recurrent networks.
 Yet recent results indicate that convolutional architectures can outperform recurrent networks on
 tasks such as audio synthesis and machine translation. Given a new sequence modeling task or
@@ -1486,34 +1603,34 @@ networks should be reconsidered, and convolutional networks should be regarded a
 starting point for sequence modeling tasks. To
 assist related work, we have made code available
 at http://github.com/locuslab/TCN},
-	Annote = {They provide code for a Temporal Convolutional Network unit at
+	annote = {They provide code for a Temporal Convolutional Network unit at
 https://github.com/locuslab/TCN
 
 They compare TCN with LSTM and GRU and show that TCN does a better job at dealing with sequences.
 Highly cited paper.},
-	Author = {Bai, Shaojie and Kolter, J Zico and Koltun, Vladlen},
-	Date-Added = {2020-04-23 13:00:56 -0400},
-	Date-Modified = {2020-05-21 14:43:21 -0400},
-	Journal = {arXiv preprint arXiv:1803.01271},
-	Keywords = {cnn, rnn, time series, code},
-	Read = {1},
-	Title = {An empirical evaluation of generic convolutional and recurrent networks for sequence modeling},
-	Year = {2018},
+	author = {Bai, Shaojie and Kolter, J Zico and Koltun, Vladlen},
+	date-added = {2020-04-23 13:00:56 -0400},
+	date-modified = {2020-05-21 14:43:21 -0400},
+	journal = {arXiv preprint arXiv:1803.01271},
+	keywords = {cnn, rnn, time series, code},
+	read = {1},
+	title = {An empirical evaluation of generic convolutional and recurrent networks for sequence modeling},
+	year = {2018},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1803.01271.pdf}}
 
 @article{borovykh2017conditional,
-	Author = {Borovykh, Anastasia and Bohte, Sander and Oosterlee, Cornelis W},
-	Date-Added = {2020-04-23 12:46:31 -0400},
-	Date-Modified = {2020-05-21 14:59:02 -0400},
-	Journal = {arXiv preprint arXiv:1703.04691},
-	Keywords = {time series, forecasting, cnn},
-	Read = {1},
-	Title = {Conditional time series forecasting with convolutional neural networks},
-	Year = {2017},
+	author = {Borovykh, Anastasia and Bohte, Sander and Oosterlee, Cornelis W},
+	date-added = {2020-04-23 12:46:31 -0400},
+	date-modified = {2020-05-21 14:59:02 -0400},
+	journal = {arXiv preprint arXiv:1703.04691},
+	keywords = {time series, forecasting, cnn},
+	read = {1},
+	title = {Conditional time series forecasting with convolutional neural networks},
+	year = {2017},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1703.04691.pdf?source=post_page---------------------------}}
 
 @article{pearl2009causal,
-	Abstract = {This review presents empirical researchers with recent advances
+	abstract = {This review presents empirical researchers with recent advances
 in causal inference, and stresses the paradigmatic shifts that must be undertaken in moving from traditional statistical analysis to causal analysis of
 multivariate data. Special emphasis is placed on the assumptions that underly all causal inferences, the languages used in formulating those assumptions, the conditional nature of all causal and counterfactual claims, and
 the methods that have been developed for the assessment of such claims.
@@ -1528,21 +1645,21 @@ effects (also known as ``mediation''). Finally, the paper defines the formal
 and conceptual relationships between the structural and potential-outcome
 frameworks and presents tools for a symbiotic analysis that uses the strong
 features of both.},
-	Author = {Pearl, Judea and others},
-	Date-Added = {2020-04-23 11:08:59 -0400},
-	Date-Modified = {2020-05-21 14:44:04 -0400},
-	Journal = {Statistics surveys},
-	Keywords = {causality, structural causal model},
-	Pages = {96--146},
-	Publisher = {The author, under a Creative Commons Attribution License},
-	Read = {1},
-	Title = {Causal inference in statistics: An overview},
-	Volume = {3},
-	Year = {2009},
+	author = {Pearl, Judea and others},
+	date-added = {2020-04-23 11:08:59 -0400},
+	date-modified = {2020-05-21 14:44:04 -0400},
+	journal = {Statistics surveys},
+	keywords = {causality, structural causal model},
+	pages = {96--146},
+	publisher = {The author, under a Creative Commons Attribution License},
+	read = {1},
+	title = {Causal inference in statistics: An overview},
+	volume = {3},
+	year = {2009},
 	Bdsk-Url-1 = {https://projecteuclid.org/download/pdfview_1/euclid.ssu/1255440554}}
 
 @article{yao2020survey,
-	Abstract = {Causal inference is a critical research topic across many domains, such as statistics, computer science, education, public
+	abstract = {Causal inference is a critical research topic across many domains, such as statistics, computer science, education, public
 policy and economics, for decades. Nowadays, estimating causal effect from observational data has become an appealing
 research direction owing to the large amount of available data and low budget requirement, compared with randomized
 controlled trials. Embraced with the rapidly developed machine learning area, various causal effect estimation methods for
@@ -1553,23 +1670,23 @@ both the traditional statistical methods and the recent machine learning enhance
 The plausible applications of these methods are also presented, including the applications in advertising, recommendation,
 medicine and so on. Moreover, the commonly used benchmark datasets as well as the open-source codes are also summarized,
 which facilitate researchers and practitioners to explore, evaluate and apply the causal inference methods.},
-	Annote = {In that review paper, the methods are classified into 2 categories whether they rely on 3 assumptions (re-weighting methods, matching methods, tree-based methods, representation learning, multitask learning methods, meta learning methods), or if they relax some of them. 
+	annote = {In that review paper, the methods are classified into 2 categories whether they rely on 3 assumptions (re-weighting methods, matching methods, tree-based methods, representation learning, multitask learning methods, meta learning methods), or if they relax some of them. 
 These 3 assumptions are: 
 * SUTVA (independence of the units receiving treatment, and unicity of treatments administred), 
 * ignorability (treatment assignment done independently from expected outcome; so random), and 
 * positivity (treatment assignmed randomly for all background).},
-	Author = {Yao, Liuyi and Chu, Zhixuan and Li, Sheng and Li, Yaliang and Gao, Jing and Zhang, Aidong},
-	Date-Added = {2020-04-23 11:07:24 -0400},
-	Date-Modified = {2020-04-28 13:16:33 -0400},
-	Journal = {arXiv preprint arXiv:2002.02770},
-	Keywords = {causality, potential outcome framework},
-	Read = {1},
-	Title = {A Survey on Causal Inference},
-	Year = {2020},
+	author = {Yao, Liuyi and Chu, Zhixuan and Li, Sheng and Li, Yaliang and Gao, Jing and Zhang, Aidong},
+	date-added = {2020-04-23 11:07:24 -0400},
+	date-modified = {2020-04-28 13:16:33 -0400},
+	journal = {arXiv preprint arXiv:2002.02770},
+	keywords = {causality, potential outcome framework},
+	read = {1},
+	title = {A Survey on Causal Inference},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2002.02770.pdf}}
 
 @inproceedings{sen2019think,
-	Abstract = {Forecasting high-dimensional time series plays a crucial role in many applications
+	abstract = {Forecasting high-dimensional time series plays a crucial role in many applications
 such as demand forecasting and financial predictions. Modern datasets can have
 millions of correlated time-series that evolve together, i.e they are extremely high
 dimensional (one dimension for each individual time-series). There is a need
@@ -1588,19 +1705,19 @@ without a priori normalization or rescaling. Empirical results demonstrate that
 DeepGLO can outperform state-of-the-art approaches; for example, we see more
 than 25% improvement in WAPE over other methods on a public dataset that
 contains more than 100K-dimensional time series.},
-	Author = {Sen, Rajat and Yu, Hsiang-Fu and Dhillon, Inderjit S},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-04-23 10:47:34 -0400},
-	Date-Modified = {2020-05-21 14:59:23 -0400},
-	Keywords = {time series, matrix factorization, cnn, high dimension, rnn},
-	Pages = {4838--4847},
-	Read = {1},
-	Title = {Think globally, act locally: A deep neural network approach to high-dimensional time series forecasting},
-	Year = {2019},
+	author = {Sen, Rajat and Yu, Hsiang-Fu and Dhillon, Inderjit S},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-04-23 10:47:34 -0400},
+	date-modified = {2020-05-21 14:59:23 -0400},
+	keywords = {time series, matrix factorization, cnn, high dimension, rnn},
+	pages = {4838--4847},
+	read = {1},
+	title = {Think globally, act locally: A deep neural network approach to high-dimensional time series forecasting},
+	year = {2019},
 	Bdsk-Url-1 = {http://papers.nips.cc/paper/8730-think-globally-act-locally-a-deep-neural-network-approach-to-high-dimensional-time-series-forecasting.pdf}}
 
 @inproceedings{yu2016temporal,
-	Abstract = {Time series prediction problems are becoming increasingly high-dimensional in
+	abstract = {Time series prediction problems are becoming increasingly high-dimensional in
 modern applications, such as climatology and demand forecasting. For example,
 in the latter problem, the number of items for which demand needs to be forecast
 might be as large as 50,000. In addition, the data is generally noisy and full of
@@ -1618,7 +1735,7 @@ Experimental results show the superiority of TRMF in terms of scalability and
 prediction quality. In particular, TRMF is two orders of magnitude faster than
 other methods on a problem of dimension 50,000, and generates better forecasts on
 real-world datasets such as Wal-mart E-commerce datasets.},
-	Annote = {Interesting matrix factorization technique that allows to define (or infer) a temporal dynamics for the latent variables (e.g., AR),
+	annote = {Interesting matrix factorization technique that allows to define (or infer) a temporal dynamics for the latent variables (e.g., AR),
 yielding a causal dimensionality reduction.
 They apply their method to forecasting or missing values imputation.
 
@@ -1627,30 +1744,30 @@ LImitations:
 * you have to re-solve an optimization problem every time you want to append new data and therefore
 need to compute their corresponding value in the latent space (see ``Updates for X'' in section 4). The optimization problem is
 much smaller though.},
-	Author = {Yu, Hsiang-Fu and Rao, Nikhil and Dhillon, Inderjit S},
-	Booktitle = {Advances in neural information processing systems},
-	Date-Added = {2020-04-23 09:31:20 -0400},
-	Date-Modified = {2020-05-21 14:56:42 -0400},
-	Keywords = {time series, matrix factorization, high dimension},
-	Pages = {847--855},
-	Read = {1},
-	Title = {Temporal regularized matrix factorization for high-dimensional time series prediction},
-	Year = {2016},
+	author = {Yu, Hsiang-Fu and Rao, Nikhil and Dhillon, Inderjit S},
+	booktitle = {Advances in neural information processing systems},
+	date-added = {2020-04-23 09:31:20 -0400},
+	date-modified = {2020-05-21 14:56:42 -0400},
+	keywords = {time series, matrix factorization, high dimension},
+	pages = {847--855},
+	read = {1},
+	title = {Temporal regularized matrix factorization for high-dimensional time series prediction},
+	year = {2016},
 	Bdsk-Url-1 = {https://papers.nips.cc/paper/6160-temporal-regularized-matrix-factorization-for-high-dimensional-time-series-prediction.pdf}}
 
 @inproceedings{chen2018dimensionality,
-	Author = {Chen, Minshuo and Yang, Lin and Wang, Mengdi and Zhao, Tuo},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-04-23 08:29:38 -0400},
-	Date-Modified = {2020-04-23 08:30:10 -0400},
-	Keywords = {optimization, stochastic, nonconvex, time series},
-	Pages = {3496--3506},
-	Title = {Dimensionality reduction for stationary time series via stochastic nonconvex optimization},
-	Year = {2018},
+	author = {Chen, Minshuo and Yang, Lin and Wang, Mengdi and Zhao, Tuo},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-04-23 08:29:38 -0400},
+	date-modified = {2020-04-23 08:30:10 -0400},
+	keywords = {optimization, stochastic, nonconvex, time series},
+	pages = {3496--3506},
+	title = {Dimensionality reduction for stationary time series via stochastic nonconvex optimization},
+	year = {2018},
 	Bdsk-Url-1 = {http://papers.nips.cc/paper/7609-dimensionality-reduction-for-stationary-time-series-via-stochastic-nonconvex-optimization.pdf}}
 
 @article{keogh2001dimensionality,
-	Abstract = {The problem of similarity search in large time series databases has attracted much attention
+	abstract = {The problem of similarity search in large time series databases has attracted much attention
 recently. It is a non-trivial problem because of the inherent high dimensionality of the data. The
 most promising solutions involve performing dimensionality reduction on the data, then indexing
 the reduced data with a spatial access method. Three major dimensionality reduction techniques
@@ -1662,25 +1779,25 @@ demonstrate its superiority. In addition to being competitive with or faster tha
 our approach has numerous advantages. It is simple to understand and implement, allows more
 flexible distance measures including weighted Euclidean queries and the index can be built in
 linear time.},
-	Annote = {Classic paper to do rapid indexing of large time series database.
+	annote = {Classic paper to do rapid indexing of large time series database.
 Introduce PIecewise Aggregate Approximation which sub-samples the time series and
 do similarity search on these sub-sampled time series.},
-	Author = {Keogh, Eamonn and Chakrabarti, Kaushik and Pazzani, Michael and Mehrotra, Sharad},
-	Date-Added = {2020-04-22 17:54:05 -0400},
-	Date-Modified = {2020-05-21 14:58:30 -0400},
-	Journal = {Knowledge and information Systems},
-	Keywords = {time series, indexing, high dimension, dimensionality reduction},
-	Number = {3},
-	Pages = {263--286},
-	Publisher = {Springer},
-	Read = {1},
-	Title = {Dimensionality reduction for fast similarity search in large time series databases},
-	Volume = {3},
-	Year = {2001},
+	author = {Keogh, Eamonn and Chakrabarti, Kaushik and Pazzani, Michael and Mehrotra, Sharad},
+	date-added = {2020-04-22 17:54:05 -0400},
+	date-modified = {2020-05-21 14:58:30 -0400},
+	journal = {Knowledge and information Systems},
+	keywords = {time series, indexing, high dimension, dimensionality reduction},
+	number = {3},
+	pages = {263--286},
+	publisher = {Springer},
+	read = {1},
+	title = {Dimensionality reduction for fast similarity search in large time series databases},
+	volume = {3},
+	year = {2001},
 	Bdsk-Url-1 = {https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/time_series_indexing.pdf}}
 
 @article{duan2019ngboost,
-	Abstract = {We present Natural Gradient Boosting (NGBoost), an algorithm for generic probabilistic
+	abstract = {We present Natural Gradient Boosting (NGBoost), an algorithm for generic probabilistic
 prediction via gradient boosting. Typical regression models return a point estimate, conditional on covariates, but probabilistic regression
 models output a full probability distribution over
 the outcome space, conditional on the covariates. This allows for predictive uncertainty estimation --- crucial in applications like healthcare and weather forecasting. NGBoost generalizes gradient boosting to probabilistic regression
@@ -1690,18 +1807,18 @@ learner, any family of distributions with continuous parameters, and any scoring
 matches or exceeds the performance of existing
 methods for probabilistic prediction while offering additional benefits in flexibility, scalability,
 and usability.},
-	Author = {Duan, Tony and Avati, Anand and Ding, Daisy Yi and Basu, Sanjay and Ng, Andrew Y and Schuler, Alejandro},
-	Date-Added = {2020-04-22 10:24:24 -0400},
-	Date-Modified = {2020-06-03 23:45:18 -0400},
-	Journal = {arXiv preprint arXiv:1910.03225},
-	Keywords = {time series, distributional forecast, forecasting},
-	Read = {1},
-	Title = {NGBoost: Natural Gradient Boosting for Probabilistic Prediction},
-	Year = {2019},
+	author = {Duan, Tony and Avati, Anand and Ding, Daisy Yi and Basu, Sanjay and Ng, Andrew Y and Schuler, Alejandro},
+	date-added = {2020-04-22 10:24:24 -0400},
+	date-modified = {2020-06-03 23:45:18 -0400},
+	journal = {arXiv preprint arXiv:1910.03225},
+	keywords = {time series, distributional forecast, forecasting},
+	read = {1},
+	title = {NGBoost: Natural Gradient Boosting for Probabilistic Prediction},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1910.03225.pdf}}
 
 @inproceedings{verleysen2005curse,
-	Abstract = {Modern data analysis tools have to work on high-dimensional data,
+	abstract = {Modern data analysis tools have to work on high-dimensional data,
 whose components are not independently distributed. High-dimensional spaces
 show surprising, counter-intuitive geometrical properties that have a large
 influence on the performances of data analysis tools. Among these properties,
@@ -1711,19 +1828,19 @@ inappropriate in high-dimensional spaces. This papers presents alternative
 distance measures and kernels, together with geometrical methods to decrease
 the dimension of the space. The methodology is applied to a typical time series
 prediction example. },
-	Author = {Verleysen, Michel and Fran{\c{c}}ois, Damien},
-	Booktitle = {International Work-Conference on Artificial Neural Networks},
-	Date-Added = {2020-04-22 10:19:26 -0400},
-	Date-Modified = {2020-04-22 10:20:13 -0400},
-	Keywords = {time series, data mining, high dimension},
-	Organization = {Springer},
-	Pages = {758--770},
-	Title = {The curse of dimensionality in data mining and time series prediction},
-	Year = {2005},
+	author = {Verleysen, Michel and Fran{\c{c}}ois, Damien},
+	booktitle = {International Work-Conference on Artificial Neural Networks},
+	date-added = {2020-04-22 10:19:26 -0400},
+	date-modified = {2020-04-22 10:20:13 -0400},
+	keywords = {time series, data mining, high dimension},
+	organization = {Springer},
+	pages = {758--770},
+	title = {The curse of dimensionality in data mining and time series prediction},
+	year = {2005},
 	Bdsk-Url-1 = {http://neuro.bstu.by/ai/To-dom/My_research/Papers-0/For-research/D-mining/Stock-market/iwann05mv.pdf}}
 
 @article{xue2014jump,
-	Abstract = {This paper introduces a new nonparametric test to identify jump arrival times in high frequency
+	abstract = {This paper introduces a new nonparametric test to identify jump arrival times in high frequency
 financial time series data. The asymptotic distribution of the test is derived. We demonstrate that the
 test is robust for different specifications of price processes and the presence of the microstructure
 noise. A Monte Carlo simulation is conducted which shows that the test has good size and power.
@@ -1734,21 +1851,21 @@ jumps and negative jumps are symmetric across different time scales, the magnitu
 distributed asymmetrically at high frequencies. Third, only 20% of jumps occur in the trading session
 from 9:30AM to 4:00 PM, suggesting that illiquidity during after-hours trading is a strong determinant
 of jumps.},
-	Author = {Xue, Yi and Gencay, Ramazan and Fagan, Stephen},
-	Date-Added = {2020-04-22 10:17:32 -0400},
-	Date-Modified = {2020-04-22 10:18:04 -0400},
-	Journal = {Quantitative Finance},
-	Keywords = {time series, change point detection, wavelet},
-	Number = {8},
-	Pages = {1427--1444},
-	Publisher = {Taylor \& Francis},
-	Title = {Jump detection with wavelets for high-frequency financial time series},
-	Volume = {14},
-	Year = {2014},
+	author = {Xue, Yi and Gencay, Ramazan and Fagan, Stephen},
+	date-added = {2020-04-22 10:17:32 -0400},
+	date-modified = {2020-04-22 10:18:04 -0400},
+	journal = {Quantitative Finance},
+	keywords = {time series, change point detection, wavelet},
+	number = {8},
+	pages = {1427--1444},
+	publisher = {Taylor \& Francis},
+	title = {Jump detection with wavelets for high-frequency financial time series},
+	volume = {14},
+	year = {2014},
 	Bdsk-Url-1 = {https://www.researchgate.net/profile/Yi_Xue2/publication/268152725_Jump_detection_with_wavelets_for_high-frequency_financial_time_series/links/54630bad0cf2c0c6aec1c47a/Jump-detection-with-wavelets-for-high-frequency-financial-time-series.pdf}}
 
 @article{detommaso2019stein,
-	Abstract = {Bayesian online changepoint detection (BOCPD) [1] offers a rigorous and viable
+	abstract = {Bayesian online changepoint detection (BOCPD) [1] offers a rigorous and viable
 way to identify changepoints in complex systems. In this work, we introduce
 a Stein variational online changepoint detection (SVOCD) method to provide a
 computationally tractable generalization of BOCPD beyond the exponential family
@@ -1758,32 +1875,32 @@ a large number of situations with significant importance in practice. We apply t
 resulting method to two challenging and novel applications: Hawkes processes and
 long short-term memory (LSTM) neural networks. In both cases, we successfully
 demonstrate the efficacy of our method on real data.},
-	Author = {Detommaso, Gianluca and Hoitzing, Hanne and Cui, Tiangang and Alamir, Ardavan},
-	Date-Added = {2020-04-22 10:16:52 -0400},
-	Date-Modified = {2020-06-04 12:50:41 -0400},
-	Journal = {arXiv preprint arXiv:1901.07987},
-	Keywords = {time series, change point detection, bayesian},
-	Read = {1},
-	Title = {Stein variational online changepoint detection with applications to Hawkes processes and neural networks},
-	Year = {2019},
+	author = {Detommaso, Gianluca and Hoitzing, Hanne and Cui, Tiangang and Alamir, Ardavan},
+	date-added = {2020-04-22 10:16:52 -0400},
+	date-modified = {2020-06-04 12:50:41 -0400},
+	journal = {arXiv preprint arXiv:1901.07987},
+	keywords = {time series, change point detection, bayesian},
+	read = {1},
+	title = {Stein variational online changepoint detection with applications to Hawkes processes and neural networks},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1901.07987.pdf}}
 
 @article{aminikhanghahi2017survey,
-	Author = {Aminikhanghahi, Samaneh and Cook, Diane J},
-	Date-Added = {2020-04-22 10:15:29 -0400},
-	Date-Modified = {2020-04-22 10:15:49 -0400},
-	Journal = {Knowledge and information systems},
-	Keywords = {time series, change point detection},
-	Number = {2},
-	Pages = {339--367},
-	Publisher = {Springer},
-	Title = {A survey of methods for time series change point detection},
-	Volume = {51},
-	Year = {2017},
+	author = {Aminikhanghahi, Samaneh and Cook, Diane J},
+	date-added = {2020-04-22 10:15:29 -0400},
+	date-modified = {2020-04-22 10:15:49 -0400},
+	journal = {Knowledge and information systems},
+	keywords = {time series, change point detection},
+	number = {2},
+	pages = {339--367},
+	publisher = {Springer},
+	title = {A survey of methods for time series change point detection},
+	volume = {51},
+	year = {2017},
 	Bdsk-Url-1 = {https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5464762/pdf/nihms860556.pdf}}
 
 @inproceedings{keogh2001online,
-	Abstract = {In recent years, there has been an explosion of interest in mining time series databases. As with most
+	abstract = {In recent years, there has been an explosion of interest in mining time series databases. As with most
 computer science problems, representation of the data is the key to efficient and effective solutions. One of
 the most commonly used representations is piecewise linear approximation. This representation has been
 used by various researchers to support clustering, classification, indexing and association rule mining of
@@ -1792,30 +1909,30 @@ algorithms having been independently rediscovered several times. In this paper, 
 extensive review and empirical comparison of all proposed techniques. We show that all these algorithms
 have fatal flaws from a data mining perspective. We introduce a novel algorithm that we empirically show
 to be superior to all others in the literature.},
-	Author = {Keogh, Eamonn and Chu, Selina and Hart, David and Pazzani, Michael},
-	Booktitle = {Proceedings 2001 IEEE international conference on data mining},
-	Date-Added = {2020-04-22 10:13:24 -0400},
-	Date-Modified = {2020-04-22 10:28:58 -0400},
-	Keywords = {time series, online algorithm, data mining},
-	Organization = {IEEE},
-	Pages = {289--296},
-	Title = {An online algorithm for segmenting time series},
-	Year = {2001},
+	author = {Keogh, Eamonn and Chu, Selina and Hart, David and Pazzani, Michael},
+	booktitle = {Proceedings 2001 IEEE international conference on data mining},
+	date-added = {2020-04-22 10:13:24 -0400},
+	date-modified = {2020-04-22 10:28:58 -0400},
+	keywords = {time series, online algorithm, data mining},
+	organization = {IEEE},
+	pages = {289--296},
+	title = {An online algorithm for segmenting time series},
+	year = {2001},
 	Bdsk-Url-1 = {https://sfb876.tu-dortmund.de/PublicPublicationFiles/keogh_etal_2001a.pdf}}
 
 @article{martinsson2020randomized,
-	Author = {Martinsson, Per-Gunnar and Tropp, Joel},
-	Date-Added = {2020-04-22 10:10:33 -0400},
-	Date-Modified = {2020-05-21 14:56:55 -0400},
-	Journal = {arXiv preprint arXiv:2002.01387},
-	Keywords = {numerical linear algebra, randomized, algorithm},
-	Read = {1},
-	Title = {Randomized numerical linear algebra: Foundations \& algorithms},
-	Year = {2020},
+	author = {Martinsson, Per-Gunnar and Tropp, Joel},
+	date-added = {2020-04-22 10:10:33 -0400},
+	date-modified = {2020-05-21 14:56:55 -0400},
+	journal = {arXiv preprint arXiv:2002.01387},
+	keywords = {numerical linear algebra, randomized, algorithm},
+	read = {1},
+	title = {Randomized numerical linear algebra: Foundations \& algorithms},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2002.01387.pdf}}
 
 @article{demvsar2006statistical,
-	Abstract = {While methods for comparing two learning algorithms on a single data set have been scrutinized for
+	abstract = {While methods for comparing two learning algorithms on a single data set have been scrutinized for
 quite some time already, the issue of statistical tests for comparisons of more algorithms on multiple
 data sets, which is even more essential to typical machine learning studies, has been all but ignored.
 This article reviews the current practice and then theoretically and empirically examines several
@@ -1824,35 +1941,35 @@ tests for statistical comparisons of classifiers: the Wilcoxon signed ranks test
 two classifiers and the Friedman test with the corresponding post-hoc tests for comparison of more
 classifiers over multiple data sets. Results of the latter can also be neatly presented with the newly
 introduced CD (critical difference) diagrams.},
-	Author = {Dem{\v{s}}ar, Janez},
-	Date-Added = {2020-04-21 11:53:43 -0400},
-	Date-Modified = {2020-10-28 09:14:52 -0400},
-	Journal = {Journal of Machine learning research},
-	Keywords = {classification, statistical test, model selection, cross validation, **MUST-READ**},
-	Number = {Jan},
-	Pages = {1--30},
-	Title = {Statistical comparisons of classifiers over multiple data sets},
-	Volume = {7},
-	Year = {2006},
+	author = {Dem{\v{s}}ar, Janez},
+	date-added = {2020-04-21 11:53:43 -0400},
+	date-modified = {2020-10-28 09:14:52 -0400},
+	journal = {Journal of Machine learning research},
+	keywords = {classification, statistical test, model selection, cross validation, **MUST-READ**},
+	number = {Jan},
+	pages = {1--30},
+	title = {Statistical comparisons of classifiers over multiple data sets},
+	volume = {7},
+	year = {2006},
 	Bdsk-Url-1 = {http://www.jmlr.org/papers/volume7/demsar06a/demsar06a.pdf}}
 
 @article{pearl2019seven,
-	Author = {Pearl, Judea},
-	Date-Added = {2020-04-21 09:34:41 -0400},
-	Date-Modified = {2020-05-21 14:56:10 -0400},
-	Journal = {Communications of the ACM},
-	Keywords = {causality},
-	Number = {3},
-	Pages = {54--60},
-	Publisher = {ACM New York, NY, USA},
-	Read = {1},
-	Title = {The seven tools of causal inference, with reflections on machine learning},
-	Volume = {62},
-	Year = {2019},
+	author = {Pearl, Judea},
+	date-added = {2020-04-21 09:34:41 -0400},
+	date-modified = {2020-05-21 14:56:10 -0400},
+	journal = {Communications of the ACM},
+	keywords = {causality},
+	number = {3},
+	pages = {54--60},
+	publisher = {ACM New York, NY, USA},
+	read = {1},
+	title = {The seven tools of causal inference, with reflections on machine learning},
+	volume = {62},
+	year = {2019},
 	Bdsk-Url-1 = {http://ftp.cs.ucla.edu/pub/stat_ser/r481.pdf}}
 
 @webpage{palachy2019,
-	Annote = {re-read quickly, then move on -> need to decide on what to read
+	annote = {re-read quickly, then move on -> need to decide on what to read
 
 probably want to focus on graphical models
 1) DynoTEARS
@@ -1881,45 +1998,45 @@ What is the advantage of graphical methods over statistical tests?
 * Graphical approach: often used to model Granger causality in multivariate setting
 
 Connection stationarity - Causality??},
-	Date-Added = {2020-04-20 23:13:21 -0400},
-	Date-Modified = {2020-04-28 13:16:17 -0400},
-	Keywords = {causality, time series},
-	Lastchecked = {Apr. 2020},
-	Month = {Nov},
-	Read = {1},
-	Url = {https://towardsdatascience.com/inferring-causality-in-time-series-data-b8b75fe52c46#99db},
-	Year = {2019},
+	date-added = {2020-04-20 23:13:21 -0400},
+	date-modified = {2020-04-28 13:16:17 -0400},
+	keywords = {causality, time series},
+	lastchecked = {Apr. 2020},
+	month = {Nov},
+	read = {1},
+	url = {https://towardsdatascience.com/inferring-causality-in-time-series-data-b8b75fe52c46#99db},
+	year = {2019},
 	Bdsk-Url-1 = {https://towardsdatascience.com/inferring-causality-in-time-series-data-b8b75fe52c46#99db}}
 
 @unpublished{haugh2015,
-	Author = {Martin Haugh},
-	Date-Added = {2020-04-20 07:42:28 -0400},
-	Date-Modified = {2020-05-21 14:43:36 -0400},
-	Keywords = {EM, algorithm, class notes},
-	Note = {IEOR E4570: Machine Learning for OR&FE, Columbia},
-	Read = {1},
-	Title = {The EM Algorithm},
-	Year = {2015},
+	author = {Martin Haugh},
+	date-added = {2020-04-20 07:42:28 -0400},
+	date-modified = {2020-05-21 14:43:36 -0400},
+	keywords = {EM, algorithm, class notes},
+	note = {IEOR E4570: Machine Learning for OR&FE, Columbia},
+	read = {1},
+	title = {The EM Algorithm},
+	year = {2015},
 	Bdsk-Url-1 = {http://www.columbia.edu/~mh2078/MachineLearningORFE/EM_Algorithm.pdf}}
 
 @article{scholkopf2019causality,
-	Abstract = {Graphical causal inference as pioneered by Judea Pearl arose from research on artificial intelligence
+	abstract = {Graphical causal inference as pioneered by Judea Pearl arose from research on artificial intelligence
 (AI), and for a long time had little connection to the field of machine learning. This article discusses
 where links have been and should be established, introducing key concepts along the way. It argues
 that the hard open problems of machine learning and AI are intrinsically related to causality, and
 explains how the field is beginning to understand them.},
-	Author = {Sch{\"o}lkopf, Bernhard},
-	Date-Added = {2020-04-06 14:36:14 -0400},
-	Date-Modified = {2020-05-21 14:55:31 -0400},
-	Journal = {arXiv preprint arXiv:1911.10500},
-	Keywords = {causality},
-	Read = {1},
-	Title = {Causality for Machine Learning},
-	Year = {2019},
+	author = {Sch{\"o}lkopf, Bernhard},
+	date-added = {2020-04-06 14:36:14 -0400},
+	date-modified = {2020-05-21 14:55:31 -0400},
+	journal = {arXiv preprint arXiv:1911.10500},
+	keywords = {causality},
+	read = {1},
+	title = {Causality for Machine Learning},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1911.10500.pdf}}
 
 @incollection{ralanamahatana2005mining,
-	Abstract = {Much of the world's supply of data is in the form of time series. In the last decade,
+	abstract = {Much of the world's supply of data is in the form of time series. In the last decade,
 there has been an explosion of interest in mining time series data. A number of new algorithms have been introduced to classify, cluster, segment, index, discover rules, and detect
 anomalies/novelties in time series. While these many different techniques used to solve these
 problems use a multitude of different techniques, they all have one common factor; they require some high level representation of the data, rather than the original raw data. These high
@@ -1928,23 +2045,23 @@ transmission, and computation of massive dataset feasible. A multitude of repres
 been proposed in the literature, including spectral transforms, wavelets transforms, piecewise
 polynomials, eigenfunctions, and symbolic mappings. This chapter gives a high-level survey
 of time series Data Mining tasks, with an emphasis on time series representations.},
-	Annote = {* Good high-level overview of data mining approaches for time series:
+	annote = {* Good high-level overview of data mining approaches for time series:
 indexing, clustering, classification, prediction, summarization, anomaly detection, segmentation.
 * For every approach, the treatment is very superficial though.},
-	Author = {Ralanamahatana, Chotirat Ann and Lin, Jessica and Gunopulos, Dimitrios and Keogh, Eamonn and Vlachos, Michail and Das, Gautam},
-	Booktitle = {Data mining and knowledge discovery handbook},
-	Date-Added = {2020-03-26 15:42:44 -0400},
-	Date-Modified = {2020-05-21 14:58:19 -0400},
-	Keywords = {time series, algorithm, data mining},
-	Pages = {1069--1103},
-	Publisher = {Springer},
-	Read = {1},
-	Title = {Mining time series data},
-	Year = {2005},
+	author = {Ralanamahatana, Chotirat Ann and Lin, Jessica and Gunopulos, Dimitrios and Keogh, Eamonn and Vlachos, Michail and Das, Gautam},
+	booktitle = {Data mining and knowledge discovery handbook},
+	date-added = {2020-03-26 15:42:44 -0400},
+	date-modified = {2020-05-21 14:58:19 -0400},
+	keywords = {time series, algorithm, data mining},
+	pages = {1069--1103},
+	publisher = {Springer},
+	read = {1},
+	title = {Mining time series data},
+	year = {2005},
 	Bdsk-Url-1 = {https://www.researchgate.net/profile/Chotirat_Ratanamahatana2/publication/227001229_Mining_Time_Series_Data/links/02bfe51188657160b5000000.pdf}}
 
 @inproceedings{ren2019likelihood,
-	Abstract = {Discriminative neural networks offer little or no performance guarantees when
+	abstract = {Discriminative neural networks offer little or no performance guarantees when
 deployed on data not generated by the same process as the training distribution. On
 such out-of-distribution (OOD) inputs, the prediction may not only be erroneous,
 but confidently so, limiting the safe deployment of classifiers in real-world applications. One such challenging application is bacteria identification based on genomic
@@ -1960,7 +2077,7 @@ method against existing approaches on the genomics dataset and show that our
 method achieves state-of-the-art performance. We demonstrate the generality of
 the proposed method by showing that it significantly improves OOD detection
 when applied to deep generative models of images.},
-	Annote = {Research stemmed from a OOD problem in genomic, and they try to generalize it to image classification. This project stems from the limitation of existing generative-based methods for OOD; they show examples in both domains where the likelihood OOD is at least as confident as in-distribution.
+	annote = {Research stemmed from a OOD problem in genomic, and they try to generalize it to image classification. This project stems from the limitation of existing generative-based methods for OOD; they show examples in both domains where the likelihood OOD is at least as confident as in-distribution.
 Their solution is to split input into background and semantic (independence assumption), and apply a likelihood ration only to the semantic part.
 
 It's not clear why their assumptions would be valid outside (even inside) of genomics. For instance, backgroud play a big role in confounding image classifiers (e.g., wolf in front of grass).
@@ -1992,19 +2109,19 @@ auxiliary datasets of outliers (Hendrycks et al., 2018) for calibration purpose.
 9. The generative model-based ensemble method that measures E[log pθ(x)] − Var[log pθ(x)] of
 multiple likelihood estimations from independently trained model with random initialization and
 random shuffling of the inputs. (Choi et al., 2018).},
-	Author = {Ren, Jie and Liu, Peter J and Fertig, Emily and Snoek, Jasper and Poplin, Ryan and Depristo, Mark and Dillon, Joshua and Lakshminarayanan, Balaji},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-03-26 14:41:15 -0400},
-	Date-Modified = {2020-04-22 10:28:20 -0400},
-	Keywords = {out of distribution, generative model, deep learning},
-	Pages = {14680--14691},
-	Read = {1},
-	Title = {Likelihood ratios for out-of-distribution detection},
-	Year = {2019},
+	author = {Ren, Jie and Liu, Peter J and Fertig, Emily and Snoek, Jasper and Poplin, Ryan and Depristo, Mark and Dillon, Joshua and Lakshminarayanan, Balaji},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-03-26 14:41:15 -0400},
+	date-modified = {2020-04-22 10:28:20 -0400},
+	keywords = {out of distribution, generative model, deep learning},
+	pages = {14680--14691},
+	read = {1},
+	title = {Likelihood ratios for out-of-distribution detection},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1906.02845.pdf}}
 
 @article{tonekaboni2020went,
-	Abstract = {Multivariate time series models are poised to be
+	abstract = {Multivariate time series models are poised to be
 used for decision support in high-stakes applications, such as healthcare. In these contexts, it is
 important to know which features at which times
 most influenced a prediction. We demonstrate
@@ -2020,22 +2137,22 @@ approach generates the most precise explanations.
 Our method is inexpensive, model agnostic, and
 can be used with arbitrarily complex time series
 models and predictors},
-	Annote = {Proposes a method to assess the importance of multivariate temporal features. They do so, at each time step, for each feature, by measuring the KL divergence between the exact predictive distribution and the one you would obtain if you were to not observe that feature at that time step. To replace the feature (they still need it to derive a predictive distribution), they sample from a generatitve model they train on all features at previous time.
+	annote = {Proposes a method to assess the importance of multivariate temporal features. They do so, at each time step, for each feature, by measuring the KL divergence between the exact predictive distribution and the one you would obtain if you were to not observe that feature at that time step. To replace the feature (they still need it to derive a predictive distribution), they sample from a generatitve model they train on all features at previous time.
 Problems:
 1) you only the importance of a feature at the last time step
 2) when sampling the missing feature, they do not account for possible correlation across features at that time step (only at previous time steps).},
-	Author = {Tonekaboni, Sana and Joshi, Shalmali and Duvenaud, David and Goldenberg, Anna},
-	Date-Added = {2020-03-10 15:02:42 -0400},
-	Date-Modified = {2020-04-22 10:29:31 -0400},
-	Journal = {arXiv preprint arXiv:2003.02821},
-	Keywords = {xai, time series, generative model},
-	Read = {1},
-	Title = {What went wrong and when? Instance-wise Feature Importance for Time-series Models},
-	Year = {2020},
+	author = {Tonekaboni, Sana and Joshi, Shalmali and Duvenaud, David and Goldenberg, Anna},
+	date-added = {2020-03-10 15:02:42 -0400},
+	date-modified = {2020-04-22 10:29:31 -0400},
+	journal = {arXiv preprint arXiv:2003.02821},
+	keywords = {xai, time series, generative model},
+	read = {1},
+	title = {What went wrong and when? Instance-wise Feature Importance for Time-series Models},
+	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2003.02821.pdf}}
 
 @article{gholamiintegrated,
-	Abstract = {Finding the right Neural Network model and
+	abstract = {Finding the right Neural Network model and
 training it for a new task requires considerable expertise
 and extensive computational resources. Moreover, the process
 often includes ad-hoc rules that do not generalize to different
@@ -2058,36 +2175,36 @@ on edge platforms. This requires designing mechanisms to
 better understand NN training and bridge the gap between
 theoretical results for optimization, second order methods, and
 high performance computing.},
-	Annote = {Gives an overview of the recent work of the 3 authors in Second-order methods and parallel computing. It's more of a marketing paper, but it gathers all their references},
-	Author = {Gholami, Amir and Mahoney, Michael W and Keutzer, Kurt},
-	Date-Added = {2020-03-09 10:50:01 -0400},
-	Date-Modified = {2020-04-22 10:27:21 -0400},
-	Keywords = {Hessian, Newton method, deep learning},
-	Read = {1},
-	Title = {An Integrated Approach to Neural Network Design, Training, and Inference},
-	Year = {2020},
+	annote = {Gives an overview of the recent work of the 3 authors in Second-order methods and parallel computing. It's more of a marketing paper, but it gathers all their references},
+	author = {Gholami, Amir and Mahoney, Michael W and Keutzer, Kurt},
+	date-added = {2020-03-09 10:50:01 -0400},
+	date-modified = {2020-04-22 10:27:21 -0400},
+	keywords = {Hessian, Newton method, deep learning},
+	read = {1},
+	title = {An Integrated Approach to Neural Network Design, Training, and Inference},
+	year = {2020},
 	Bdsk-Url-1 = {http://smartci.sci.utah.edu/images/whitepapers/2020_NSF_White_Paper_UCB.pdf}}
 
 @article{lindsten2017probabilistic,
-	Abstract = {This is a text on probabilistic modeling for the master level course `Statistical Machine Learning' given at the
+	abstract = {This is a text on probabilistic modeling for the master level course `Statistical Machine Learning' given at the
 Department of Information Technology, Uppsala University during the spring term 2017 and it is a complement
 to the course books James et al. (2013) and Hastie et al. (2009). It consists of three chapters and one appendix.
 The three chapters cover an introduction to probabilistic modeling, probabilistic (Bayesian) linear regression,
 and Gaussian processes. The appendix introduces the multivariate Gaussian distribution and presents key results
 needed in the chapters. Consequently, the appendix has an important role in this document and should therefore
 be studied carefully.},
-	Author = {Lindsten, Fredrik and Sch{\"o}n, Thomas B and Svensson, Andreas and Wahlstr{\"o}m, Niklas},
-	Date-Added = {2020-02-20 11:10:47 -0500},
-	Date-Modified = {2020-02-20 11:11:57 -0500},
-	Journal = {Uppsala: Uppsala University},
-	Keywords = {gaussian process, distributional forecast},
-	Read = {1},
-	Title = {Probabilistic modeling--linear regression \& Gaussian processes},
-	Year = {2017},
+	author = {Lindsten, Fredrik and Sch{\"o}n, Thomas B and Svensson, Andreas and Wahlstr{\"o}m, Niklas},
+	date-added = {2020-02-20 11:10:47 -0500},
+	date-modified = {2020-02-20 11:11:57 -0500},
+	journal = {Uppsala: Uppsala University},
+	keywords = {gaussian process, distributional forecast},
+	read = {1},
+	title = {Probabilistic modeling--linear regression \& Gaussian processes},
+	year = {2017},
 	Bdsk-Url-1 = {http://www.it.uu.se/edu/course/homepage/sml/literature/probabilistic_modeling_compendium.pdf}}
 
 @article{marcus2018deep,
-	Abstract = {Although deep learning has historical roots going back decades, neither the term ``deep
+	abstract = {Although deep learning has historical roots going back decades, neither the term ``deep
 learning'' nor the approach was popular just over five years ago, when the field was
 reignited by papers such as Krizhevsky, Sutskever and Hinton's now classic 2012
 (Krizhevsky, Sutskever, & Hinton, 2012)deep net model of Imagenet.
@@ -2096,18 +2213,18 @@ considerable progress in areas such as speech recognition, image recognition, an
 playing, and considerable enthusiasm in the popular press, I present ten concerns for deep
 learning, and suggest that deep learning must be supplemented by other techniques if we
 are to reach artificial general intelligence.},
-	Author = {Marcus, Gary},
-	Date-Added = {2020-02-18 17:37:08 -0500},
-	Date-Modified = {2020-02-18 17:37:54 -0500},
-	Journal = {arXiv preprint arXiv:1801.00631},
-	Keywords = {deep learning, symbolic AI},
-	Read = {1},
-	Title = {Deep learning: A critical appraisal},
-	Year = {2018},
+	author = {Marcus, Gary},
+	date-added = {2020-02-18 17:37:08 -0500},
+	date-modified = {2020-02-18 17:37:54 -0500},
+	journal = {arXiv preprint arXiv:1801.00631},
+	keywords = {deep learning, symbolic AI},
+	read = {1},
+	title = {Deep learning: A critical appraisal},
+	year = {2018},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1801.00631.pdf}}
 
 @inproceedings{ma2019learning,
-	Abstract = {Time series clustering is an essential unsupervised technique in cases when category
+	abstract = {Time series clustering is an essential unsupervised technique in cases when category
 information is not available. It has been widely applied to genome data, anomaly
 detection, and in general, in any domain where pattern detection is important.
 Although feature-based time series clustering methods are robust to noise and
@@ -2129,38 +2246,38 @@ extensive time series datasets show that DTCR is state-of-the-art compared to
 existing methods. The visualization analysis not only shows the effectiveness of
 cluster-specific representation but also shows the learning process is robust, even if
 K-means makes mistakes.},
-	Annote = {Propose to cluster time series in latent space, using a seq2seq model based on multi-layer Dilated RNN, a k-means loss term, and a GAN-type classifier (real/fake). 
+	annote = {Propose to cluster time series in latent space, using a seq2seq model based on multi-layer Dilated RNN, a k-means loss term, and a GAN-type classifier (real/fake). 
 The k-means loss applies to the centroids but also the encoder; for stability reason, the centroids are updated less frequently than the network weights (every 10 epochs in the paper). 
 They added a classifier to improve the quality of the reconstruction; they generate fake time series by randomly permutating the entries of the real ones.
 
 Interesting paper overall. Seems a bit convoluted, but show SOTA results on a few of the UCR classification datasets.},
-	Author = {Ma, Qianli and Zheng, Jiawei and Li, Sen and Cottrell, Gary W},
-	Booktitle = {Advances in Neural Information Processing Systems},
-	Date-Added = {2020-02-11 16:23:10 -0500},
-	Date-Modified = {2020-04-22 11:21:36 -0400},
-	Keywords = {DTCR, clustering, k-means, seq2seq},
-	Pages = {3776--3786},
-	Read = {1},
-	Title = {Learning Representations for Time Series Clustering},
-	Year = {2019},
+	author = {Ma, Qianli and Zheng, Jiawei and Li, Sen and Cottrell, Gary W},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2020-02-11 16:23:10 -0500},
+	date-modified = {2020-04-22 11:21:36 -0400},
+	keywords = {DTCR, clustering, k-means, seq2seq},
+	pages = {3776--3786},
+	read = {1},
+	title = {Learning Representations for Time Series Clustering},
+	year = {2019},
 	Bdsk-Url-1 = {https://papers.nips.cc/paper/8634-learning-representations-for-time-series-clustering.pdf}}
 
 @article{aghabozorgi2015time,
-	Author = {Aghabozorgi, Saeed and Shirkhorshidi, Ali Seyed and Wah, Teh Ying},
-	Date-Added = {2020-02-11 14:31:16 -0500},
-	Date-Modified = {2020-05-21 14:59:28 -0400},
-	Journal = {Information Systems},
-	Keywords = {time series, clustering, algorithm},
-	Pages = {16--38},
-	Publisher = {Elsevier},
-	Read = {1},
-	Title = {Time-series clustering--a decade review},
-	Volume = {53},
-	Year = {2015},
+	author = {Aghabozorgi, Saeed and Shirkhorshidi, Ali Seyed and Wah, Teh Ying},
+	date-added = {2020-02-11 14:31:16 -0500},
+	date-modified = {2020-05-21 14:59:28 -0400},
+	journal = {Information Systems},
+	keywords = {time series, clustering, algorithm},
+	pages = {16--38},
+	publisher = {Elsevier},
+	read = {1},
+	title = {Time-series clustering--a decade review},
+	volume = {53},
+	year = {2015},
 	Bdsk-Url-1 = {https://wiki.smu.edu.sg/18191isss608g1/img_auth.php/f/fd/Time_Series_Clustering_A_Decade_Review.pdf}}
 
 @inproceedings{yi2019not,
-	Abstract = {Handling missing data is one of the most fundamental problems in machine learning.
+	abstract = {Handling missing data is one of the most fundamental problems in machine learning.
 Among many approaches, the simplest and most intuitive way is zero imputation,
 which treats the value of a missing entry simply as zero. However, many studies
 have experimentally confirmed that zero imputation results in suboptimal performances in training neural networks. Yet, none of the existing work has explained
@@ -2172,47 +2289,47 @@ to handle missingness, which we refer to as Sparsity Normalization (SN), that
 directly targets and resolves the VSP. We further experimentally validate SN on
 diverse benchmark datasets, to show that debiasing the effect of input-level sparsity
 improves the performance and stabilizes the training of neural networks.},
-	Author = {Yi, Joonyoung and Lee, Juhyuk and Hwang, Sung Ju and Yang, Eunho},
-	Date-Added = {2020-02-06 14:04:23 -0500},
-	Date-Modified = {2020-04-22 07:42:25 -0400},
-	Keywords = {missing data, zero imputation, deep learning},
-	Read = {1},
-	Title = {Why Not to Use Zero Imputation? Correcting Sparsity Bias in Training Neural Networks},
-	Year = {2019},
+	author = {Yi, Joonyoung and Lee, Juhyuk and Hwang, Sung Ju and Yang, Eunho},
+	date-added = {2020-02-06 14:04:23 -0500},
+	date-modified = {2020-04-22 07:42:25 -0400},
+	keywords = {missing data, zero imputation, deep learning},
+	read = {1},
+	title = {Why Not to Use Zero Imputation? Correcting Sparsity Bias in Training Neural Networks},
+	year = {2019},
 	Bdsk-Url-1 = {https://openreview.net/pdf?id=BylsKkHYvH}}
 
 @article{bauckhage2015numpy,
-	Abstract = {In this note, we study least squares optimization for parameter estimation. By means of the basic example of a linear regression task, we explore different formulations of the ordinary least squares problem, show how to solve it using NumPy or SciPy, and provide suggestions for practical applications.},
-	Author = {Bauckhage, Christian},
-	Date-Added = {2020-02-05 15:21:33 -0500},
-	Date-Modified = {2020-04-22 10:28:01 -0400},
-	Journal = {researchgate. net, Mar},
-	Keywords = {linear regression, numpy/scipy},
-	Title = {NumPy/SciPy Recipes for Data Science: Ordinary Least Squares Optimization},
-	Year = {2015},
+	abstract = {In this note, we study least squares optimization for parameter estimation. By means of the basic example of a linear regression task, we explore different formulations of the ordinary least squares problem, show how to solve it using NumPy or SciPy, and provide suggestions for practical applications.},
+	author = {Bauckhage, Christian},
+	date-added = {2020-02-05 15:21:33 -0500},
+	date-modified = {2020-04-22 10:28:01 -0400},
+	journal = {researchgate. net, Mar},
+	keywords = {linear regression, numpy/scipy},
+	title = {NumPy/SciPy Recipes for Data Science: Ordinary Least Squares Optimization},
+	year = {2015},
 	Bdsk-File-1 = {YnBsaXN0MDDSAQIDBFxyZWxhdGl2ZVBhdGhZYWxpYXNEYXRhXxAjLi4vLi4vLi4vLlRyYXNoL25wLXNwLXJlY2lwZXMtNS5wZGZPEQFcAAAAAAFcAAIAAAxNYWNpbnRvc2ggSEQAAAAAAAAAAAAAAAAAAAAAAAAAQkQAAf////8TbnAtc3AtcmVjaXBlcy01LnBkZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAAAAADAAIAAAogY3UAAAAAAAAAAAAAAAAABi5UcmFzaAACAC0vOlVzZXJzOmJlbmNyZXN0ZWw6LlRyYXNoOm5wLXNwLXJlY2lwZXMtNS5wZGYAAA4AKAATAG4AcAAtAHMAcAAtAHIAZQBjAGkAcABlAHMALQA1AC4AcABkAGYADwAaAAwATQBhAGMAaQBuAHQAbwBzAGgAIABIAEQAEgArVXNlcnMvYmVuY3Jlc3RlbC8uVHJhc2gvbnAtc3AtcmVjaXBlcy01LnBkZgAAEwABLwAAFQACABH//wAAAAgADQAaACQASgAAAAAAAAIBAAAAAAAAAAUAAAAAAAAAAAAAAAAAAAGq}}
 
 @article{DBLP:journals/corr/abs-1803-03635,
-	Annote = {Conjecture that over-parametrized network are easier to train b/c they contain smaller networks with similar high accuracy},
-	Archiveprefix = {arXiv},
-	Author = {Jonathan Frankle and Michael Carbin},
-	Bibsource = {dblp computer science bibliography, https://dblp.org},
-	Biburl = {https://dblp.org/rec/bib/journals/corr/abs-1803-03635},
-	Date-Added = {2020-02-05 14:40:58 -0500},
-	Date-Modified = {2020-02-05 14:42:58 -0500},
-	Eprint = {1803.03635},
-	Journal = {CoRR},
-	Keywords = {lottery ticket, over-parametrized, pruning},
-	Read = {1},
-	Timestamp = {Mon, 13 Aug 2018 16:48:29 +0200},
-	Title = {The Lottery Ticket Hypothesis: Training Pruned Neural Networks},
-	Url = {http://arxiv.org/abs/1803.03635},
-	Volume = {abs/1803.03635},
-	Year = {2018},
+	annote = {Conjecture that over-parametrized network are easier to train b/c they contain smaller networks with similar high accuracy},
+	archiveprefix = {arXiv},
+	author = {Jonathan Frankle and Michael Carbin},
+	bibsource = {dblp computer science bibliography, https://dblp.org},
+	biburl = {https://dblp.org/rec/bib/journals/corr/abs-1803-03635},
+	date-added = {2020-02-05 14:40:58 -0500},
+	date-modified = {2020-02-05 14:42:58 -0500},
+	eprint = {1803.03635},
+	journal = {CoRR},
+	keywords = {lottery ticket, over-parametrized, pruning},
+	read = {1},
+	timestamp = {Mon, 13 Aug 2018 16:48:29 +0200},
+	title = {The Lottery Ticket Hypothesis: Training Pruned Neural Networks},
+	url = {http://arxiv.org/abs/1803.03635},
+	volume = {abs/1803.03635},
+	year = {2018},
 	Bdsk-Url-1 = {http://arxiv.org/abs/1803.03635}}
 
 @article{DBLP:journals/corr/abs-1906-04705,
-	Abstract = {Least-mean squares (LMS) solvers such as Linear / Ridge / Lasso-Regression,
+	abstract = {Least-mean squares (LMS) solvers such as Linear / Ridge / Lasso-Regression,
 SVD and Elastic-Net not only solve fundamental machine learning problems, but
 are also the building blocks in a variety of other methods, such as decision trees
 and matrix factorizations.
@@ -2227,42 +2344,42 @@ As an example application, we show how it can be used to boost the performance
 of existing LMS solvers, such as those in scikit-learn library, up to x100. 
 Generalization for streaming and distributed (big) data is trivial. Extensive experimental
 results and complete open source code are also provided.},
-	Annote = {Claim major speed-ups compared to other sketching methods.
+	annote = {Claim major speed-ups compared to other sketching methods.
 Honorable Mention Outstanding Paper Award @ NeurIPS 2019},
-	Archiveprefix = {arXiv},
-	Author = {Alaa Maalouf and Ibrahim Jubran and Dan Feldman},
-	Bibsource = {dblp computer science bibliography, https://dblp.org},
-	Biburl = {https://dblp.org/rec/bib/journals/corr/abs-1906-04705},
-	Date-Added = {2020-02-05 14:29:15 -0500},
-	Date-Modified = {2020-04-22 10:20:35 -0400},
-	Eprint = {1906.04705},
-	Journal = {CoRR},
-	Keywords = {sketching, least mean squares, big data},
-	Read = {1},
-	Timestamp = {Fri, 14 Jun 2019 09:38:24 +0200},
-	Title = {Fast and Accurate Least-Mean-Squares Solvers},
-	Url = {http://arxiv.org/abs/1906.04705},
-	Volume = {abs/1906.04705},
-	Year = {2019},
+	archiveprefix = {arXiv},
+	author = {Alaa Maalouf and Ibrahim Jubran and Dan Feldman},
+	bibsource = {dblp computer science bibliography, https://dblp.org},
+	biburl = {https://dblp.org/rec/bib/journals/corr/abs-1906-04705},
+	date-added = {2020-02-05 14:29:15 -0500},
+	date-modified = {2020-04-22 10:20:35 -0400},
+	eprint = {1906.04705},
+	journal = {CoRR},
+	keywords = {sketching, least mean squares, big data},
+	read = {1},
+	timestamp = {Fri, 14 Jun 2019 09:38:24 +0200},
+	title = {Fast and Accurate Least-Mean-Squares Solvers},
+	url = {http://arxiv.org/abs/1906.04705},
+	volume = {abs/1906.04705},
+	year = {2019},
 	Bdsk-Url-1 = {http://arxiv.org/abs/1906.04705}}
 
 @article{araya2017automated,
-	Annote = {Not clear how good of an idea that is. In the paper, they claim DNN are a good idea to approximate physics processes, but I'm not so sure how true that is.},
-	Author = {Araya-Polo, Mauricio and Dahlke, Taylor and Frogner, Charlie and Zhang, Chiyuan and Poggio, Tomaso and Hohl, Detlef},
-	Date-Added = {2020-01-14 14:49:38 -0500},
-	Date-Modified = {2020-01-14 22:41:34 -0500},
-	Journal = {The Leading Edge},
-	Keywords = {seismic processing, wasserstein, image segmentation, cnn},
-	Number = {3},
-	Pages = {208--214},
-	Publisher = {Society of Exploration Geophysicists},
-	Read = {1},
-	Title = {Automated fault detection without seismic processing},
-	Volume = {36},
-	Year = {2017}}
+	annote = {Not clear how good of an idea that is. In the paper, they claim DNN are a good idea to approximate physics processes, but I'm not so sure how true that is.},
+	author = {Araya-Polo, Mauricio and Dahlke, Taylor and Frogner, Charlie and Zhang, Chiyuan and Poggio, Tomaso and Hohl, Detlef},
+	date-added = {2020-01-14 14:49:38 -0500},
+	date-modified = {2020-01-14 22:41:34 -0500},
+	journal = {The Leading Edge},
+	keywords = {seismic processing, wasserstein, image segmentation, cnn},
+	number = {3},
+	pages = {208--214},
+	publisher = {Society of Exploration Geophysicists},
+	read = {1},
+	title = {Automated fault detection without seismic processing},
+	volume = {36},
+	year = {2017}}
 
 @inproceedings{Graves:2006aa,
-	Abstract = {Many real-world sequence learning tasks require the prediction of sequences of labels
+	abstract = {Many real-world sequence learning tasks require the prediction of sequences of labels
 from noisy, unsegmented input data. In
 speech recognition, for example, an acoustic
 signal is transcribed into words or sub-word
@@ -2275,21 +2392,21 @@ has so far been limited. This paper presents a
 novel method for training RNNs to label unsegmented sequences directly, thereby solving both problems. An experiment on the
 TIMIT speech corpus demonstrates its advantages over both a baseline HMM and a
 hybrid HMM-RNN.},
-	Annote = {Easy to digest summary of CTC: https://distill.pub/2017/ctc/. ``Connectionist Temporal Classification (CTC) is a way to get around not knowing the alignment between the input and the output''},
-	Author = {Graves, Alex and Fern{\'a}ndez, Santiago and Gomez, Faustino and Schmidhuber, J{\"u}rgen},
-	Booktitle = {Proceedings of the 23rd international conference on Machine learning},
-	Date-Added = {2019-12-10 13:50:44 -0800},
-	Date-Modified = {2020-04-21 12:51:39 -0400},
-	Keywords = {deep learning, speech-to-text, ocr, ctc},
-	Organization = {ACM},
-	Pages = {369--376},
-	Read = {1},
-	Title = {Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks},
-	Year = {2006},
+	annote = {Easy to digest summary of CTC: https://distill.pub/2017/ctc/. ``Connectionist Temporal Classification (CTC) is a way to get around not knowing the alignment between the input and the output''},
+	author = {Graves, Alex and Fern{\'a}ndez, Santiago and Gomez, Faustino and Schmidhuber, J{\"u}rgen},
+	booktitle = {Proceedings of the 23rd international conference on Machine learning},
+	date-added = {2019-12-10 13:50:44 -0800},
+	date-modified = {2020-04-21 12:51:39 -0400},
+	keywords = {deep learning, speech-to-text, ocr, ctc},
+	organization = {ACM},
+	pages = {369--376},
+	read = {1},
+	title = {Connectionist temporal classification: labelling unsegmented sequence data with recurrent neural networks},
+	year = {2006},
 	Bdsk-Url-1 = {https://www.cs.toronto.edu/~graves/icml_2006.pdf}}
 
 @article{mehra2019penalty,
-	Abstract = {Bilevel optimizations are at the center of several important machine learning problems such
+	abstract = {Bilevel optimizations are at the center of several important machine learning problems such
 as hyperparameter tuning, data denoising, fewshot learning, data poisoning. Different from simultaneous or multi-objective optimization, obtaining the exact descent direction for continuous bilevel optimization requires computing the
 inverse of the hessian of the lower-level cost
 function, even for first order methods. In this
@@ -2304,18 +2421,18 @@ datasets, for few-shot learning on Omniglot/MiniImagenet datasets and for traini
 on MNIST/Imagenet datasets. In all experiments,
 our method outperforms or is comparable to previously proposed methods both in terms of accuracy
 and run-time},
-	Author = {Mehra, Akshay and Hamm, Jihun},
-	Date-Modified = {2019-12-10 13:52:10 -0800},
-	Journal = {arXiv preprint arXiv:1911.03432},
-	Keywords = {bilevel optimization, penalty method,},
-	Read = {1},
-	Title = {Penalty Method for Inversion-Free Deep Bilevel Optimization},
-	Url = {https://arxiv.org/pdf/1911.03432.pdf},
-	Year = {2019},
+	author = {Mehra, Akshay and Hamm, Jihun},
+	date-modified = {2019-12-10 13:52:10 -0800},
+	journal = {arXiv preprint arXiv:1911.03432},
+	keywords = {bilevel optimization, penalty method,},
+	read = {1},
+	title = {Penalty Method for Inversion-Free Deep Bilevel Optimization},
+	url = {https://arxiv.org/pdf/1911.03432.pdf},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1911.03432.pdf}}
 
 @article{pedregosa2016hyperparameter,
-	Abstract = {Most models in machine learning contain at least
+	abstract = {Most models in machine learning contain at least
 one hyperparameter to control for model complexity. Choosing an appropriate set of hyperparameters is both crucial in terms of model accuracy and computationally challenging. In this
 work we propose an algorithm for the optimization of continuous hyperparameters using inexact gradient information. An advantage of this
 method is that hyperparameters can be updated
@@ -2327,18 +2444,18 @@ performance of this method on the estimation of
 regularization constants of `2-regularized logistic regression and kernel Ridge regression. Empirical benchmarks indicate that our approach is
 highly competitive with respect to state of the art
 methods.},
-	Author = {Pedregosa, Fabian},
-	Date-Modified = {2020-04-30 09:36:48 -0400},
-	Journal = {arXiv preprint arXiv:1602.02355},
-	Keywords = {hyperparameter, approximate gradient},
-	Read = {1},
-	Title = {Hyperparameter optimization with approximate gradient},
-	Url = {https://arxiv.org/pdf/1602.02355.pdf},
-	Year = {2016},
+	author = {Pedregosa, Fabian},
+	date-modified = {2020-04-30 09:36:48 -0400},
+	journal = {arXiv preprint arXiv:1602.02355},
+	keywords = {hyperparameter, approximate gradient},
+	read = {1},
+	title = {Hyperparameter optimization with approximate gradient},
+	url = {https://arxiv.org/pdf/1602.02355.pdf},
+	year = {2016},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1602.02355.pdf}}
 
 @article{lorraine2019optimizing,
-	Abstract = {We propose an algorithm for inexpensive
+	abstract = {We propose an algorithm for inexpensive
 gradient-based hyperparameter optimization
 that combines the implicit function theorem
 (IFT) with efficient inverse Hessian approximations. We present results on the relationship between the IFT and differentiating through optimization, motivating our algorithm. We use the proposed approach to
@@ -2351,13 +2468,13 @@ of regularization hyperparameters. Jointly
 tuning weights and hyperparameters with our
 approach is only a few times more costly in
 memory and compute than standard training.},
-	Annote = {Not super novel, more like putting together a lot of good ideas. But it's well explained and interesting. I'm still not sure about Laplacian approximation, though. Need to read the actual paper for that.},
-	Author = {Lorraine, Jonathan and Vicol, Paul and Duvenaud, David},
-	Date-Modified = {2020-04-30 09:36:48 -0400},
-	Journal = {arXiv preprint arXiv:1911.02590},
-	Keywords = {hyperparameter, bilevel optimization, inverse Hessian approximation},
-	Read = {1},
-	Title = {Optimizing Millions of Hyperparameters by Implicit Differentiation},
-	Url = {https://arxiv.org/pdf/1911.02590.pdf},
-	Year = {2019},
+	annote = {Not super novel, more like putting together a lot of good ideas. But it's well explained and interesting. I'm still not sure about Laplacian approximation, though. Need to read the actual paper for that.},
+	author = {Lorraine, Jonathan and Vicol, Paul and Duvenaud, David},
+	date-modified = {2020-04-30 09:36:48 -0400},
+	journal = {arXiv preprint arXiv:1911.02590},
+	keywords = {hyperparameter, bilevel optimization, inverse Hessian approximation},
+	read = {1},
+	title = {Optimizing Millions of Hyperparameters by Implicit Differentiation},
+	url = {https://arxiv.org/pdf/1911.02590.pdf},
+	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1911.02590.pdf}}
