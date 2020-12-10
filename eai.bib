@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2020-12-03 00:14:40 -0500 
+%% Created for Ben Crestel at 2020-12-10 16:05:54 -0500 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,244 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@book{aggarwal2016recommender,
+	annote = {	Chapter 1: An Introduction to Recommender Systems
+
+	1.1 Introduction
+``The entity to which the recommendation is provided is referred to as the user, and the product being recommended is also referred to as an item. Therefore, recommendation analysis is often based on the previous interaction between users and items, because past interests and proclivities are often good indicators of future choices. A notable exception is the case of knowledge-based recommender systems, in which the recommendations are suggested on the basis of user-specified requirements rather than the past history of the user.''
+
+	1.2 Goals of Recommender Systems
+Recommendation can be formulated either as i) a prediction problem (predict the unknown user-item rating) and recommend the one with the highest predicted rating), or ii) directly as a ranking problem (directly predict the top-k recommended article).
+
+Desired properties of a recommender system:
+i) relevance
+ii) novelty: recommended item should be new to the user
+iii) serendipity (Serendipity is an unplanned fortunate discovery): items recom- mended are somewhat unexpected
+iv) increasing recommendation diverity: top-k items recommended should be different, to prevent the user not liking all of them
+-> I think these properties make sense in the context of e-commerce. But in the case of a service provider, you want to make sure that you provide what the user needs. So there is a single good answer that you want to capture. In that case, novelty, serendipity, and maybe even diversity do not necessarily make so much sense.
+
+Examples of recommender systems:
+* GroupLens Recommender System: pioneer of collaborative filtering + released large datasets; see also https://grouplens.org/
+* Amazon.com Recommender System: uses implicit  (e.g., browsing history, purchase history) and explicit ratings
+* Netflix Movie Recommender System: discuss Netflix prize, which represents an ``excellent example of proper evaluation design of recommendation algorithms''. Made significant contributions to latent factor models (Latent Factor models are a state of the art methodology for model-based collaborative filtering. The basic assumption is that there exist an unknown low-dimensional representation of users and items where user-item affinity can be modeled accurately. For example, the rating that a user gives to a movie might be assumed to depend on few implicit factors such as the user's taste across various movie genres. Matrix factorization techniques are a class of widely successful Latent Factor models that attempt to find weighted low-rank approximations to the user-item matrix, where weights are used to hold out missing entries. There is a large family of matrix factorization models based on choice of loss function to measure approximation quality, regularization terms to avoid overfitting, and other domain-dependent formulations.)
+* Google News Personalization System: introduce notion of unary ratings (user can only express one sentiment; for instance, can't express they don't like an article)
+* Facebook Friend Recommendations: social network is an interesting example as the goal of friend recommendation is to increase the user experience, not directly the company profits. In that sense, that resembles a service provider scenario as described above. ``This problem is also referred to as link prediction in the field of social network analysis. Such forms of recommendations are based on structural relationships rather than ratings data. Therefore, the nature of the underlying algorithms is completely different.''
+
+	1.3 Basic Models of Recommender Systems
+What data is used?
+a) collaborative filtering methods rely on user-item interactions (ratings, uying behaviour,{\ldots})
+b) content-based recommender methods rely on attribute information about users and/or items (textual profiles, relevant keywords,{\ldots})
+c) knowledge-based recommender methods rely on user requirements.
+d) hybrid systems: combine elements from traditional recommender systems
+
+	1.3.1 Collaborative Filtering Models
+a) Memory-based methods or neighboorhood based collaborative filtering alg:
+Notion of neighboorhood can be measured at the user level (make recommendations based on similar users) or item level (make recommendations on similar item that were rated by that user)
+``The advantages of memory-based techniques are that they are simple to implement and the resulting recommendations are often easy to explain. On the other hand, memory-based algorithms do not work very well with sparse ratings matrices''
+b) Model-based method: ``Some examples of such model-based methods include deci- sion trees, rule-based models, Bayesian methods and latent factor models''
+
+	1.3.1.1 Types of Ratings
+utility matrix vs ratings matrix: ``While utility matrices are often set to be the same as the ratings matrices, it is possible for the application to explicitly transform the ratings to utility values based on domain-specific criteria. All collaborative filtering algorithms are then applied to the utility matrix rather than the ratings matrix. However, such an approach is rarely used in practice, and most collaborative filtering algorithms work directly with the ratings matrix.''
+
+Discuss differences between implicit, explicit, unary ratings, and especially how the approach would differ
+
+	1.3.1.2 Relationship with Missing Value Analysis
+Collaborative filtering resembles missing value analysis, except that it applies to very large and sparse matrices. Which complicated the problem significantly.
+
+	1.3.1.3 Collaborative Filtering as a Generalization of Classification and Regression Modeling
+``Collaborative filtering is a generalization of classification/regression modeling in which the prediction is performed in entry-wise fashion rather than row-wise fashion.''
+
+Also discuss the transductive nature of matrix completion, where you cannot easily extrapolate prediction ot new users or items. You can only deal with the matrix that was provided during training. This is by opposition to some more recent methods that are inductive.
+
+	1.3.2 Content-Based Recommender Systems
+},
+	author = {Aggarwal, Charu C and others},
+	date-added = {2020-12-10 13:08:49 -0500},
+	date-modified = {2020-12-10 13:09:20 -0500},
+	keywords = {recommender systems},
+	publisher = {Springer},
+	title = {Recommender systems},
+	volume = {1},
+	year = {2016},
+	Bdsk-Url-1 = {https://d1wqtxts1xzle7.cloudfront.net/63186644/2016_Book_RecommenderSystems20200503-102501-wsddcn.pdf?1588554359=&response-content-disposition=inline%3B+filename%3DRecommender_Systems_The_Textbook.pdf&Expires=1607627337&Signature=WrcTySU9oAwaPTthYNPMlB9jOwRKrxV520yltUx0NQcnUaPAuWip4lvFC5GvroFYTgwkJkz6J7rksBxq1Uv1PeQZp1E~MrhJhdimevjtr0n91Dj48CmT1ZGWMvvuEhz3eNt~Tb6EN27bOmq688pOV9v6sVgnPJMJ72fZQcBJ98DmfI2hmpYzg-vxcmHXcVJfq6KhDaIzS-fm0MppKJaH~4rkX8VrMSEVlfb~ciHAih34VJurAV-3H3SCX6DdolD-LYQMrWfH7PpwKOG8FG~8au3eUpVuiuRodseXyYVwntlztBu7FEPwuFa-EkjEU04LvS7JJmctAJtr5qsFccONmQ__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA}}
+
+@misc{tran2020uncertainty,
+	author = {Tran, Dustin and Snoek, Jasper and Lakshminarayanan, Balaji},
+	date-added = {2020-12-10 11:31:41 -0500},
+	date-modified = {2020-12-10 11:35:33 -0500},
+	howpublished = {NeurIPS 2020 Tutorial},
+	keywords = {uncertainty, out of distribution, deep learning},
+	month = {december},
+	title = {Practical Uncertainty Estimation & Out-of-Distribution Robustness in Deep Learning},
+	year = {2020},
+	Bdsk-Url-1 = {https://neurips.cc/media/Slides/nips/2020/virtual(07-13-30)-07-16-00UTC-16649-track2_practi.pdf}}
+
+@article{wenzel2020hyperparameter,
+	abstract = {Ensembles over neural network weights trained from different random initialization,
+known as deep ensembles, achieve state-of-the-art accuracy and calibration. The
+recently introduced batch ensembles provide a drop-in replacement that is more
+parameter efficient. In this paper, we design ensembles not only over weights,
+but over hyperparameters to improve the state of the art in both settings. For
+best performance independent of budget, we propose hyper-deep ensembles, a
+simple procedure that involves a random search over different hyperparameters,
+themselves stratified across multiple random initializations. Its strong performance
+highlights the benefit of combining models with both weight and hyperparameter
+diversity. We further propose a parameter efficient version, hyper-batch ensembles,
+which builds on the layer structure of batch ensembles and self-tuning networks.
+The computational and memory costs of our method are notably lower than typical
+ensembles. On image classification tasks, with MLP, LeNet, ResNet 20 and Wide
+ResNet 28-10 architectures, we improve upon both deep and batch ensembles.},
+	author = {Wenzel, Florian and Snoek, Jasper and Tran, Dustin and Jenatton, Rodolphe},
+	date-added = {2020-12-10 11:13:39 -0500},
+	date-modified = {2020-12-10 11:14:12 -0500},
+	journal = {Advances in Neural Information Processing Systems},
+	keywords = {ensemble, deep learning, uncertainty, hyperparameter,},
+	title = {Hyperparameter ensembles for robustness and uncertainty quantification},
+	volume = {33},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2006.13570.pdf}}
+
+@article{taieb2012review,
+	abstract = {Multi-step ahead forecasting is still an open challenge in time series forecasting. Several approaches
+that deal with this complex problem have been proposed in the literature but an extensive comparison on a large number of tasks is still missing. This paper aims to fill this gap by reviewing existing
+strategies for multi-step ahead forecasting and comparing them in theoretical and practical terms.
+To attain such an objective, we performed a large scale comparison of these different strategies using a large experimental benchmark (namely the 111 series from the NN5 forecasting competition).
+In addition, we considered the effects of deseasonalization, input variable selection, and forecast
+combination on these strategies and on multi-step ahead forecasting at large. The following three
+findings appear to be consistently supported by the experimental results: Multiple-Output strategies are the best performing approaches, deseasonalization leads to uniformly improved forecast
+accuracy, and input selection is more effective when performed in conjunction with deseasonalization.},
+	annote = {Discusses the issue of multi-step ahead forecasting
+
+Needs to select model and introduces 3 different methodologies
+i) best model on a test set
+ii) average all models
+iii) weighted average of all models with weight given by the inverse of the test set error
+
+4.2.2. Forecasting performance evaluation
+uses Friedman + post-hoc
+
+},
+	author = {Taieb, Souhaib Ben and Bontempi, Gianluca and Atiya, Amir F and Sorjamaa, Antti},
+	date-added = {2020-12-09 22:20:06 -0500},
+	date-modified = {2020-12-09 22:48:18 -0500},
+	journal = {Expert systems with applications},
+	keywords = {forecasting},
+	number = {8},
+	pages = {7067--7083},
+	publisher = {Elsevier},
+	read = {1},
+	title = {A review and comparison of strategies for multi-step ahead time series forecasting based on the NN5 forecasting competition},
+	volume = {39},
+	year = {2012},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1108.3259.pdf}}
+
+@article{d2020underspecification,
+	abstract = {ML models often exhibit unexpectedly poor behavior when they are deployed in real-world domains.
+We identify underspecification as a key reason for these failures. An ML pipeline is underspecified
+when it can return many predictors with equivalently strong held-out performance in the training
+domain. Underspecification is common in modern ML pipelines, such as those based on deep
+learning. Predictors returned by underspecified pipelines are often treated as equivalent based
+on their training domain performance, but we show here that such predictors can behave very
+differently in deployment domains. This ambiguity can lead to instability and poor model behavior
+in practice, and is a distinct failure mode from previously identified issues arising from structural
+mismatch between training and deployment domains. We show that this problem appears in a
+wide variety of practical ML pipelines, using examples from computer vision, medical imaging,
+natural language processing, clinical risk prediction based on electronic health records, and medical
+genomics. Our results show the need to explicitly account for underspecification in modeling
+pipelines that are intended for real-world deployment in any domain.},
+	author = {D'Amour, Alexander and Heller, Katherine and Moldovan, Dan and Adlam, Ben and Alipanahi, Babak and Beutel, Alex and Chen, Christina and Deaton, Jonathan and Eisenstein, Jacob and Hoffman, Matthew D and others},
+	date-added = {2020-12-07 09:29:35 -0500},
+	date-modified = {2020-12-07 09:30:33 -0500},
+	journal = {arXiv preprint arXiv:2011.03395},
+	keywords = {xai, concept drift, **MUST-READ**},
+	title = {Underspecification Presents Challenges for Credibility in Modern Machine Learning},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2011.03395.pdf}}
+
+@article{li2020fourier,
+	author = {Li, Zongyi and Kovachki, Nikola and Azizzadenesheli, Kamyar and Liu, Burigede and Bhattacharya, Kaushik and Stuart, Andrew and Anandkumar, Anima},
+	date-added = {2020-12-07 09:25:37 -0500},
+	date-modified = {2020-12-07 09:26:03 -0500},
+	journal = {arXiv preprint arXiv:2010.08895},
+	keywords = {pde, deep learning, **MUST-READ**},
+	title = {Fourier Neural Operator for Parametric Partial Differential Equations},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2010.08895.pdf}}
+
+@article{tashman2000out,
+	abstract = {In evaluations of forecasting accuracy, including forecasting competitions, researchers have paid attention to the selection
+of time series and to the appropriateness of forecast-error measures. However, they have not formally analyzed choices in the implementation of out-of-sample tests, making it difficult to replicate and compare forecasting accuracy studies. In this
+paper, I (1) explain the structure of out-of-sample tests, (2) provide guidelines for implementing these tests, and (3) evaluate
+the adequacy of out-of-sample tests in forecasting software. The issues examined include series-splitting rules, fixed versus
+rolling origins, updating versus recalibration of model coefficients, fixed versus rolling windows, single versus multiple test
+periods, diversification through multiple time series, and design characteristics of forecasting competitions. For individual
+time series, the efficiency and reliability of out-of-sample tests can be improved by employing rolling-origin evaluations,
+recalibrating coefficients, and using multiple test periods. The results of forecasting competitions would be more
+generalizable if based upon precisely described groups of time series, in which the series are homogeneous within group and heterogeneous between groups. Few forecasting software programs adequately implement out-of-sample evaluations,
+especially general statistical packages and spreadsheet add-ins},
+	author = {Tashman, Leonard J},
+	date-added = {2020-12-07 09:24:14 -0500},
+	date-modified = {2020-12-09 22:16:32 -0500},
+	journal = {International journal of forecasting},
+	keywords = {model selection, forecasting},
+	number = {4},
+	pages = {437--450},
+	publisher = {Elsevier},
+	read = {1},
+	title = {Out-of-sample tests of forecasting accuracy: an analysis and review},
+	volume = {16},
+	year = {2000},
+	Bdsk-Url-1 = {https://www.researchgate.net/profile/Len_Tashman/publication/247087596_Out-of_sample_tests_of_forecasting_accuracy_a_tutorial_and_review/links/5745ceec08ae9f741b430de3.pdf}}
+
+@article{paleyes2020challenges,
+	abstract = {In recent years, machine learning has received increased interest both as an academic research field and as a solution for real-world business problems. However,
+the deployment of machine learning models in production systems can present a
+number of issues and concerns. This survey reviews published reports of deploying machine learning solutions in a variety of use cases, industries and applications
+and extracts practical considerations corresponding to stages of the machine learning deployment workflow. Our survey shows that practitioners face challenges at
+each stage of the deployment. The goal of this paper is to layout a research agenda
+to explore approaches addressing these challenges.},
+	author = {Paleyes, Andrei and Urma, Raoul-Gabriel and Lawrence, Neil D},
+	date-added = {2020-12-07 09:23:30 -0500},
+	date-modified = {2020-12-07 09:23:46 -0500},
+	journal = {arXiv preprint arXiv:2011.09926},
+	title = {Challenges in Deploying Machine Learning: a Survey of Case Studies},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2011.09926.pdf}}
+
+@article{fridovich2020approximately,
+	author = {Fridovich-Keil, Sara and Recht, Benjamin},
+	date-added = {2020-12-03 21:14:09 -0500},
+	date-modified = {2020-12-03 21:14:19 -0500},
+	journal = {arXiv preprint arXiv:2011.04721},
+	keywords = {optimization, line search},
+	title = {Approximately Exact Line Search},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2011.04721.pdf}}
+
+@article{gower2020variance,
+	author = {Gower, Robert M and Schmidt, Mark and Bach, Francis and Richtarik, Peter},
+	date-added = {2020-12-03 21:06:38 -0500},
+	date-modified = {2020-12-03 21:06:58 -0500},
+	journal = {Proceedings of the IEEE},
+	keywords = {optimization, machine learning},
+	number = {11},
+	pages = {1968--1983},
+	publisher = {IEEE},
+	title = {Variance-reduced methods for machine learning},
+	volume = {108},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2010.00892.pdf}}
+
+@article{raj2020causal,
+	author = {Raj, Anant and Bauer, Stefan and Soleymani, Ashkan and Besserve, Michel and Sch{\"o}lkopf, Bernhard},
+	date-added = {2020-12-03 20:54:16 -0500},
+	date-modified = {2020-12-03 20:55:00 -0500},
+	journal = {arXiv preprint arXiv:2007.02938},
+	keywords = {causality, feature selection},
+	title = {Causal feature selection via orthogonal search},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2007.02938.pdf}}
 
 @article{pizarro2002multiple,
 	author = {Pizarro, Joaqu{\i}n and Guerrero, Elisa and Galindo, Pedro L},
@@ -1314,13 +1552,92 @@ Their appliations seem to be mostly periodic time series. It would need to be te
 	year = {2019}}
 
 @article{cawley2010over,
+	abstract = {Model selection strategies for machine learning algorithms typically involve the numerical optimisation of an appropriate model selection criterion, often based on an estimator of generalisation
+performance, such as k-fold cross-validation. The error of such an estimator can be broken down
+into bias and variance components. While unbiasedness is often cited as a beneficial quality of a
+model selection criterion, we demonstrate that a low variance is at least as important, as a nonnegligible variance introduces the potential for over-fitting in model selection as well as in training
+the model. While this observation is in hindsight perhaps rather obvious, the degradation in performance due to over-fitting the model selection criterion can be surprisingly large, an observation that
+appears to have received little attention in the machine learning literature to date. In this paper, we
+show that the effects of this form of over-fitting are often of comparable magnitude to differences
+in performance between learning algorithms, and thus cannot be ignored in empirical evaluation.
+Furthermore, we show that some common performance evaluation practices are susceptible to a
+form of selection bias as a result of this form of over-fitting and hence are unreliable. We discuss methods to avoid over-fitting in model selection and subsequent selection bias in performance
+evaluation, which we hope will be incorporated into best practice. While this study concentrates
+on cross-validation based model selection, the findings are quite general and apply to any model
+selection practice involving the optimisation of a model selection criterion evaluated over a finite
+sample of data, including maximisation of the Bayesian evidence and optimisation of performance
+bounds.},
+	annote = {	2. Kernel Ridge Regression
+
+They use kernel ridge regression as it has a few hyperparameters to tune, and the leave-one-out cross-validation solution can be computed in close form. The hyperparameters are eta for the kernel and lambda for the regularization. You typically set these hyperparameters from an exhaustive grid search.
+
+However in this paper, they optimize the hyperparameters in an iterative manner. They define the  Predicted REsidual Sum-of-Squares (PRESS) statistic, which the sum of squares of the leave-one-out cross-validation residual errors. ``The PRESS criterion can be optimised efficiently using scaled conjugate gradient descent (Williams, 1991) or Nelder-Mead simplex (Nelder and Mead, 1965) procedures.''
+
+	3. Data Sets used in Empirical Demonstrations
+
+They use synthetic and real datasets (UCI)
+
+	3.2 A Suite of Benchmarks for Robust Performance Evaluation
+``Each benchmark is based on a data set from the UCI machine learning repository, augmented by a set of 100 pre-defined partitions to form multiple realisations of the training and test sets (20 in the case of the larger image and splice data sets).'': but they don't say anything about that split (80/20, 60/40,{\ldots}?)
+
+	4. Over-fitting in Model Selection
+
+An important definition: ``Here we use ``over-fitting in model selection'' to mean minimisation of the model selection criterion beyond the point at which generalisation performance ceases to improve and subsequently begins to decline.''
+
+Another interesting point to keep in mind is that by ``model selection'', the authors understand selecting the best set of hyperparameters for a given model.
+
+Thanks to the iterative nature of their training procedure for Kernel Ridge Regression, they are able to reproduce the typical bias-variance trade-off plot, where you see the training over-fitting after a few iterations (i.e., cv estimate decreases all the time, but true test error goes down then up after a few iterations).
+That example was with the synthetic dataset, and 1,000 realizations of small training sets (64 samples). Each training set is subject to a 4-fold cv.
+
+But that means they do hyperparameter optimization (and not search). Their procedure is itereative. How does that compare to the typical hyperparameter search we do (grid search, random search,{\ldots})?
+
+	4.1 Bias and Variance in Model Selection
+``Unbiasedness provides the assurance that the minimum of the expected value of the model selection criterion, ED{g(θ;D)} coincides with the minimum of the test error, G(θ). However, in practice, we have only a finite sample of data, Di, over which to evaluate the model selection criterion, and so it is the minimum of g(θ;Di) that is of interest.''
+They make a point that unbiasedness of your generalization error criteria is not all you need. Because in practice, with finite data, if this criteria has large variance, it won't be very useful. So you might want to accept some bias if you can have lower variance in exchange.
+``This demonstrates that while unbiasedness is reassuring, as it means that the form of the model selection criterion is correct on average, the variance of the criterion is also vitally important as it is this that ensures that the minimum of the selection criterion evaluated on a particular sample will provide good generalisation.''
+
+	4.2 The Effects of Over-fitting in Model Selection
+``In this section, we investigate the effect of the variance of the model selection criterion using a more realistic example, again based on the synthetic benchmark, where the underlying generative model is known and so we are able to evaluate the true test error. It is demonstrated that over-fitting in model selection can cause both under-fitting and over-fitting of the training sample. ''
+
+They compare the shape of the true test error against the shape of the estimated generalization error in a simple case with synthetic dataset.
+``The simplest estimator for use in model selection is the error computed over an independent validation set, that is, the split-sample estimator''
+They show that the split-sample estimator is unbiased (100 realizations). But each realization has large variance (especially for small sample size), and consequently the selected hyperparameters will vary a lot.
+
+``Note that in this section we have deliberately employed a split-sample based model selection strategy with a relatively high variance, due to the limited size of the validation set. A straightforward way to reduce the variance of the model selection criterion is simply to increase the size of the validation sample over which it is evaluated. ''
+
+``The variation in performance for different realisations of the benchmark suggests that evaluation of machine learning algorithms should always involve multiple partitions of the data to form training/validation and test sets, as the sampling of data for a single partition of the data might arbitrarily favour one classifier over another.''
+
+``However, it should also be noted that a difference in performance between two algorithms is unlikely to be of practical significance, even if it is statistically significant, if it is smaller than the variation in performance due to the random sampling of the data, as it is probable that a greater improvement in performance would be obtained by further data collection than by selection of the optimal classifier.''
+
+	4.3 Is Over-fitting in Model Selection Really a Genuine Concern in Practice?
+Run similar analysis with the real-life datasets, and using RBF and ARD kernels. RBF is a special case of ARD, so theoretically you would expect the performance with ARD to be at least as good as the one with RBF. In practice, RBF beats ARD for all datasets but one. The hyperparameters are chosen from the iterative process described above. And because the search space is much larger with ARD, we end up over-fitting (lower optimized PRESS statistic, but greater teste error).
+
+``This is a clear demonstration that over-fitting in model selection can be a significant problem in practical applications, especially where there are many hyper-parameters or where only a limited supply of data is available.''
+
+	4.4 Avoiding Over-fitting in Model Selection
+``t seems reasonable to suggest that over-fitting in model selection is possible whenever a model selection criterion evaluated over a finite sample of data is directly optimised. Like over-fitting in training, over-fitting in model selection is likely to be most severe when the sample of data is small and the number of hyper-parameters to be tuned is relatively large''
+
+The authors conlude that ``the problem of over-fitting in model selection is of the same nature as that of over-fitting at the first level of inference''. Therefore, they recommend the same remedies: regularization, early stopping, model averaging, Bayesian model averaging, ensembling,{\ldots}
+However, they do not study the impact of these procedures.
+
+``Bengio and Grandvalet (2004) have shown there is no unbiased estimate of the variance of (k-fold) crossvalidation. ''
+
+	5. Bias in Performance Estimation
+`` The key [to avoid potentially significant bias in performance evaluation, arising due to over-fitting in model
+selection] is to treat both training and model selection together, as integral parts of the model fitting procedure and ensure they are never performed separately at any point of the evaluation process''
+
+5.1 An Unbiased Performance Evaluation Methodology
+
+
+},
 	author = {Cawley, Gavin C and Talbot, Nicola LC},
 	date-added = {2020-05-06 17:29:12 -0400},
-	date-modified = {2020-10-27 22:45:09 -0400},
+	date-modified = {2020-12-09 10:18:17 -0500},
 	journal = {Journal of Machine Learning Research},
-	keywords = {model selection, cross validation, overfitting, **MUST-READ**},
+	keywords = {model selection, cross validation, overfitting},
 	number = {Jul},
 	pages = {2079--2107},
+	read = {1},
 	title = {On over-fitting in model selection and subsequent selection bias in performance evaluation},
 	volume = {11},
 	year = {2010},
@@ -1941,13 +2258,75 @@ tests for statistical comparisons of classifiers: the Wilcoxon signed ranks test
 two classifiers and the Friedman test with the corresponding post-hoc tests for comparison of more
 classifiers over multiple data sets. Results of the latter can also be neatly presented with the newly
 introduced CD (critical difference) diagrams.},
+	annote = {2. Previous work
+``None of the above studies deal with evaluating the performance of multiple classifiers and neither studies the applicability of the statistics when classifiers are tested over multiple data sets.''
+
+``The most straightforward way to compare classifiers is to compute the average over all data sets; such averaging appears naive and is seldom used''
+
+3. Statistics and Tests for Comparison of Classifiers
+`` The only requirement is that the compiled results provide reliable estimates of the algorithms' performance on each data set. In the usual experimental setups, these numbers come from cross-validation or from repeated stratified random splits onto training and testing data sets.''
+
+``In our task, multiple resampling from each data set is used only to assess the performance score and not its variance. The sources of the variance are the differences in performance over (independent) data sets and not on (usually dependent) samples, so the elevated Type 1 error is not an issue. Since multiple resampling does not bias the score estimation, various types of crossvalidation or leave-one-out procedures can be used without any risk.''
+
+In this paper, Demsar assumes that the performance over each data set has been calculated faithfully and in unbiased manner. How this is done is opened for debate. He mentions a few classical techniques, mainly cross-validation or random resampling.
+
+``Since running the algorithms on multiple data sets naturally gives a sample of independent measurements, such comparisons are even simpler than comparisons on a single data set.''
+-> that makes it more complicated to use these approches for time-series backtesting (or sequential validation)
+
+3.1 Comparison of Two Classifiers
+
+In that section, they compare different tests to compare 2 classifiers on multiple datasets.
+One issue they need to consider is that different data sets do not return measures that are all comparable (commensurability). Note that this may be the case for sequential validation (e.g., financial crisis).
+
+3.1.1 Averaging over data sets
+Generally not recommended
+
+3.1.2 Paired t-test
+''In our context, the t-test suffers from three weaknesses. The first is commensurability: the t-test only makes sense when the differences over the data sets are commensurate'' ( measurable by the same standard)
+''The second problem with the t-test is that unless the sample size is large enough (∼ 30 data sets), the paired t-test requires that the differences between the two random variables compared are distributed normally''
+``The third problem is that the t-test is, just as averaging over data sets, affected by outliers''
+
+3.1.3 Wilcoxon signed-rank tests
+More general that t-test. Better power when conditions of t-test not met.
+
+3.1.4 Counts of wins, losses and ties: sign test
+Binomial test on the number of wins for each model
+
+3.2 Comparisons of Multiple Classifiers
+
+``When so many tests are made, a certain proportion of the null hypotheses is rejected due to random chance, so listing them makes little sense. The issue of multiple hypothesis testing is a well-known statistical problem'': repeating a pair test makes not statistical sense
+
+3.2.1 ANOVA
+``repeated-measures ANOVA (or within-subjects ANOVA)''
+``The ``related samples'' are again the performances of the classifiers measured across the same data sets, preferably using the same splits onto training and testing sets. The null-hypothesis being tested is that all classifiers perform the same and the observed differences are merely random.''
+
+If the null (all models perform the same) is rejected, ``we can proceed with a post-hoc test to find out which classifiers actually differ. Of many such tests for ANOVA, the two most suitable for our situation are the Tukey test (Tukey, 1949) for comparing all classifiers with each other and the Dunnett test (Dunnett, 1980) for comparisons of all classifiers with the control (for instance, comparing the base classifier and some proposed improvements, or comparing the newly proposed classifier with several existing methods).''
+Both methods resemble a t-test but with critcial values adjusted to account for the multiple testing.
+
+Assumptions for ANOVA:
+- normal samples
+- same variance for all samples -> has even greater effect on post-hoc analysis
+
+3.2.2 Friedman test
+Non-parametric equivalent of ANOVA.
+Rank all algorithms for each dataset, then compare average ranks of each models.
+
+Post-hoc test: Nemenyi test
+Less powerful than Friedman test. So in some cases, you make reject the null with the Friedman test, but fails to identify what methods differ.
+
+Note: could run Friedman + Nemenyi, or could pick the best model as control then run Friedman + post-hoc test in the case of a control. Can use Bonferonni-Dunn test, or Holm test
+``When all classifiers are compared with a control classifier, we can instead of the Nemenyi test use one of the general procedures for controlling the family-wise error in multiple hypothesis testing, such as the Bonferroni correction or similar procedures. Although these methods are generally conservative and can have little power, they are in this specific case more powerful than the Nemenyi test, since the latter adjusts the critical value for making k(k−1)/2 comparisons while when comparing with a control we only make k −1 comparisons.''
+
+4. Empirical Comparison of Tests
+},
 	author = {Dem{\v{s}}ar, Janez},
 	date-added = {2020-04-21 11:53:43 -0400},
-	date-modified = {2020-10-28 09:14:52 -0400},
+	date-modified = {2020-12-07 22:28:53 -0500},
 	journal = {Journal of Machine learning research},
-	keywords = {classification, statistical test, model selection, cross validation, **MUST-READ**},
+	keywords = {classification, statistical test, model selection, cross validation},
 	number = {Jan},
 	pages = {1--30},
+	read = {1},
 	title = {Statistical comparisons of classifiers over multiple data sets},
 	volume = {7},
 	year = {2006},
