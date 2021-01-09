@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2021-01-06 21:59:26 -0500 
+%% Created for Ben Crestel at 2021-01-09 00:28:01 -0500 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,264 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@article{quadrana2018sequence,
+	abstract = {Recommender systems are one of the most successful applications of data mining and machine learning
+technology in practice. Academic research in the field is historically often based on the matrix completion
+problem formulation, where for each user-item-pair only one interaction (e.g., a rating) is considered. In many
+application domains, however, multiple user-item interactions of different types can be recorded over time.
+And, a number of recent works have shown that this information can be used to build richer individual user
+models and to discover additional behavioral patterns that can be leveraged in the recommendation process.
+In this work we review existing works that consider information from such sequentially-ordered useritem interaction logs in the recommendation process. Based on this review, we propose a categorization
+of the corresponding recommendation tasks and goals, summarize existing algorithmic solutions, discuss
+methodological approaches when benchmarking what we call sequence-aware recommender systems, and
+outline open challenges in the area},
+	annote = {1 INTRODUCTION
+
+``In this survey work, we therefore (i) categorize the various scenarios of sequence-aware recommendations approaches in the academic literature, (ii) we review the various algorithmic approaches that were proposed to extract and leverage patterns from interaction logs, and (iii) we finally discuss specific issues when benchmarking different recommendation methods. One of the major goals of the review in that context is to lay the path for more standardized and better reproducible research works in the field.''
+
+2 CHARACTERIZING SEQUENCE-AWARE RECOMMENDER SYSTEMS
+
+	2.1 Inputs, Outputs, Computational Tasks, and Abstract Problem Characterization
+``Inputs. The main input to sequence-aware recommendation problems is an ordered and often timestamped list of past user actions.''
+Actions are not required to be tied to either a user or an item.
+
+Outputs. The output of a sequence-aware recommender are ordered lists of items
+
+Keep characterizing other parts of a sequence-aware recsys.
+
+	2.2 Relation to Other Areas
+Implicit-Feedback Recommender Systems. Explicit rating can be more confused than anything else for sequence-aware recsys as time of review might differ significantly from time of purchase
+
+Context-Aware and Time-Aware Recommender Systems (TARS). Similarity between context-aware and sequence-aware recsys. Also some similarities with TARS but not as much as sequence-aware recsys focus on the sequentiality, not the time aspect.
+
+Research in Other Related Fields. Similarity with interest drift (user modeling) or query suggestion (information retrieval)
+
+3 A CATEGORIZATION OF SEQUENCE-AWARE RECOMMENDATION TASKS
+
+Four main goals for which one case use sequence-aware recsys:
+
+	3.1 Context Adaptation
+Context-aware recsys also relies on representational context, ie, set of observable context variables. For instance, the user's geographical position, the current weather, or the time of
+the day.
+Other contextual info has to be derived, like interactional context (user's current shopping intent, or current mood). Particularly important with anonymous users.
+
+``Overall, understanding the users' situation and goals and making context-adapted recommendations from past interaction data represents a main goal of sequence-aware recommender systems.''
+
+Categorization based on importance of long- and short-term interactions. Different sub-categories depending on data available and/or task at hand:
+* last-N interactions based recommendation: often the case for location-aware recsys
+* session-based recommendation: per user data available is within a session
+* session-aware recommendation: when user log in, can use long-term and short-term info
+
+On utility functions and recommendation purposes. Utility function is not obvious and should be carefully designed to reflect the goal of the recsys
+
+	3.2 Trend Detection
+Other possible use for seq-aware recsys, but less explored
+* Community trends. Detect change in popularity for items
+* Individual trends. Detect change in user's interest
+
+	3.3 Repeated Recommendation
+Can be meaningful in some domains.
+* Identifying repeated user behavior patterns. eg, printer ink cartridge, or assist use of a device
+* Repeated recommendations as reminders. Remind user of sthg they found interesting in the past
+
+	3.4 Consideration of Order Constraints and Observed Sequential Patterns
+Additional constraints when considering order of recommendations:
+a) external domain knowledge (eg, movie sequels, or what courses to take)
+b) predict sequential pattern
+Factors that can influence ordering:
+* Importance of the order of the recommendations. 
+* Importance of the exact order of the past events.
+* Existence of implicit order constraints. 
+
+	3.5 Categorization of Existing Works
+Organize existing work according to their categorization:
+Context SA: Session-aware, SB: Session-based, LI: Last-N interactions; Order Constraints W: Weak, I: Inferred, S: Strong; Application domain APP: App recommendation, MUS: Music domain, QRY: Query recommendation, EC: E-Commerce domain, CS: Learning courses
+recommendations, AD: Advertisements, WWW: Web navigation recommendation, OTH: Others.
+Existing work was hand-selected from a search on ACM Digital Library.
+
+		3.5.1 Categorization based on Context-Adaptation Type.
+Most papers relied on last-N interaction (32%), followed by session-based (22%), and session-aware (17%).
+However, session-based systems have grown increasingly more popular over the last few years, and is connected to new deep learning based sequence-learning techniques.
+
+		3.5.2 Order Constraints.
+Most work relied on implicirtly derived ordering constraints (consequently weak). Might be due to academic bias toward certain industries.
+
+		3.5.3 Categorization based on Domain.
+Most applications in e-commerce (25%; session-based, session-aware, next-basket rec,{\ldots}) and music (15%)
+
+		3.5.4 Specific Tasks of Sequence-aware Recommendation.
+* Repeated Recommendation (rarely the focus in research)
+	Find items for repeated recommendation
+	Find timing for repeated recommendation
+* Trend detection (not investigated to a large extent)
+	Detect individual trends
+	Detect community trend
+	Detect seasonal trends
+
+4 ALGORITHMS FOR SEQUENCE-AWARE RECOMMENDER SYSTEMS
+
+	4.1 Sequence Learning
+Most popular type of approach for domains with a natural sequentiality (NLP, genetic, forecasting,{\ldots})
+
+		4.1.1 Frequent Pattern Mining (FPM).
+List rules of frequent pattern from training dataset. At predict time, search all rules for a matching pattern. Rules come with metrics (confidence, support,{\ldots}) to express their strenght
+
+Personalization can be obtained by filtering patterns to search based on user features
+
+Discussion. Method well explored and easy to implement. Problem with scalability, and with hyperparameter tuning (threshold value).
+
+		4.1.2 Sequence modeling.
+Could treat the input sequence as a discrete time series and turn recommendation problem as one of time series prediction. In practice, it's a bit different. Methods come from 3 categories:
+* Markov Models: usual data sparsity leads to problem with Markov models. Requires tricks (skipping, clustering, finite mixture modeling). Also challenge choosing the right order of the MC chain. HMMs solves a few of these problems naturally; interesting applications using HMMs.
+* Reinforcement Learning: has been used for sequence-aware recsys in online shops.
+* RNNs: looks like an active area of research (RNNs, GRUs, LSTMs)
+
+Discussion. Not clear if Markov models are a practical option. DL on the rise thanks to growing size of datasets.
+
+		4.1.3 Distributed Item Representations
+Build a lower-dimensional representation of the items that accounts for the sequentiality.
+
+Discussion. Works well in NLP and for recsys applied to text data. But heavy computationally.
+Embedding methods leverage sequentiality to build embedding, but don't directly use it to make prediction. Therefore requires other method to generate sequence-aware prediciton. Not ideal.
+
+		4.1.4 Supervised Learning with Sliding Windows
+Slide window forward; at each step, uses past n-actions as features and try to predict the next one; so multi-class classification problem, with auto-regressive features.
+
+Discussion. Good b/c many models exist to solve that problem. 
+However, scales poorly with number of possible actions/items/{\ldots}. Can be tricky to set up (hyperparameters + feature engineering required).
+
+	4.2 Sequence-aware Matrix Factorization
+Integrate time-depending parameters into matrix factorization techniques, typically on the loss (weighted loss).
+Not to be confused with more general time-aware matrix factorization.
+
+Discussion. Good: can use standard matrix factorization alg.
+Bad: Factorization model needs to be updated when new ratings are provided for suggested next step.
+
+	4.3 Hybrid methods
+Typically combine sequence learning methods with matrix-completion techniques. Several applications include a topic extraction step via LDA.
+
+Discussion. Hybrid methods are a popular approach as they can solve many of the shortcomings of individual methods. But trick is how to optimally combine these different techniques.
+
+	4.4 Other methods
+Graph-based methods.
+Discrete optimization methods. Discrete optimization is often employed for sequence-aware recommendation problems when weak or strict ordering constraints between items exist
+
+	4.5 Summary and Pros and Cons of Selected Approaches
+Frequent Pattern Mining: Discover patterns in user action sequences
++: Easy implementation; Explainable results
+-: Complex configuration; Suffers from data sparsity; Limited scalability
+Markov Chains: Compute transition probabilities
+over fixed-length sequences
++ Explainable results
+- Fixed transition order; Suffers from data sparsity; Limited scalability
+Variable-order Markov Models: Compute transition probabilities over variable-length sequences
++ Variable transition orders; Explainable results
+- Suffers from data sparsity
+HMM Model the causal factors in user sequences as transitions between discrete hidden states
++ Learns from variable-length inputs; Robust to data sparsity
+- Limited explainability; Huge number of discrete parameters
+RL Directly maximize the customer and seller reward over time
++ Dynamically adapt recommendations to future (unknown) rewards; Under active research
+- MDP-based approaches have same issues as MCs; Limited explainability
+RNN Model the causal factors in user sequences with non-linear transitions between continuous hidden states
++ Learns from variable-length inputs; Learns long-term dependencies; Robust to data sparsity; Compact hidden states; Under active research
+- Complex configuration; Limited explainability; Benefits not fully clear in some domains
+Distributed Item Reprensetations: Embed items into latent spaces that preserves sequential transition properties
++ Robust to data sparsity; Visually interpetable embeddings; Under active research
+- Need auxiliary methods to make recommendations; Limited explainability
+Supervised Learning: Use supervised learning over features extracted from fixed-size sliding windows over sequences
++ Easy implementation; Use off-the-shelf supervised algorithms
+- Explainability depends on the chosen supervised method; Feature engineering
+Matrix Factorization: Define new inputs and loss functions for MF to handle sequences
++ Extensive literature available; Robust to data sparsity
+- Non-trivial input and loss design; Concerns regarding scalability
+
+5 EVALUATION OF SEQUENCE-AWARE RECOMMENDER SYSTEMS
+	5.1 Common Evaluation Approaches for Recommender Systems
+},
+	author = {Quadrana, Massimo and Cremonesi, Paolo and Jannach, Dietmar},
+	date-added = {2021-01-08 18:16:12 -0500},
+	date-modified = {2021-01-08 18:52:15 -0500},
+	journal = {ACM Computing Surveys (CSUR)},
+	keywords = {recommender systems, time series},
+	number = {4},
+	pages = {1--36},
+	publisher = {ACM New York, NY, USA},
+	title = {Sequence-aware recommender systems},
+	volume = {51},
+	year = {2018},
+	Bdsk-Url-1 = {https://re.public.polimi.it/retrieve/handle/11311/1084454/368312/2018-seqrec_survey.pdf}}
+
+@article{ruthotto2017jinv,
+	author = {Ruthotto, Lars and Treister, Eran and Haber, Eldad},
+	date-added = {2021-01-07 16:50:52 -0500},
+	date-modified = {2021-01-07 16:51:26 -0500},
+	journal = {SIAM Journal on Scientific Computing},
+	keywords = {julia, inverse problem, pde, differentiable programming},
+	number = {5},
+	pages = {S702--S722},
+	publisher = {SIAM},
+	title = {jinv--a flexible Julia package for PDE parameter estimation},
+	volume = {39},
+	year = {2017},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1606.07399.pdf}}
+
+@article{bezanson2019scientific,
+	author = {Bezanson, Jeff and Edelman, Alan and Karpinski, Stefan and Shah, Viral B},
+	date-added = {2021-01-07 16:49:08 -0500},
+	date-modified = {2021-01-07 16:49:24 -0500},
+	journal = {SIAM News},
+	keywords = {julia, differentiable programming},
+	title = {Scientific Machine Learning: How Julia Employs Differentiable Programming to Do it Best},
+	volume = {5},
+	year = {2019},
+	Bdsk-Url-1 = {https://sinews.siam.org/Details-Page/scientific-machine-learning-how-julia-employs-differentiable-programming-to-do-it-best}}
+
+@article{egorov2017pomdps,
+	author = {Egorov, Maxim and Sunberg, Zachary N and Balaban, Edward and Wheeler, Tim A and Gupta, Jayesh K and Kochenderfer, Mykel J},
+	date-added = {2021-01-07 16:46:52 -0500},
+	date-modified = {2021-01-07 16:47:39 -0500},
+	journal = {The Journal of Machine Learning Research},
+	keywords = {decision making, julia, uncertainty, differentiable programming},
+	number = {1},
+	pages = {831--835},
+	publisher = {JMLR. org},
+	title = {POMDPs. jl: A framework for sequential decision making under uncertainty},
+	volume = {18},
+	year = {2017},
+	Bdsk-Url-1 = {https://www.jmlr.org/papers/volume18/16-300/16-300.pdf}}
+
+@article{innes2019differentiable,
+	author = {Innes, Mike and Edelman, Alan and Fischer, Keno and Rackauckas, Christopher and Saba, Elliot and Shah, Viral B and Tebbutt, Will},
+	date-added = {2021-01-07 16:44:56 -0500},
+	date-modified = {2021-01-07 16:46:03 -0500},
+	journal = {CoRR, abs/1907.07587},
+	keywords = {differentiable programming, machine learning, scientific computing, julia, **MUST-READ**},
+	title = {A differentiable programming system to bridge machine learning and scientific computing},
+	year = {2019},
+	Bdsk-Url-1 = {https://deepai.org/publication/a-differentiable-programming-system-to-bridge-machine-learning-and-scientific-computing},
+	Bdsk-Url-2 = {https://arxiv.org/pdf/1907.07587.pdf}}
+
+@book{powell2020rl,
+	author = {Warren B. Powell},
+	date-added = {2021-01-07 15:57:52 -0500},
+	date-modified = {2021-01-07 15:59:48 -0500},
+	keywords = {reinforcement learning, optimization},
+	publisher = {Wiley-Interscience},
+	title = {Reinforcement Learning and Stochastic Optimization: A unified framework for sequential decisions},
+	year = {2020},
+	Bdsk-Url-1 = {https://castlelab.princeton.edu/wp-content/uploads/2020/01/Powell-RLSO-Jan202020.pdf}}
+
+@article{franccois2018introduction,
+	author = {Fran{\c{c}}ois-Lavet, Vincent and Henderson, Peter and Islam, Riashat and Bellemare, Marc G and Pineau, Joelle},
+	date-added = {2021-01-07 15:49:18 -0500},
+	date-modified = {2021-01-07 15:49:36 -0500},
+	journal = {arXiv preprint arXiv:1811.12560},
+	keywords = {reinforcement learning, deep learning},
+	title = {An introduction to deep reinforcement learning},
+	year = {2018},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1811.12560.pdf?fbclid=IwAR3sArXMkmy7yL_baZJ2QLa1Ud8LaC8x6s-0VvXb8WEkdjzBOnck-DI-yBA}}
 
 @article{boyd2017multi,
 	author = {Boyd, Stephen and Busseti, Enzo and Diamond, Steven and Kahn, Ronald N and Koh, Kwangmoo and Nystrup, Peter and Speth, Jan},
