@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2021-01-18 15:58:56 -0500 
+%% Created for Ben Crestel at 2021-01-26 17:02:52 -0500 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -11,12 +11,37 @@
 
 
 
+@article{oord2016wavenet,
+	author = {Oord, Aaron van den and Dieleman, Sander and Zen, Heiga and Simonyan, Karen and Vinyals, Oriol and Graves, Alex and Kalchbrenner, Nal and Senior, Andrew and Kavukcuoglu, Koray},
+	date-added = {2021-01-22 22:05:19 -0500},
+	date-modified = {2021-01-22 22:05:53 -0500},
+	journal = {arXiv preprint arXiv:1609.03499},
+	keywords = {time series, cnn, causality},
+	title = {Wavenet: A generative model for raw audio},
+	year = {2016},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1609.03499.pdf}}
+
+@book{cite-key,
+	date-added = {2021-01-20 16:37:39 -0500},
+	date-modified = {2021-01-20 16:37:54 -0500}}
+
+@inproceedings{yoon2019time,
+	author = {Yoon, Jinsung and Jarrett, Daniel and van der Schaar, Mihaela},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2021-01-20 10:46:17 -0500},
+	date-modified = {2021-01-20 16:07:54 -0500},
+	keywords = {time series, generative model, **TO-BE-IMPLEMENTED**},
+	pages = {5508--5518},
+	title = {Time-series generative adversarial networks},
+	year = {2019},
+	Bdsk-Url-1 = {https://papers.nips.cc/paper/2019/file/c9efe5f26cd17ba6216bbe2a7d26d490-Paper.pdf}}
+
 @article{kidger2020neural,
 	author = {Kidger, Patrick and Morrill, James and Foster, James and Lyons, Terry},
 	date-added = {2021-01-18 15:55:18 -0500},
 	date-modified = {2021-01-18 15:55:47 -0500},
 	journal = {arXiv preprint arXiv:2005.08926},
-	keywords = {neural ODE, time series, deep learning, },
+	keywords = {neural ODE, time series, deep learning,},
 	title = {Neural controlled differential equations for irregular time series},
 	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2005.08926.pdf}}
@@ -282,12 +307,13 @@ Open research questions:
 - Toward standardized and more comprehensive evaluations: need to move beyond accuracy measures only.},
 	author = {Quadrana, Massimo and Cremonesi, Paolo and Jannach, Dietmar},
 	date-added = {2021-01-08 18:16:12 -0500},
-	date-modified = {2021-01-18 14:49:26 -0500},
+	date-modified = {2021-01-20 10:40:38 -0500},
 	journal = {ACM Computing Surveys (CSUR)},
 	keywords = {recommender systems, time series},
 	number = {4},
 	pages = {1--36},
 	publisher = {ACM New York, NY, USA},
+	read = {1},
 	title = {Sequence-aware recommender systems},
 	volume = {51},
 	year = {2018},
@@ -1403,8 +1429,8 @@ Sharpness: They define sharpness as the mean of the variances of all predictive 
 	author = {Salinas, David and Bohlke-Schneider, Michael and Callot, Laurent and Medico, Roberto and Gasthaus, Jan},
 	booktitle = {Advances in Neural Information Processing Systems},
 	date-added = {2020-10-05 15:57:38 -0400},
-	date-modified = {2020-10-05 15:58:02 -0400},
-	keywords = {forecasting, uncertainty},
+	date-modified = {2021-01-20 16:21:53 -0500},
+	keywords = {forecasting, uncertainty, time series, **TO-BE-IMPLEMENTED**},
 	pages = {6827--6837},
 	title = {High-dimensional multivariate forecasting with low-rank Gaussian Copula Processes},
 	year = {2019},
@@ -2302,9 +2328,9 @@ In its simplest form, their model is a multivariate version (MIMO) of DeepAR tha
 They also have a mode where they replace the RNN part with an attention-based model},
 	author = {Rasul, Kashif and Sheikh, Abdul-Saboor and Schuster, Ingmar and Bergmann, Urs and Vollgraf, Roland},
 	date-added = {2020-05-25 10:20:39 -0400},
-	date-modified = {2020-05-25 10:25:05 -0400},
+	date-modified = {2021-01-20 16:07:54 -0500},
 	journal = {arXiv preprint arXiv:2002.06103},
-	keywords = {time series, forecasting, distributional forecast,},
+	keywords = {time series, forecasting, distributional forecast, **TO-BE-IMPLEMENTED**},
 	read = {1},
 	title = {Multi-variate Probabilistic Time Series Forecasting via Conditioned Normalizing Flows},
 	year = {2020},
@@ -2402,8 +2428,8 @@ Their appliations seem to be mostly periodic time series. It would need to be te
 	author = {Ren, Hansheng and Xu, Bixiong and Wang, Yujing and Yi, Chao and Huang, Congrui and Kou, Xiaoyu and Xing, Tony and Yang, Mao and Tong, Jie and Zhang, Qi},
 	booktitle = {Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
 	date-added = {2020-05-21 11:39:12 -0400},
-	date-modified = {2020-05-21 14:42:36 -0400},
-	keywords = {anomaly detection, time series},
+	date-modified = {2021-01-20 16:38:10 -0500},
+	keywords = {anomaly detection, time series,},
 	pages = {3009--3017},
 	read = {1},
 	title = {Time-Series Anomaly Detection Service at Microsoft},
@@ -2805,11 +2831,53 @@ Highly cited paper.},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1803.01271.pdf}}
 
 @article{borovykh2017conditional,
+	abstract = {We present a method for conditional time series forecasting based on an adaptation of the recent deep convolutional WaveNet architecture. The proposed network contains stacks of dilated convolutions that allow it to access a broad range of history when forecasting, a ReLU activation function and conditioning is performed by applying multiple convolutional filters in parallel to separate time series which allows for the fast processing of data and the exploitation of the correlation structure between the multivariate time series. We test and analyze the performance of the convolutional network both unconditionally as well as conditionally for financial time series forecasting using the S&P500, the volatility index, the CBOE interest rate and several exchange rates and extensively compare it to the performance of the well-known autoregressive model and a long-short term memory network. We show that a convolutional network is well-suited for regression-type problems and is able to effectively learn dependencies in and between the series without the need for long historical time series, is a time-efficient and easy to implement alternative to recurrent-type networks and tends to outperform linear and recurrent models},
+	annote = {Code: https://github.com/abrvkh/WaveNet_simple/blob/master/wnet_simple.py
+
+1. Introduction
+
+Since financial time series change regime often, we effectively don't have long time series to learn from. In this paper, authors propose to trade long lookback periods with multivariate forecasting, that is, using multiple (hopefully) correlated time series to base its prediction.
+
+They modifies the architecture of Wavenet to make it more amenable to time series forecasting (eg, replaced gated activation function with ReLU).
+
+2. The model
+	2.1 Background
+		2.1.1 Feedforward neural networks
+{\ldots}
+		2.1.2 Convolutions
+They consider 1D convolutions (makes sense for time signals, but not typical when thinking of images)
+They don't consider a stride.
+		2.1.3 Convolutional neural networks
+Again, we work here with 1D input (time series signal), but use 3D convolution filters. So in the first layer, assuming it contains M filters, the input is a single time series of length N, and we have
+- input: x -> R^(1 x N x 1)
+- filter: w -> R^(1 x k x 1) -> M filters
+=> output: w*x -> R^(1 x N-k+1 x M)
+In the subsequent layer l, 
+- the input will have dim: 1 x N_(l-1) x M_(l-1), 
+- each filter will have dim: 1 x k x M_(l-1), 
+=> and the output will have dimension: 1 x N_(l-1)-k+1 x M_l
+Therefore they assume that the filter length is constant equal at k for all layers.
+
+	2.2 Structure
+They propose to train their network by maximizing the likelihood function (but haven't talked yet about how they generate this likelihood).
+To learn long term dependencies, they use stacked layers of dilated convolutions.
+
+Dilated convolution: 
+In a ``normal'' convolution, at every point, you shift the kernel/filter by a given amount, they sum (integrate) the product of both the input and the kernel. In a dilated convolution, you do the same except that the kernel is dilated by a fixed amount d; that is, the function has gaps in it (that definition only makes sense in discrete space), or ``the filter is applied to every dth element in the input vector''.
+In math, with w the kernel and f the input, and assuming the summation is from -infty to +infty, we would get:
+normal: (w * f)(i) = Sum_j w(j) f(i-j)
+dilated: (w *_d f)(i) = Sum_j w(j) f(i-d.j) = Sum_j w((i-k)/d) f(k). In the last expression, w((i-k)/d) would be 0 if (i-k)/d is not integer. For instance if i=0, d=3, k=0 -> w(0), but k=1 -> w(1/2) = 0, and k=2 -> w(-1) and it applies to f(2); so we skipped f(1). 
+That link is helpful in understanding the difference between stride and dilation: https://www.quora.com/What-is-the-difference-between-dilated-convolution-and-convolution+stride; and this blog post explains it: https://www.inference.vc/dilated-convolutions-and-kronecker-factorisation/
+
+They apply L layers of dilated convolutions with the dilation factor increasing by a factor of 2 at each layer (1, 2, 4, {\ldots}, 2^(L-1)). Filters all have size 1 x 2. In-between each layer, they apply a ReLU activation function.
+After the stack of dilated convolutions, they apply a 1x1 convolution reducing the number of filters to 1.
+
+The depth of the stack is calculated so that it returns a single value},
 	author = {Borovykh, Anastasia and Bohte, Sander and Oosterlee, Cornelis W},
 	date-added = {2020-04-23 12:46:31 -0400},
-	date-modified = {2020-05-21 14:59:02 -0400},
+	date-modified = {2021-01-26 17:02:44 -0500},
 	journal = {arXiv preprint arXiv:1703.04691},
-	keywords = {time series, forecasting, cnn},
+	keywords = {time series, forecasting, cnn, **TO-BE-IMPLEMENTED**},
 	read = {1},
 	title = {Conditional time series forecasting with convolutional neural networks},
 	year = {2017},
@@ -2894,8 +2962,8 @@ contains more than 100K-dimensional time series.},
 	author = {Sen, Rajat and Yu, Hsiang-Fu and Dhillon, Inderjit S},
 	booktitle = {Advances in Neural Information Processing Systems},
 	date-added = {2020-04-23 10:47:34 -0400},
-	date-modified = {2020-05-21 14:59:23 -0400},
-	keywords = {time series, matrix factorization, cnn, high dimension, rnn},
+	date-modified = {2021-01-20 16:37:05 -0500},
+	keywords = {time series, matrix factorization, cnn, high dimension, rnn, **TO-BE-IMPLEMENTED**},
 	pages = {4838--4847},
 	read = {1},
 	title = {Think globally, act locally: A deep neural network approach to high-dimensional time series forecasting},
@@ -3504,8 +3572,8 @@ Interesting paper overall. Seems a bit convoluted, but show SOTA results on a fe
 	author = {Ma, Qianli and Zheng, Jiawei and Li, Sen and Cottrell, Gary W},
 	booktitle = {Advances in Neural Information Processing Systems},
 	date-added = {2020-02-11 16:23:10 -0500},
-	date-modified = {2020-04-22 11:21:36 -0400},
-	keywords = {DTCR, clustering, k-means, seq2seq},
+	date-modified = {2021-01-20 16:07:54 -0500},
+	keywords = {DTCR, clustering, k-means, seq2seq, time series, **TO-BE-IMPLEMENTED**},
 	pages = {3776--3786},
 	read = {1},
 	title = {Learning Representations for Time Series Clustering},
