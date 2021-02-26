@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2021-02-16 15:33:01 -0500 
+%% Created for Ben Crestel at 2021-02-26 15:40:11 -0500 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,132 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@inproceedings{duffield2017stream,
+	author = {Duffield, Nick and Xu, Yunhong and Xia, Liangzhen and Ahmed, Nesreen K and Yu, Minlan},
+	booktitle = {Proceedings of the 2017 ACM on Conference on Information and Knowledge Management},
+	date-added = {2021-02-26 15:39:54 -0500},
+	date-modified = {2021-02-26 15:40:09 -0500},
+	keywords = {sampling, network},
+	pages = {909--918},
+	title = {Stream aggregation through order sampling},
+	year = {2017},
+	Bdsk-Url-1 = {https://nickduffield.net/download/papers/pba-paper.pdf}}
+
+@misc{repo_hummingbird,
+	author = {microsoft},
+	date-added = {2021-02-26 15:16:41 -0500},
+	date-modified = {2021-02-26 15:21:05 -0500},
+	howpublished = {github},
+	keywords = {repo, machine learning, },
+	title = {Hummingbird},
+	Bdsk-Url-1 = {https://github.com/microsoft/hummingbird}}
+
+@inproceedings{finlay2020train,
+	author = {Finlay, Chris and Jacobsen, J{\"o}rn-Henrik and Nurbekyan, Levon and Oberman, Adam},
+	booktitle = {International Conference on Machine Learning},
+	date-added = {2021-02-26 14:27:45 -0500},
+	date-modified = {2021-02-26 14:28:07 -0500},
+	keywords = {neural ODE},
+	organization = {PMLR},
+	pages = {3154--3164},
+	title = {How to train your neural ODE: the world of Jacobian and kinetic regularization},
+	year = {2020},
+	Bdsk-Url-1 = {http://proceedings.mlr.press/v119/finlay20a/finlay20a.pdf}}
+
+@article{duffield2005learn,
+	abstract = {--- This paper deals with sampling objects from a large
+stream. Each object possesses a size, and the aim is to be able
+to estimate the total size of an arbitrary subset of objects whose
+composition is not known at the time of sampling. This problem is
+motivated from network measurements in which the objects are
+flow records exported by routers and the sizes are the number of
+packet or bytes reported in the record. Subsets of interest could
+be flows from a certain customer or flows from a worm attack.
+This paper introduces threshold sampling as a sampling scheme
+that optimally controls the expected volume of samples and the
+variance of estimators over any classification of flows.
+This paper provides algorithms for dynamic control of sample
+volumes and evaluate them on flow data gathered from a
+commercial IP network. The algorithms are simple to implement
+and robust to variation in network conditions. The work reported
+here has been applied in the measurement infrastructure of the
+commercial IP network. To not have employed sampling would
+have entailed an order of magnitude greater capital expenditure
+to accommodate the measurement traffic and its processing.},
+	annote = {I. Introduction
+
+Paper proposes a way to reduce the size of large network flows such that we can still calculate aggregated values. The flows comes in packets of different sizes x_i and keys c_i (like an identifier).
+The fact that they focus on network flows means that i) the data is really large and can't be all stored; ii) the flows have a heavy-tail distributions. Therefore, a few omissions with large values could have a big impact on the quality of the approximate aggregate.
+They derive a threshold based techniques, that is more likelye to sample packets with large values.
+
+II. Sampling Theory
+
+},
+	author = {Duffield, Nick and Lund, Carsten and Thorup, Mikkel},
+	date-added = {2021-02-25 15:30:59 -0500},
+	date-modified = {2021-02-25 16:57:17 -0500},
+	journal = {IEEE Transactions on Information Theory},
+	keywords = {sampling, network},
+	number = {5},
+	pages = {1756--1775},
+	publisher = {IEEE},
+	title = {Learn more, sample less: control of volume and variance in network measurement},
+	volume = {51},
+	year = {2005},
+	Bdsk-Url-1 = {https://nickduffield.net/download/papers/DLT05-optimal.pdf}}
+
+@inproceedings{zhang2019cross,
+	author = {Zhang, Xu and Kim, Junghyun and Lin, Qingwei and Lim, Keunhak and Kanaujia, Shobhit O and Xu, Yong and Jamieson, Kyle and Albarghouthi, Aws and Qin, Si and Freedman, Michael J and others},
+	booktitle = {2019 $\{$USENIX$\}$ Annual Technical Conference ($\{$USENIX$\}$$\{$ATC$\}$ 19)},
+	date-added = {2021-02-23 14:45:12 -0500},
+	date-modified = {2021-02-23 14:45:29 -0500},
+	keywords = {anomaly detection, time series},
+	pages = {1063--1076},
+	title = {Cross-dataset time series anomaly detection for cloud systems},
+	year = {2019},
+	Bdsk-Url-1 = {https://www.usenix.net/system/files/atc19-zhang-xu.pdf}}
+
+@article{scholkopf2021causal,
+	author = {Bernhard Sch{\"o}lkopf and Francesco Locatello and Stefan Bauer and Nan Rosemary Ke and Nal Kalchbrenner and Anirudh Goyal and Yoshua Bengio},
+	date-added = {2021-02-23 14:08:39 -0500},
+	date-modified = {2021-02-23 14:10:06 -0500},
+	journal = {arxiv},
+	keywords = {causality, representation learning},
+	title = {Towards Causal Representation Learning},
+	year = {2021},
+	Bdsk-Url-1 = {https://arxiv.org/abs/2102.11107}}
+
+@article{lesort2019continual,
+	author = {Lesort, Timoth{\'e}e and Lomonaco, Vincenzo and Stoian, Andrei and Maltoni, Davide and Filliat, David and D{\i}az-Rodr{\i}guez, Natalia},
+	date-added = {2021-02-23 14:05:50 -0500},
+	date-modified = {2021-02-23 14:06:05 -0500},
+	journal = {arXiv preprint arXiv:1907.00182},
+	keywords = {continual learning, robotics},
+	pages = {1--34},
+	title = {Continual learning for robotics},
+	year = {2019},
+	Bdsk-Url-1 = {https://www.researchgate.net/profile/Natalia-Diaz-Rodriguez/publication/334161654_Continual_Learning_for_Robotics/links/5d80f16fa6fdcc12cb96f278/Continual-Learning-for-Robotics.pdf}}
+
+@article{farquhar2018towards,
+	author = {Farquhar, Sebastian and Gal, Yarin},
+	date-added = {2021-02-23 14:05:04 -0500},
+	date-modified = {2021-02-23 14:05:22 -0500},
+	journal = {arXiv preprint arXiv:1805.09733},
+	keywords = {continual learning},
+	title = {Towards robust evaluations of continual learning},
+	year = {2018},
+	Bdsk-Url-1 = {https://arxiv.org/abs/1805.09733}}
+
+@article{domingos2020every,
+	author = {Domingos, Pedro},
+	date-added = {2021-02-22 11:48:43 -0500},
+	date-modified = {2021-02-22 11:49:19 -0500},
+	journal = {arXiv preprint arXiv:2012.00152},
+	keywords = {theory, deep learning, kernel},
+	title = {Every Model Learned by Gradient Descent Is Approximately a Kernel Machine},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/abs/2012.00152?ref=mlnews}}
 
 @article{smith2021origin,
 	author = {Smith, Samuel L and Dherin, Benoit and Barrett, David GT and De, Soham},
@@ -502,9 +628,9 @@ Open research questions:
 - Toward standardized and more comprehensive evaluations: need to move beyond accuracy measures only.},
 	author = {Quadrana, Massimo and Cremonesi, Paolo and Jannach, Dietmar},
 	date-added = {2021-01-08 18:16:12 -0500},
-	date-modified = {2021-01-20 10:40:38 -0500},
+	date-modified = {2021-02-25 16:34:19 -0500},
 	journal = {ACM Computing Surveys (CSUR)},
-	keywords = {recommender systems, time series},
+	keywords = {recommender systems, sequence},
 	number = {4},
 	pages = {1--36},
 	publisher = {ACM New York, NY, USA},
@@ -3401,8 +3527,8 @@ to be superior to all others in the literature.},
 	author = {Keogh, Eamonn and Chu, Selina and Hart, David and Pazzani, Michael},
 	booktitle = {Proceedings 2001 IEEE international conference on data mining},
 	date-added = {2020-04-22 10:13:24 -0400},
-	date-modified = {2020-04-22 10:28:58 -0400},
-	keywords = {time series, online algorithm, data mining},
+	date-modified = {2021-02-25 16:32:24 -0500},
+	keywords = {time series, online algorithm, data mining, segmentation, linear regression},
 	organization = {IEEE},
 	pages = {289--296},
 	title = {An online algorithm for segmenting time series},
