@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2021-02-26 15:40:11 -0500 
+%% Created for Ben Crestel at 2021-03-08 16:54:52 -0500 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,16 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@article{hannun2021measuring,
+	author = {Hannun, Awni and Guo, Chuan and van der Maaten, Laurens},
+	date-added = {2021-02-27 10:04:40 -0500},
+	date-modified = {2021-02-27 10:05:27 -0500},
+	journal = {arXiv preprint arXiv:2102.11673},
+	keywords = {privacy, machine learning, },
+	title = {Measuring Data Leakage in Machine-Learning Models with Fisher Information},
+	year = {2021},
+	Bdsk-Url-1 = {https://arxiv.org/abs/2102.11673}}
 
 @inproceedings{duffield2017stream,
 	author = {Duffield, Nick and Xu, Yunhong and Xia, Liangzhen and Ahmed, Nesreen K and Yu, Minlan},
@@ -63,23 +73,64 @@ here has been applied in the measurement infrastructure of the
 commercial IP network. To not have employed sampling would
 have entailed an order of magnitude greater capital expenditure
 to accommodate the measurement traffic and its processing.},
-	annote = {I. Introduction
+	annote = {I. INTRODUCTION
 
 Paper proposes a way to reduce the size of large network flows such that we can still calculate aggregated values. The flows comes in packets of different sizes x_i and keys c_i (like an identifier).
-The fact that they focus on network flows means that i) the data is really large and can't be all stored; ii) the flows have a heavy-tail distributions. Therefore, a few omissions with large values could have a big impact on the quality of the approximate aggregate.
-They derive a threshold based techniques, that is more likelye to sample packets with large values.
+The fact that they focus on network flows means that i) the data is really large and can't be all stored; ii) the flows have a heavy-tail distributions (and the tails matter a lot!). Therefore, a few omissions with large values could have a big impact on the quality of the approximate aggregate.
+They derive a threshold based techniques, that is more likely to sample packets with large values.
 
-II. Sampling Theory
+II. SAMPLING THEORY
 
+A. Sampling and renormalization
+``The key elements of our algorithm are size-dependent sampling, and renormalization of the samples''
+-> sampling function p(x) (how likely are you to sample x; does not have to be a pdf) and renormalization function r(x) (replaces x if sampled)
+
+Total size of n objects x_i is the sum of all x_i. We want to down-sample while preserving the total size. 
+Estimator: sum_i w_i r(x_i), where w_i is {0,1} with p = p(x_i).
+Unbiased estimator =>  renormalization r(x)=x/p(x) (assume x_i deterministic)
+
+B. Bounding sample volumes
+Want to be able to impose bound on the sample volume (ie, how many points you sample). This requires to have p(x_i) = M/n (M the bound on sample vol, n the size), ie independent of x_i.
+
+C. Static control of sample volume and variance
+Define a cost to represent balance between minimizing the variance of objects size and sample volume. Show that it is minimzed for p(x) = min(1, x/z) where z is a parameter that defines the balance betweenv var and size. Looking at optimal solution, z also represents the smallest value of x that will always select in your samples. In that case, r(x) = max(x, z).
+
+D. Sampling and key partitions
+Minimize for each class locally, then sum since each key are sampled independently from each other.
+Finer size control, per key, is possible but will result in higher overall variance for the estimator.
+
+E. Multidimensional sizes
+If size x is multidimensional: 
+can treat each dim independently -> sub-optimal + higher computer power
+can apply decision on a single dim, then apply sampling to all dim -> also sub-optimal
+
+better solution: introduce a vector-threshold (for each dim), then define a cost function that combines all dim. Proposes diff versions of that cost function.
+
+F. Estimating variance from samples
+Derives unbiased estimate of the varaince of the (estimated) total size and total size, only computed from the sampled values.
+
+G. Composing sampling operations
+Shows that sampler ppties are preserved by monotonic composition (ie, threshold monotonically increasing)
+
+H. Threshold sampling of packet sampled flows
+``We emphasize again that in our network application it is the completed flow records that are sampled, not the packets that contribute to them'': I feel this is an important distinction that I don't fully comprehend{\ldots}
+``To estimate the volumes of traffic prior to packet sampling, it is necessary to apply an initial normalization to the flow byte or packet sizes before threshold sampling. With packet sampling at a rate 1 in N, the sizes are multiplied by N in order to obtain an unbiased estimate of traffic volumes prior to packet sampling''
+
+III. COMPARISON OF STATIC SAMPLING STRATEGIES
+
+A. Comparison of uniform and threshold flow sampling
+Compare their threshold-based sampling strategy with uniform sampling (or rather, deterministic sampling, 1 in N). Shows lower variance for their method.
+Error bars are calculated, instead of derived from MC simulation (different seeds, or re-shuffling data,{\ldots})
 },
 	author = {Duffield, Nick and Lund, Carsten and Thorup, Mikkel},
 	date-added = {2021-02-25 15:30:59 -0500},
-	date-modified = {2021-02-25 16:57:17 -0500},
+	date-modified = {2021-03-08 16:53:32 -0500},
 	journal = {IEEE Transactions on Information Theory},
 	keywords = {sampling, network},
 	number = {5},
 	pages = {1756--1775},
 	publisher = {IEEE},
+	read = {1},
 	title = {Learn more, sample less: control of volume and variance in network measurement},
 	volume = {51},
 	year = {2005},
@@ -99,9 +150,9 @@ II. Sampling Theory
 @article{scholkopf2021causal,
 	author = {Bernhard Sch{\"o}lkopf and Francesco Locatello and Stefan Bauer and Nan Rosemary Ke and Nal Kalchbrenner and Anirudh Goyal and Yoshua Bengio},
 	date-added = {2021-02-23 14:08:39 -0500},
-	date-modified = {2021-02-23 14:10:06 -0500},
+	date-modified = {2021-02-27 10:02:56 -0500},
 	journal = {arxiv},
-	keywords = {causality, representation learning},
+	keywords = {causality, representation learning, **MUST-READ**},
 	title = {Towards Causal Representation Learning},
 	year = {2021},
 	Bdsk-Url-1 = {https://arxiv.org/abs/2102.11107}}
