@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2021-03-16 12:23:42 -0400 
+%% Created for Ben Crestel at 2021-04-01 00:03:54 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,218 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@article{wu2020current,
+	author = {Wu, Renjie and Keogh, Eamonn J},
+	date-added = {2021-03-31 12:23:48 -0400},
+	date-modified = {2021-03-31 12:24:04 -0400},
+	journal = {arXiv preprint arXiv:2009.13807},
+	keywords = {time series, anomaly detection},
+	title = {Current Time Series Anomaly Detection Benchmarks are Flawed and are Creating the Illusion of Progress},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2009.13807.pdf}}
+
+@article{talagala2020anomaly,
+	author = {Talagala, Priyanga Dilini and Hyndman, Rob J and Smith-Miles, Kate and Kandanaarachchi, Sevvandi and Mu{\~n}oz, Mario A},
+	date-added = {2021-03-29 10:34:51 -0400},
+	date-modified = {2021-03-29 10:35:26 -0400},
+	journal = {Journal of Computational and Graphical Statistics},
+	keywords = {time series, anomaly detection, },
+	number = {1},
+	pages = {13--27},
+	publisher = {Taylor \& Francis},
+	title = {Anomaly detection in streaming nonstationary temporal data},
+	volume = {29},
+	year = {2020},
+	Bdsk-Url-1 = {https://www.researchgate.net/profile/Priyanga-Talagala/publication/323694683_Anomaly_Detection_in_Streaming_Nonstationary_Temporal_Data/links/5c7f1f69458515831f87a383/Anomaly-Detection-in-Streaming-Nonstationary-Temporal-Data.pdf}}
+
+@inproceedings{NIPS2013_d296c101,
+	author = {Sugiyama, Mahito and Borgwardt, Karsten},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2021-03-26 16:11:15 -0400},
+	date-modified = {2021-03-26 16:11:27 -0400},
+	editor = {C. J. C. Burges and L. Bottou and M. Welling and Z. Ghahramani and K. Q. Weinberger},
+	keywords = {anomaly detection},
+	publisher = {Curran Associates, Inc.},
+	title = {Rapid Distance-Based Outlier Detection via Sampling},
+	url = {https://proceedings.neurips.cc/paper/2013/file/d296c101daa88a51f6ca8cfc1ac79b50-Paper.pdf},
+	volume = {26},
+	year = {2013},
+	Bdsk-Url-1 = {https://proceedings.neurips.cc/paper/2013/file/d296c101daa88a51f6ca8cfc1ac79b50-Paper.pdf}}
+
+@inproceedings{NEURIPS2020_97e401a0,
+	author = {Shen, Lifeng and Li, Zhuocong and Kwok, James},
+	booktitle = {Advances in Neural Information Processing Systems},
+	date-added = {2021-03-26 13:36:29 -0400},
+	date-modified = {2021-03-26 13:36:45 -0400},
+	editor = {H. Larochelle and M. Ranzato and R. Hadsell and M. F. Balcan and H. Lin},
+	keywords = {time series, anomaly detection, deep learning},
+	pages = {13016--13026},
+	publisher = {Curran Associates, Inc.},
+	title = {Timeseries Anomaly Detection using Temporal Hierarchical One-Class Network},
+	url = {https://proceedings.neurips.cc/paper/2020/file/97e401a02082021fd24957f852e0e475-Paper.pdf},
+	volume = {33},
+	year = {2020},
+	Bdsk-Url-1 = {https://proceedings.neurips.cc/paper/2020/file/97e401a02082021fd24957f852e0e475-Paper.pdf}}
+
+@article{agrawal2019differentiable,
+	author = {Agrawal, Akshay and Amos, Brandon and Barratt, Shane and Boyd, Stephen and Diamond, Steven and Kolter, Zico},
+	date-added = {2021-03-25 14:01:50 -0400},
+	date-modified = {2021-03-25 14:02:07 -0400},
+	journal = {arXiv preprint arXiv:1910.12430},
+	keywords = {deep learning, optimization, differentiable programming},
+	title = {Differentiable convex optimization layers},
+	year = {2019},
+	Bdsk-Url-1 = {https://arxiv.org/abs/1910.12430}}
+
+@inproceedings{amos2017optnet,
+	author = {Amos, Brandon and Kolter, J Zico},
+	booktitle = {International Conference on Machine Learning},
+	date-added = {2021-03-25 14:01:06 -0400},
+	date-modified = {2021-03-25 14:01:31 -0400},
+	keywords = {deep learning, optimization, differentiable programming},
+	organization = {PMLR},
+	pages = {136--145},
+	title = {Optnet: Differentiable optimization as a layer in neural networks},
+	year = {2017},
+	Bdsk-Url-1 = {http://proceedings.mlr.press/v70/amos17a.html},
+	Bdsk-Url-2 = {http://proceedings.mlr.press/v70/amos17a/amos17a.pdf}}
+
+@inproceedings{blondel2020fast,
+	abstract = {The sorting operation is one of the most commonly used building blocks in computer programming. In machine learning, it is often used for
+robust statistics. However, seen as a function,
+it is piecewise linear and as a result includes
+many kinks where it is non-differentiable. More
+problematic is the related ranking operator, often
+used for order statistics and ranking metrics. It
+is a piecewise constant function, meaning that
+its derivatives are null or undefined. While numerous works have proposed differentiable proxies to sorting and ranking, they do not achieve
+the O(n log n) time complexity one would expect
+from sorting and ranking operations. In this paper, we propose the first differentiable sorting and
+ranking operators with O(n log n) time and O(n)
+space complexity. Our proposal in addition enjoys
+exact computation and differentiation. We achieve
+this feat by constructing differentiable operators
+as projections onto the permutahedron, the convex hull of permutations, and using a reduction
+to isotonic optimization. Empirically, we confirm
+that our approach is an order of magnitude faster
+than existing approaches and showcase two novel
+applications: differentiable Spearman's rank correlation coefficient and least trimmed squares.},
+	annote = {``From the fundamental theorem of linear programming, an optimal solution of a linear program is almost surely achieved at a vertex of the convex polytope, a permutation in the case of the permutahedron''. 
+They relax the (exact) discrete programming formulation to allow for ``continuous permutations'', knowing that the solution of their relaxed formulation is guaranteed to be at a vertex of the permutahedron (ie, it is guaranteed to be a permutation).},
+	author = {Blondel, Mathieu and Teboul, Olivier and Berthet, Quentin and Djolonga, Josip},
+	booktitle = {International Conference on Machine Learning},
+	date-added = {2021-03-25 11:43:34 -0400},
+	date-modified = {2021-03-25 14:05:13 -0400},
+	keywords = {differentiable programming, optimization},
+	organization = {PMLR},
+	pages = {950--959},
+	read = {1},
+	title = {Fast differentiable sorting and ranking},
+	year = {2020},
+	Bdsk-Url-1 = {http://proceedings.mlr.press/v119/blondel20a/blondel20a.pdf},
+	Bdsk-Url-2 = {https://arxiv.org/abs/2002.08871}}
+
+@article{sambasivan2021everyone,
+	author = {Sambasivan, Nithya and Kapania, Shivani and Highfill, Hannah and Akrong, Diana and Paritosh, Praveen Kumar and Aroyo, Lora Mois},
+	date-added = {2021-03-23 14:20:42 -0400},
+	date-modified = {2021-03-23 14:21:31 -0400},
+	keywords = {ai, data, review},
+	title = {" Everyone wants to do the model work, not the data work": Data Cascades in High-Stakes AI},
+	year = {2021},
+	Bdsk-Url-1 = {https://research.google/pubs/pub49953/},
+	Bdsk-Url-2 = {https://storage.googleapis.com/pub-tools-public-publication-data/pdf/0d556e45afc54afeb2eb6b51a9bc1827b9961ff4.pdf}}
+
+@techreport{garg2021weatherbench,
+	author = {Garg, Sagar and Rasp, Stephan and Thuerey, Nils},
+	date-added = {2021-03-23 14:17:17 -0400},
+	date-modified = {2021-03-23 14:17:50 -0400},
+	institution = {Copernicus Meetings},
+	keywords = {deep learning, forecasting, weather, uncertainty},
+	title = {WeatherBench Probability: Medium-range weather forecasts with probabilistic machine learning methods.},
+	year = {2021},
+	Bdsk-Url-1 = {https://meetingorganizer.copernicus.org/EGU21/EGU21-11448.html}}
+
+@article{ruthotto2021introduction,
+	annote = {1. Motivation
+Introduce 3 key research questions about Deep Generative Models (DGM):
+a. DGM are ill-posed (approximate pdf from finite nb of points). So reconstruction depends on modelling assumptions (hp, network structure,{\ldots})
+b. DGM requires to quantify similarity between 2 samples. Can be done directly (2-sample test -> difficult), or by inverting the generator (-> needs invertible generator)
+c. Choice of nb of hp in latent space (too much -> ill-posed; too little -> poor approx)
+
+2 Mathematical Formulation and Examples
+2.1 General Set Up
+Target: learn a representation of a distribution X is high dim and intractable (eg, multimodal with disjoint support).
+Input: iid data from X (training data)
+Goal: Find a map g that takes a tractable distribution Z and approximates X. Input of function z is called latent variable (Z=latent space). Typicall Z ~ N (univariate Gaussian)
+-> Focus is only on the generator g (encoder is just one way to train the generator, as they show next)
+
+Latent space can be used to calculate likelihood/evidence of a sample x, using marginalization p(x) = \int p(x|z) p(z) dz, where p(x|z) measures the similarity between g(z) and x (eg, Gaussian for real-valued data, centered at g(z); what is sigma?). But that integral is typically intractable due to high dimension (even for z a univariate Gaussian?!).
+
+2.2 Testbed Examples
+Introduce the examples used throughout the paper
+
+Example1: scikit-learn Moons
+
+Example2: MNIST
+Generator is a 3-layer CNN, starting from a 2D latent variable. 
+This is possible thanks to the use of transposed convolutions (or sometimes incorreectly called a deconvolution). This is all explained in this blog post: https://towardsdatascience.com/types-of-convolutions-in-deep-learning-717013397f4d
+
+2.3 Training the Generator: A High-level Overview
+Focus is only on generator (most general setting).
+Train generator weights so that p(g(Z)) approximates p(X). Comparing them directly is a 2-sample hyp test which is very diff in high dim. So will rely on visual obs.
+
+Present 3 main ways of training a generator:
+* Normalizing flows / Continuous Normalizing flows: only valid when latent space has same dim as data space. In that case, we look for an invertible generator. An advantage is that if generator function and its inverse are differentiable, then you can estimate likelihood of a data point with the change of variable formula (no need for an integral).
+* VAEs: Introduce encoder which approximates the intractable posterior p(z|x).
+* GANs: Try to solve 2-sample hyp test problem directly in data space, by leaning the distance between a generated sample and the true data distribution (discriminator).
+
+3 Finite and Continuous Normalizing Flows
+},
+	archiveprefix = {arXiv},
+	author = {Lars Ruthotto and Eldad Haber},
+	date-added = {2021-03-23 13:53:02 -0400},
+	date-modified = {2021-03-24 17:29:22 -0400},
+	eprint = {2103.05180},
+	keywords = {deep learning, generative model, **MUST-READ**, review},
+	primaryclass = {cs.LG},
+	title = {An Introduction to Deep Generative Modeling},
+	year = {2021},
+	Bdsk-Url-1 = {https://arxiv.org/abs/2103.05180},
+	Bdsk-Url-2 = {https://arxiv.org/pdf/2103.05180.pdf}}
+
+@article{kofod2012structured,
+	author = {Kofod-Petersen, Anders},
+	date-added = {2021-03-23 10:41:26 -0400},
+	date-modified = {2021-03-23 10:41:36 -0400},
+	journal = {Ver. 0.1. October},
+	keywords = {literature review},
+	title = {How to do a Structured Literature Review in computer science},
+	volume = {1},
+	year = {2012},
+	Bdsk-Url-1 = {https://research.idi.ntnu.no/aimasters/files/SLR_HowTo2018.pdf}}
+
+@article{lan2020perfect,
+	author = {Lan, Charline Le and Dinh, Laurent},
+	date-added = {2021-03-19 15:42:23 -0400},
+	date-modified = {2021-03-19 15:42:43 -0400},
+	journal = {arXiv preprint arXiv:2012.03808},
+	keywords = {anomaly detection, generative model},
+	title = {Perfect density models cannot guarantee anomaly detection},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2012.03808.pdf}}
+
+@book{pml1Book,
+	author = {Kevin P. Murphy},
+	date-added = {2021-03-19 11:02:47 -0400},
+	date-modified = {2021-03-19 11:03:10 -0400},
+	keywords = {machine learning,},
+	publisher = {MIT Press},
+	title = {Probabilistic Machine Learning: An introduction},
+	url = {probml.ai},
+	year = 2021,
+	Bdsk-Url-1 = {probml.ai},
+	Bdsk-Url-2 = {https://probml.github.io/pml-book/book1.html}}
 
 @article{ruthotto2019deep,
 	author = {Ruthotto, Lars and Haber, Eldad},
@@ -26,9 +238,9 @@
 @article{benidis2020neural,
 	author = {Benidis, Konstantinos and Rangapuram, Syama Sundar and Flunkert, Valentin and Wang, Bernie and Maddix, Danielle and Turkmen, Caner and Gasthaus, Jan and Bohlke-Schneider, Michael and Salinas, David and Stella, Lorenzo and others},
 	date-added = {2021-03-15 12:03:58 -0400},
-	date-modified = {2021-03-16 12:23:42 -0400},
+	date-modified = {2021-03-23 13:55:33 -0400},
 	journal = {arXiv preprint arXiv:2004.10240},
-	keywords = {deep learning, forecasting, **MUST-READ**},
+	keywords = {deep learning, forecasting, **MUST-READ**, review},
 	title = {Neural forecasting: Introduction and literature overview},
 	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/abs/2004.10240}}
@@ -63,9 +275,9 @@ Interestingly, they use a duality-approach to transform an arg-max into a simple
 @article{zhang2021understanding,
 	author = {Zhang, Chiyuan and Bengio, Samy and Hardt, Moritz and Recht, Benjamin and Vinyals, Oriol},
 	date-added = {2021-03-10 21:23:36 -0500},
-	date-modified = {2021-03-10 21:24:02 -0500},
+	date-modified = {2021-03-23 13:57:22 -0400},
 	journal = {Communications of the ACM},
-	keywords = {deep learning, generalization, **MUST-READ**},
+	keywords = {deep learning, generalization},
 	number = {3},
 	pages = {107--115},
 	publisher = {ACM New York, NY, USA},
@@ -96,8 +308,8 @@ Interestingly, they use a duality-approach to transform an arg-max into a simple
 	author = {Zhu, Yunyue and Shasha, Dennis},
 	booktitle = {VLDB'02: Proceedings of the 28th International Conference on Very Large Databases},
 	date-added = {2021-03-09 14:30:58 -0500},
-	date-modified = {2021-03-09 14:31:34 -0500},
-	keywords = {online algorithm, time series, statistics, streaming, **MUST-READ**},
+	date-modified = {2021-03-23 13:57:34 -0400},
+	keywords = {online algorithm, time series, statistics, streaming, finance},
 	organization = {Elsevier},
 	pages = {358--369},
 	title = {Statstream: Statistical monitoring of thousands of data streams in real time},
@@ -263,9 +475,9 @@ Error bars are calculated, instead of derived from MC simulation (different seed
 @article{scholkopf2021causal,
 	author = {Bernhard Sch{\"o}lkopf and Francesco Locatello and Stefan Bauer and Nan Rosemary Ke and Nal Kalchbrenner and Anirudh Goyal and Yoshua Bengio},
 	date-added = {2021-02-23 14:08:39 -0500},
-	date-modified = {2021-02-27 10:02:56 -0500},
+	date-modified = {2021-03-23 13:56:54 -0400},
 	journal = {arxiv},
-	keywords = {causality, representation learning, **MUST-READ**},
+	keywords = {causality, representation learning},
 	title = {Towards Causal Representation Learning},
 	year = {2021},
 	Bdsk-Url-1 = {https://arxiv.org/abs/2102.11107}}
@@ -325,9 +537,9 @@ Error bars are calculated, instead of derived from MC simulation (different seed
 	archiveprefix = {arXiv},
 	author = {Moritz Hardt and Benjamin Recht},
 	date-added = {2021-02-15 21:43:49 -0500},
-	date-modified = {2021-02-15 21:44:29 -0500},
+	date-modified = {2021-03-23 13:55:42 -0400},
 	eprint = {2102.05242},
-	keywords = {machine learning, deep learning, causality, decision making, **MUST-READ**},
+	keywords = {machine learning, deep learning, causality, decision making, **MUST-READ**, textbook},
 	primaryclass = {cs.LG},
 	publisher = {\url{https://mlstory.org}},
 	title = {Patterns, predictions, and actions: A story about machine learning},
@@ -338,9 +550,9 @@ Error bars are calculated, instead of derived from MC simulation (different seed
 @article{brock2021recogn,
 	author = {Brock, Andrew and De, Soham and Smith, Samuel L. and Simonyan, Karen},
 	date-added = {2021-02-15 10:06:14 -0500},
-	date-modified = {2021-02-15 10:08:40 -0500},
+	date-modified = {2021-03-23 13:54:15 -0400},
 	journal = {arXiv:2102.06171},
-	keywords = {vision, normalization, **MUST-READ**},
+	keywords = {vision, normalization},
 	title = {High-Performance Large-Scale Image Recognition Without Normalization},
 	year = {2021},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2102.06171.pdf}}
@@ -361,9 +573,9 @@ and emerging research motivated by lifelong learning factors in biological syste
 such as structural plasticity, memory replay, curriculum and transfer learning, intrinsic motivation, and multisensory integration.},
 	author = {Parisi, German I and Kemker, Ronald and Part, Jose L and Kanan, Christopher and Wermter, Stefan},
 	date-added = {2021-02-11 14:53:39 -0500},
-	date-modified = {2021-02-11 14:54:05 -0500},
+	date-modified = {2021-03-23 13:56:37 -0400},
 	journal = {Neural Networks},
-	keywords = {continual learning, deep learning, **MUST-READ**},
+	keywords = {continual learning, deep learning, review},
 	pages = {54--71},
 	publisher = {Elsevier},
 	title = {Continual lifelong learning with neural networks: A review},
@@ -375,8 +587,8 @@ such as structural plasticity, memory replay, curriculum and transfer learning, 
 	author = {Pamfil, Roxana and Sriwattanaworachai, Nisara and Desai, Shaan and Pilgerstorfer, Philip and Georgatzis, Konstantinos and Beaumont, Paul and Aragam, Bryon},
 	booktitle = {International Conference on Artificial Intelligence and Statistics},
 	date-added = {2021-02-10 13:34:22 -0500},
-	date-modified = {2021-02-10 13:34:43 -0500},
-	keywords = {causality, time series, **MUST-READ**},
+	date-modified = {2021-03-23 13:56:19 -0400},
+	keywords = {causality, time series,},
 	organization = {PMLR},
 	pages = {1595--1605},
 	title = {DYNOTEARS: Structure learning from time-series data},
@@ -387,8 +599,8 @@ such as structural plasticity, memory replay, curriculum and transfer learning, 
 	author = {Lawrence, Andrew R and Kaiser, Marcus and Sampaio, Rui and Sipos, Maksim},
 	booktitle = {Advances in Neural Information Processing Systems},
 	date-added = {2021-02-10 12:37:05 -0500},
-	date-modified = {2021-02-10 13:33:31 -0500},
-	keywords = {causality, time series, **MUST-READ**, **TO-BE-IMPLEMENTED**},
+	date-modified = {2021-03-23 13:56:04 -0400},
+	keywords = {causality, time series, **TO-BE-IMPLEMENTED**},
 	organization = {Causal Discovery & Causality-Inspired Machine Learning Workshop},
 	title = {Data Generating Process to Evaluate Causal Discovery Techniques for Time Series Data},
 	year = {2020},
@@ -534,9 +746,9 @@ Some results: https://www.deepmind.com/blog/wavenet-generative-model-raw-audio/
 @article{ha2018world,
 	author = {Ha, David and Schmidhuber, J{\"u}rgen},
 	date-added = {2021-01-17 19:41:15 -0500},
-	date-modified = {2021-01-17 19:41:53 -0500},
+	date-modified = {2021-03-18 17:18:24 -0400},
 	journal = {arXiv preprint arXiv:1803.10122},
-	keywords = {reinforcement learning, world model, deep learning, **MUST-READ**},
+	keywords = {reinforcement learning, world model, deep learning,},
 	title = {World models},
 	year = {2018},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/1803.10122.pdf}}
@@ -846,9 +1058,9 @@ Open research questions:
 @article{innes2019differentiable,
 	author = {Innes, Mike and Edelman, Alan and Fischer, Keno and Rackauckas, Christopher and Saba, Elliot and Shah, Viral B and Tebbutt, Will},
 	date-added = {2021-01-07 16:44:56 -0500},
-	date-modified = {2021-01-07 16:46:03 -0500},
+	date-modified = {2021-03-23 13:55:22 -0400},
 	journal = {CoRR, abs/1907.07587},
-	keywords = {differentiable programming, machine learning, scientific computing, julia, **MUST-READ**},
+	keywords = {differentiable programming, machine learning, scientific computing, julia},
 	title = {A differentiable programming system to bridge machine learning and scientific computing},
 	year = {2019},
 	Bdsk-Url-1 = {https://deepai.org/publication/a-differentiable-programming-system-to-bridge-machine-learning-and-scientific-computing},
@@ -927,9 +1139,9 @@ results suggest that practitioners collect and self-train on large, diverse data
 reduce biases in classifiers even if labeling is impractical.},
 	author = {Chen, Yining and Wei, Colin and Kumar, Ananya and Ma, Tengyu},
 	date-added = {2020-12-17 14:25:47 -0500},
-	date-modified = {2020-12-17 14:26:22 -0500},
+	date-modified = {2021-03-23 13:54:26 -0400},
 	journal = {Advances in Neural Information Processing Systems},
-	keywords = {concept drift, deep learning, **MUST-READ**},
+	keywords = {concept drift, deep learning},
 	title = {Self-training avoids using spurious features under domain shift},
 	volume = {33},
 	year = {2020},
@@ -1108,9 +1320,9 @@ Assessment of the value, especially temporal aspect. In some domain, time is of 
 @article{gomes2019machine,
 	author = {Gomes, Heitor Murilo and Read, Jesse and Bifet, Albert and Barddal, Jean Paul and Gama, Jo{\~a}o},
 	date-added = {2020-12-14 23:51:57 -0500},
-	date-modified = {2020-12-14 23:52:22 -0500},
+	date-modified = {2021-03-23 13:55:04 -0400},
 	journal = {ACM SIGKDD Explorations Newsletter},
-	keywords = {streaming, machine learning, **MUST-READ**},
+	keywords = {streaming, machine learning},
 	number = {2},
 	pages = {6--22},
 	publisher = {ACM New York, NY, USA},
@@ -1495,9 +1707,9 @@ genomics. Our results show the need to explicitly account for underspecification
 pipelines that are intended for real-world deployment in any domain.},
 	author = {D'Amour, Alexander and Heller, Katherine and Moldovan, Dan and Adlam, Ben and Alipanahi, Babak and Beutel, Alex and Chen, Christina and Deaton, Jonathan and Eisenstein, Jacob and Hoffman, Matthew D and others},
 	date-added = {2020-12-07 09:29:35 -0500},
-	date-modified = {2020-12-07 09:30:33 -0500},
+	date-modified = {2021-03-23 13:54:40 -0400},
 	journal = {arXiv preprint arXiv:2011.03395},
-	keywords = {xai, concept drift, **MUST-READ**},
+	keywords = {xai, concept drift, machine learning},
 	title = {Underspecification Presents Challenges for Credibility in Modern Machine Learning},
 	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2011.03395.pdf}}
@@ -1505,9 +1717,9 @@ pipelines that are intended for real-world deployment in any domain.},
 @article{li2020fourier,
 	author = {Li, Zongyi and Kovachki, Nikola and Azizzadenesheli, Kamyar and Liu, Burigede and Bhattacharya, Kaushik and Stuart, Andrew and Anandkumar, Anima},
 	date-added = {2020-12-07 09:25:37 -0500},
-	date-modified = {2020-12-07 09:26:03 -0500},
+	date-modified = {2021-03-18 17:19:11 -0400},
 	journal = {arXiv preprint arXiv:2010.08895},
-	keywords = {pde, deep learning, **MUST-READ**},
+	keywords = {pde, deep learning},
 	title = {Fourier Neural Operator for Parametric Partial Differential Equations},
 	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2010.08895.pdf}}
@@ -2368,9 +2580,9 @@ be executed ten times, the 5x2cv test is recommended, because it is slightly mor
 because it directly measures variation due to the choice of training set.},
 	author = {Dietterich, Thomas G},
 	date-added = {2020-06-10 07:52:19 -0400},
-	date-modified = {2020-11-27 16:32:12 -0500},
+	date-modified = {2021-03-23 13:54:51 -0400},
 	journal = {Neural computation},
-	keywords = {model selection, statistical test, cross validation, **MUST-READ**},
+	keywords = {model selection, statistical test, cross validation,},
 	number = {7},
 	pages = {1895--1923},
 	publisher = {MIT Press},
@@ -2779,8 +2991,8 @@ best models from the literature.},
 	author = {Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
 	booktitle = {Advances in neural information processing systems},
 	date-added = {2020-05-25 10:27:11 -0400},
-	date-modified = {2021-02-16 15:33:01 -0500},
-	keywords = {deep learning, attention, **MUST-READ**},
+	date-modified = {2021-03-23 13:57:11 -0400},
+	keywords = {deep learning, attention, transformer},
 	pages = {5998--6008},
 	title = {Attention is all you need},
 	year = {2017},
