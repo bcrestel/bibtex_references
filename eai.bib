@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2021-04-01 00:03:54 -0400 
+%% Created for Benjamin Crestel at 2021-04-26 11:10:24 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,16 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@article{lu2019deeponet,
+	author = {Lu, Lu and Jin, Pengzhan and Karniadakis, George Em},
+	date-added = {2021-04-25 21:59:40 -0400},
+	date-modified = {2021-04-25 21:59:55 -0400},
+	journal = {arXiv preprint arXiv:1910.03193},
+	keywords = {deep learning, pde},
+	title = {Deeponet: Learning nonlinear operators for identifying differential equations based on the universal approximation theorem of operators},
+	year = {2019},
+	Bdsk-Url-1 = {https://arxiv.org/abs/1910.03193}}
 
 @article{wu2020current,
 	author = {Wu, Renjie and Keogh, Eamonn J},
@@ -26,7 +36,7 @@
 	date-added = {2021-03-29 10:34:51 -0400},
 	date-modified = {2021-03-29 10:35:26 -0400},
 	journal = {Journal of Computational and Graphical Statistics},
-	keywords = {time series, anomaly detection, },
+	keywords = {time series, anomaly detection,},
 	number = {1},
 	pages = {13--27},
 	publisher = {Taylor \& Francis},
@@ -177,11 +187,17 @@ Present 3 main ways of training a generator:
 * GANs: Try to solve 2-sample hyp test problem directly in data space, by leaning the distance between a generated sample and the true data distribution (discriminator).
 
 3 Finite and Continuous Normalizing Flows
-},
+Advantage of NF is that you can estimate (approx.) density of the samples thanks to inverse function and the determiniant of the Jacobian of its inverse.
+Trained via MLE
+
+Finite NF: flow described by a sequence of invertible functions (typically NN)
+Continuous NF: flow described via the velocity in an ODE 
+
+4 Variational Autoencoders},
 	archiveprefix = {arXiv},
 	author = {Lars Ruthotto and Eldad Haber},
 	date-added = {2021-03-23 13:53:02 -0400},
-	date-modified = {2021-03-24 17:29:22 -0400},
+	date-modified = {2021-04-14 22:28:41 -0400},
 	eprint = {2103.05180},
 	keywords = {deep learning, generative model, **MUST-READ**, review},
 	primaryclass = {cs.LG},
@@ -1722,7 +1738,8 @@ pipelines that are intended for real-world deployment in any domain.},
 	keywords = {pde, deep learning},
 	title = {Fourier Neural Operator for Parametric Partial Differential Equations},
 	year = {2020},
-	Bdsk-Url-1 = {https://arxiv.org/pdf/2010.08895.pdf}}
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2010.08895.pdf},
+	Bdsk-Url-2 = {https://github.com/zongyi-li/fourier_neural_operator}}
 
 @article{tashman2000out,
 	abstract = {In evaluations of forecasting accuracy, including forecasting competitions, researchers have paid attention to the selection
