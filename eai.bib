@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2021-04-01 00:03:54 -0400 
+%% Created for Ben Crestel at 2021-04-22 09:41:17 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,277 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@article{fernandez2021causal,
+	author = {Fern{\'a}ndez-Lor{\'\i}a, Carlos and Provost, Foster},
+	date-added = {2021-04-22 09:40:52 -0400},
+	date-modified = {2021-04-22 09:41:11 -0400},
+	journal = {arXiv preprint arXiv:2104.04103},
+	keywords = {causality, finance},
+	title = {Causal Decision Making and Causal Effect Estimation Are Not the Same... and Why It Matters},
+	year = {2021},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2104.04103.pdf}}
+
+@inproceedings{zhang2019deep,
+	annote = {MSCRED Framework
+
+``To represent the inter-correlations between different pairs
+of time series in a multivariate time series segment from
+t − w to t, we construct an n × n signature matrix Mt
+based upon the pairwise inner-product of two time series within this segment''
+
+Model: convolutional encoder-decoder for the signature matrix
+using 3d-convo on the signature matrix
+
+``Note that the exact order of the time series based on which
+the signature matrices are formed is not important, because
+for any given permutation, the resulting local patterns can be
+captured by the convolutional encoder'': I suppose that their point here is that the conv kernel can swap columns (ts) to achieve any ordering of the ts. But is that true for *any* arrangement? That can't be true for any architecture of encoder. },
+	author = {Zhang, Chuxu and Song, Dongjin and Chen, Yuncong and Feng, Xinyang and Lumezanu, Cristian and Cheng, Wei and Ni, Jingchao and Zong, Bo and Chen, Haifeng and Chawla, Nitesh V},
+	booktitle = {Proceedings of the AAAI Conference on Artificial Intelligence},
+	date-added = {2021-04-08 22:14:54 -0400},
+	date-modified = {2021-04-08 22:27:19 -0400},
+	keywords = {anomaly detection, time series},
+	number = {01},
+	pages = {1409--1416},
+	title = {A deep neural network for unsupervised anomaly detection and diagnosis in multivariate time series data},
+	volume = {33},
+	year = {2019},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1811.08055.pdf}}
+
+@article{zhao2020multivariate,
+	annote = {It's a really complicated model, but there are also a lot of interesting details on how to do multivariate AD.
+Their model can be split into 2 blocks: feature generation, and analysis
+The first block includes normalization, cleaning (use Spectral Radius to remove simple point anomalies), 1d convo, and graph attention networks across time and across features. All these features are passed through a GRU (bc why not, I guess), then use to generate 2 tasks:
+* forecasting
+* self-reconstruction (VAE)
+},
+	author = {Zhao, Hang and Wang, Yujing and Duan, Juanyong and Huang, Congrui and Cao, Defu and Tong, Yunhai and Xu, Bixiong and Bai, Jing and Tong, Jie and Zhang, Qi},
+	date-added = {2021-04-08 21:43:53 -0400},
+	date-modified = {2021-04-08 22:15:07 -0400},
+	journal = {arXiv preprint arXiv:2009.02040},
+	keywords = {anomaly detection, time series},
+	read = {1},
+	title = {Multivariate time-series anomaly detection via graph attention network},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2009.02040.pdf}}
+
+@article{munir2018deepant,
+	annote = {Forecasting-based AD
+Forecast part relies on CNN},
+	author = {Munir, Mohsin and Siddiqui, Shoaib Ahmed and Dengel, Andreas and Ahmed, Sheraz},
+	date-added = {2021-04-08 21:40:55 -0400},
+	date-modified = {2021-04-08 21:41:19 -0400},
+	journal = {IEEE Access},
+	keywords = {anomaly detection, time series, cnn},
+	pages = {1991--2005},
+	publisher = {IEEE},
+	title = {DeepAnT: A deep learning approach for unsupervised anomaly detection in time series},
+	volume = {7},
+	year = {2018},
+	Bdsk-Url-1 = {https://ieeexplore.ieee.org/iel7/6287639/6514899/08581424.pdf}}
+
+@inproceedings{audibert2020usad,
+	annote = {Train 2 encoder-decoder that share the same encoder
+Both ED must reproduce the input, but there are 2 additional losses
+to force 1 to detect if it's getting a true input or an input reconstructed by the other},
+	author = {Audibert, Julien and Michiardi, Pietro and Guyard, Fr{\'e}d{\'e}ric and Marti, S{\'e}bastien and Zuluaga, Maria A},
+	booktitle = {Proceedings of the 26th ACM SIGKDD International Conference on Knowledge Discovery \& Data Mining},
+	date-added = {2021-04-08 21:39:13 -0400},
+	date-modified = {2021-04-08 21:39:49 -0400},
+	keywords = {anomaly detection, time series, autoencoder, gan},
+	pages = {3395--3404},
+	read = {1},
+	title = {USAD: UnSupervised Anomaly Detection on Multivariate Time Series},
+	year = {2020},
+	Bdsk-Url-1 = {https://dl.acm.org/doi/pdf/10.1145/3394486.3403392},
+	Bdsk-Url-2 = {https://github.com/JulienAu/Anomaly_Detection_Tuto}}
+
+@misc{rojat2021explainable,
+	archiveprefix = {arXiv},
+	author = {Thomas Rojat and Rapha{\"e}l Puget and David Filliat and Javier Del Ser and Rodolphe Gelin and Natalia D{\'\i}az-Rodr{\'\i}guez},
+	date-added = {2021-04-08 09:11:04 -0400},
+	date-modified = {2021-04-08 09:11:26 -0400},
+	eprint = {2104.00950},
+	keywords = {xai, time series, review},
+	primaryclass = {cs.LG},
+	title = {Explainable Artificial Intelligence (XAI) on TimeSeries Data: A Survey},
+	year = {2021},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/2104.00950.pdf}}
+
+@article{arrieta2020explainable,
+	author = {Arrieta, Alejandro Barredo and D{\'\i}az-Rodr{\'\i}guez, Natalia and Del Ser, Javier and Bennetot, Adrien and Tabik, Siham and Barbado, Alberto and Garc{\'\i}a, Salvador and Gil-L{\'o}pez, Sergio and Molina, Daniel and Benjamins, Richard and others},
+	date-added = {2021-04-08 09:09:35 -0400},
+	date-modified = {2021-04-08 09:11:02 -0400},
+	journal = {Information Fusion},
+	keywords = {xai, ai},
+	pages = {82--115},
+	publisher = {Elsevier},
+	title = {Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI},
+	volume = {58},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1910.10045}}
+
+@article{shen2020timeseries,
+	abstract = {Real-world timeseries have complex underlying temporal dynamics and the detection of anomalies is challenging. In this paper, we propose the Temporal Hierarchical One-Class (THOC) network, a temporal one-class classification model for
+timeseries anomaly detection. It captures temporal dynamics in multiple scales
+by using a dilated recurrent neural network with skip connections. Using multiple
+hyperspheres obtained with a hierarchical clustering process, a one-class objective
+called Multiscale Vector Data Description is defined. This allows the temporal
+dynamics to be well captured by a set of multi-resolution temporal clusters. To
+further facilitate representation learning, the hypersphere centers are encouraged to
+be orthogonal to each other, and a self-supervision task in the temporal domain is
+added. The whole model can be trained end-to-end. Extensive empirical studies
+on various real-world timeseries demonstrate that the proposed THOC network
+outperforms recent strong deep learning baselines on timeseries anomaly detection.},
+	annote = {2 Related Work
+Discuss SVDD and DeepSVD
+Note: DeepSVD is for image, but could be extended to ts. The idea is to learn a representation by forcing the representation of each ts (or image) to cluster. I suppose you also have another loss that forces this representation to learn a meaningful representation, otherwise it could converge to a naive representation.
+
+3 Temporal Hierarchical One-Class (THOC) Network
+
+They use stacked dilated rnn (no official implementation in pytorch)
+RNN can take multivariate input
+
+They use all intermediate outcomes from the rnn cells, not just the last layer.
+
+They introduce a way to cluster the outcome of all intermediate layers. It's pretty complicated and introduces a lot of parameters. In the end, they do have 3 losses: a main one that check that all data fits within the clusters, a penalty to promote separation of the clusters, and a last one to train on a forecasting task in order to do multi-task learning (b/c why not{\ldots}).
+In the end, it seems pretty complex
+
+},
+	author = {Shen, Lifeng and Li, Zhuocong and Kwok, James},
+	date-added = {2021-04-07 12:25:42 -0400},
+	date-modified = {2021-04-07 15:23:49 -0400},
+	journal = {Advances in Neural Information Processing Systems},
+	keywords = {anomaly detection, time series, deep learning},
+	read = {1},
+	title = {Timeseries anomaly detection using temporal hierarchical one-class network},
+	volume = {33},
+	year = {2020},
+	Bdsk-Url-1 = {https://proceedings.neurips.cc//paper/2020/file/97e401a02082021fd24957f852e0e475-Paper.pdf}}
+
+@article{ahmad2017unsupervised,
+	abstract = {We are seeing an enormous increase in the availability of streaming, time-series data. Largely driven by the rise of connected real-time data sources, this data presents technical challenges and opportunities. One fundamental capability for streaming analytics is to model each stream in an unsupervised fashion and detect unusual, anomalous behaviors in real-time. Early anomaly detection is valuable, yet it can be difficult to execute reliably in practice. Application constraints require systems to process data in real- time, not batches. Streaming data inherently exhibits concept drift, favoring algorithms that learn con- tinuously. Furthermore, the massive number of independent streams in practice requires that anomaly detectors be fully automated. In this paper we propose a novel anomaly detection algorithm that meets these constraints. The technique is based on an online sequence memory algorithm called Hierarchi- cal Temporal Memory (HTM). We also present results using the Numenta Anomaly Benchmark (NAB), a benchmark containing real-world data streams with labeled anomalies. The benchmark, the first of its kind, provides a controlled open-source environment for testing anomaly detection algorithms on stream- ing data. We present results and analysis for a wide range of algorithms on this benchmark, and discuss future challenges for the emerging field of streaming analytics},
+	annote = {2. Anomaly detection using HTM
+2.1. Overview of HTM
+Do some form of DL but w/o back-prop. Their model predicts the next time step, then update at the next time step when receiving the true value based on the difference betw true and predicted (still sounds a lot like backprop{\ldots}.). Representation is sparse and update is sparse.
+But the paper doesn't provide much details about HTM.
+
+notation: pi(x_t) is a prediction of a(x_t+1)
+a(x_t) is a sparse binary vector representing the current input x_t
+
+2.2. Computing the prediction error
+They define a prediction error to check how well pi(x_t-1) approximates a(x_t) as a percentage of values that have matching bits (remember they are sparse binary representations)
+
+2.3. Computing anomaly likelihood
+They don't use that prediction error directly for AD (at least not for all scenarios) as it can be noisy and unpredictable.
+Therefore they build a signal (called anomaly likelihood) comparing variations in the distribution of the prediction error in the short-term vs long-term
+And they threshold that anomaly likelihood for AD
+``A single spike in s t will not lead to a significant increase in L t but a series of spikes will''
+
+Their model as is only catches large positive deviation in the short term, compared to long term, as there is no abs value. If the short-term avg drops, this will not be flagged as an anomly. That only makes sense when we care about large positive anomalies, but doesn't make sense for the rest.
+
+2.4. Extensions
+Discuss multivariate AD. Claim possible because sparse binary representation can be derived from multiple input signals
+
+3. Evaluation of streaming anomaly detection algorithms
+
+Numenta Anomaly Benchmark (NAB)
+The data currently in the NAB corpus represents a variety of sources, ranging from server network utilization to temperature sensors on industrial machines to social media chatter
+
+4. Results & discussion
+
+All done on univariate ts
+Compare with a bunch of different methods
+
+
+Appendix
+
+S4. Extending HTM with multiple models
+Simply assume independence of models and multiply the likelihoods. Obvious problem, so try a solution by convolving the Q-function with a Gaussian kernel.
+Note: I'm not sure I understand what that does{\ldots}},
+	author = {Ahmad, Subutai and Lavin, Alexander and Purdy, Scott and Agha, Zuha},
+	date-added = {2021-04-06 15:17:29 -0400},
+	date-modified = {2021-04-07 12:02:13 -0400},
+	journal = {Neurocomputing},
+	keywords = {anomaly detection, time series, streaming, concept drift},
+	pages = {134--147},
+	publisher = {Elsevier},
+	title = {Unsupervised real-time anomaly detection for streaming data},
+	volume = {262},
+	year = {2017},
+	Bdsk-Url-1 = {https://reader.elsevier.com/reader/sd/pii/S0925231217309864?token=9CFDB7C49C6B3BFA5ECC3FEFD3044FA346C5C4CF523B7174A65F6E319E1C177F60098CA2892EC1403FB8C65A03753854&originRegion=us-east-1&originCreation=20210406190942},
+	Bdsk-Url-2 = {https://ars.els-cdn.com/content/image/1-s2.0-S0925231217309864-mmc1.pdf}}
+
+@inproceedings{buda2018deepad,
+	abstract = {This paper presents a generic anomaly detection approach
+for time-series data. Existing anomaly detection approaches have several
+drawbacks such as a large number of false positives, parameters tuning
+difficulties, the need for a labeled dataset for training, use-case restrictions, or difficulty of use. We propose DeepAD, an anomaly detection
+framework that leverages a plethora of time-series forecasting models in
+order to detect anomalies more accurately, irrespective of the underlying complex patterns to be learnt. Our solution does not rely on the
+labels of the anomalous class for training the model, nor for optimizing
+the threshold based on highest detection given the labels in the training
+data. We compare our framework against EGADS framework on real and
+synthetic data with varying time-series characteristics. Results show significant improvements on average of 25% and up to 40-50% in F1-score,
+precision, and recall on the Yahoo Webscope Benchmark.},
+	annote = {`` DeepAD employs various explicit generalization models to learn the
+normal behaviour of the data and utilizes a dynamic sliding window for determining a dynamic threshold fitted for each time-series under analysis. The
+dynamic window is adjusted for each point to contain past rescaled squared errors to ensure the accuracy is highest. ``
+
+3 DeepAD Framework
+
+- time series forcasting: use multiple tsf models for that
+- merge predictions: combine outcome from all the tsf
+- anomaly detector: ``compares the actual
+values and the predicted values and when the distance is above a certain
+threshold the framework reports the current value as anomalous''
+
+3.1 Time series forecasting (TSF)
+Tried different variations of LSTM, and stat models (ARIMA/HW).
+For LSTM, tried diff depths (1 to 7) and lookback period = 1 or 3 (???). Selected based on lowest RMSE.
+Note: that means some very deep LSTM with a very short lookback period. This is pretty weird for forecasting purposes{\ldots}. Then said they also look at lookback from 1 to 60.
+For ARIMA/HW, used lookback=24*5
+Used 4 ARIMA and 1 HW, selected based on the lowest RMSE.
+
+3.2 Merging Predictions (MP)
+1. single step merge: at each timestamp, only keep prediction the closest to the actual value
+2. voting: only keep model with the lowest RMSE on the training dataset
+
+3.3 Anomaly Detector (AD)
+They calculate the squared error (SE) between actual and predicted (over current and past values).
+Normalize past SE to [0,1] (minmaxscaler), then computer std dev or scaled SE.
+Then based on Chebyshev's inequality, set AD threshold as 10 * std(SE). So if scaled SE for current value is above that threshold, they trigger an alert
+Note: It's pretty weird and heuristic imo. Also, Chebyshev's inequality is for the diff between a value and the mean; but they don't use the mean here.
+
+4 Evaluation
+{\ldots}
+
+
+
+In the end, I don't see this method as being applicable to multivariate ts AD, despite their claim.
+The method contains a lot of heuristic, which is a bit worrying, and they show example for a single dataset and compare to a single method.},
+	author = {Buda, Teodora Sandra and Caglayan, Bora and Assem, Haytham},
+	booktitle = {Pacific-Asia Conference on Knowledge Discovery and Data Mining},
+	date-added = {2021-04-06 13:31:05 -0400},
+	date-modified = {2021-04-06 14:23:15 -0400},
+	keywords = {anomaly detection, time series, deep learning, },
+	organization = {Springer},
+	pages = {577--588},
+	read = {1},
+	title = {Deepad: A generic framework based on deep learning for time series anomaly detection},
+	year = {2018},
+	Bdsk-Url-1 = {https://www.researchgate.net/profile/Teodora-Buda/publication/325840218_DeepAD_A_Generic_Framework_Based_on_Deep_Learning_for_Time_Series_Anomaly_Detection/links/5c542db6299bf12be3f2c4b4/DeepAD-A-Generic-Framework-Based-on-Deep-Learning-for-Time-Series-Anomaly-Detection.pdf}}
+
+@article{garipov2018loss,
+	author = {Garipov, Timur and Izmailov, Pavel and Podoprikhin, Dmitrii and Vetrov, Dmitry and Wilson, Andrew Gordon},
+	date-added = {2021-04-06 10:32:03 -0400},
+	date-modified = {2021-04-06 10:32:21 -0400},
+	journal = {arXiv preprint arXiv:1802.10026},
+	keywords = {ensemble, deep learning},
+	title = {Loss surfaces, mode connectivity, and fast ensembling of dnns},
+	year = {2018},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1802.10026.pdf}}
 
 @article{wu2020current,
 	author = {Wu, Renjie and Keogh, Eamonn J},
@@ -26,7 +297,7 @@
 	date-added = {2021-03-29 10:34:51 -0400},
 	date-modified = {2021-03-29 10:35:26 -0400},
 	journal = {Journal of Computational and Graphical Statistics},
-	keywords = {time series, anomaly detection, },
+	keywords = {time series, anomaly detection,},
 	number = {1},
 	pages = {13--27},
 	publisher = {Taylor \& Francis},
@@ -4319,8 +4590,8 @@ Interesting paper overall. Seems a bit convoluted, but show SOTA results on a fe
 	author = {Ma, Qianli and Zheng, Jiawei and Li, Sen and Cottrell, Gary W},
 	booktitle = {Advances in Neural Information Processing Systems},
 	date-added = {2020-02-11 16:23:10 -0500},
-	date-modified = {2021-01-20 16:07:54 -0500},
-	keywords = {DTCR, clustering, k-means, seq2seq, time series, **TO-BE-IMPLEMENTED**},
+	date-modified = {2021-04-07 14:13:07 -0400},
+	keywords = {DTCR, clustering, k-means, seq2seq, time series, **TO-BE-IMPLEMENTED**, representation learning},
 	pages = {3776--3786},
 	read = {1},
 	title = {Learning Representations for Time Series Clustering},
