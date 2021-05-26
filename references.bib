@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2021-05-20 22:36:38 -0400 
+%% Created for Ben Crestel at 2021-05-26 15:56:22 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,50 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@article{kingma2019introduction,
+	author = {Kingma, Diederik P and Welling, Max},
+	date-added = {2021-05-26 14:43:42 -0400},
+	date-modified = {2021-05-26 14:43:57 -0400},
+	journal = {arXiv preprint arXiv:1906.02691},
+	keywords = {generative model, vae},
+	title = {An introduction to variational autoencoders},
+	year = {2019},
+	Bdsk-Url-1 = {https://arxiv.org/abs/1906.02691},
+	Bdsk-Url-2 = {https://arxiv.org/pdf/1906.02691.pdf}}
+
+@article{kossen2021active,
+	abstract = {We introduce active testing: a new framework
+for sample-efficient model evaluation. While
+approaches like active learning reduce the number
+of labels needed for model training, existing
+literature largely ignores the cost of labeling
+test data, typically unrealistically assuming large
+test sets for model evaluation. This creates a
+disconnect to real applications where test labels
+are important and just as expensive, e.g. for
+optimizing hyperparameters. Active testing
+addresses this by carefully selecting the test points
+to label, ensuring model evaluation is sampleefficient. To this end, we derive theoreticallygrounded and intuitive acquisition strategies that
+are specifically tailored to the goals of active
+testing, noting these are distinct to those of active
+learning. Actively selecting labels introduces a
+bias; we show how to remove that bias while
+reducing the variance of the estimator at the
+same time. Active testing is easy to implement,
+effective, and can be applied to any supervised
+machine learning method. We demonstrate this
+on models including WideResNet and Gaussian
+processes on datasets including CIFAR-100.},
+	author = {Kossen, Jannik and Farquhar, Sebastian and Gal, Yarin and Rainforth, Tom},
+	date-added = {2021-05-26 12:48:42 -0400},
+	date-modified = {2021-05-26 12:52:17 -0400},
+	journal = {arXiv preprint arXiv:2103.05331},
+	keywords = {deep learning, model selection, active learning},
+	title = {Active Testing: Sample-Efficient Model Evaluation},
+	year = {2021},
+	Bdsk-Url-1 = {https://arxiv.org/abs/2103.05331},
+	Bdsk-Url-2 = {https://arxiv.org/pdf/2103.05331.pdf}}
 
 @article{buluc2021randomized,
 	author = {Buluc, Aydin and Kolda, Tamara G and Wild, Stefan M and Anitescu, Mihai and DeGennaro, Anthony and Jakeman, John and Kamath, Chandrika and Lopes, Miles E and Martinsson, Per-Gunnar and Myers, Kary and others},
@@ -763,11 +807,23 @@ Trained via MLE
 Finite NF: flow described by a sequence of invertible functions (typically NN)
 Continuous NF: flow described via the velocity in an ODE 
 
-4 Variational Autoencoders},
+4 Variational Autoencoders
+For VAE, we lift the constraint on the latent space and the data space having the same dim. So now the generator is not invertible. We can't use the change of variable to estimate the likelihood.
+Instead, we must rely on Bayes' formula,
+p(x) = p(x,z) / p(z|x) = p(x|z) p(z) / p(z|x)
+The problem is that the posterior distribution p(z|x) is typically intractable (in parts b/c the map from X to Z in not invertible anymore). With VAE, we approximates the posterior with another map e(z|x), typically parametrized by a deep neural network; VAE are sometimes also called Deep Latent Variable models.
+
+4.1 Evidence Lower Bound Training
+Show how you can derive the Evidence Lower Bound (ELBO) from the likelihood. Split into 2 terms, i) term involving joint p(x,z) and approx posterior, and ii) KL divergence between exact and approx posterior. Since KL. >= 0, and is 0 only when both pdf are equal, we have a lower bound that is tight when the approx posterior is exact.
+You can re-write the term of the ELBO to show that it is the conditional likelihood plus KL divergence between approx posterior and our prior for latent variable.
+They talk about the relation between both terms, and how you can set relative importance for one or the other.
+
+4.2 Example: Gaussian Posterior
+},
 	archiveprefix = {arXiv},
 	author = {Lars Ruthotto and Eldad Haber},
 	date-added = {2021-03-23 13:53:02 -0400},
-	date-modified = {2021-04-14 22:28:41 -0400},
+	date-modified = {2021-05-26 15:00:21 -0400},
 	eprint = {2103.05180},
 	keywords = {deep learning, generative model, **MUST-READ**, review},
 	primaryclass = {cs.LG},
