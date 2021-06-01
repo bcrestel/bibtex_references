@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2021-06-01 09:21:39 -0400 
+%% Created for Ben Crestel at 2021-06-01 11:51:56 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,24 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@article{delise2021neural,
+	annote = {It's an interesting paper, but it seems to be rather preliminary.
+The idea is to use Neural SDE to model the asset price. They use torchsde to do that.
+They use the Wasserstein-1 distance as a loss function, which does not extend easily to multivariate. So their solution is restricted to derivatives based on a single asset (vaniall European options).
+Then use quantitative finance model to compute the price of the derivative.
+},
+	author = {DeLise, Timothy},
+	date-added = {2021-06-01 11:46:54 -0400},
+	date-modified = {2021-06-01 11:51:55 -0400},
+	journal = {arXiv preprint arXiv:2105.13320},
+	keywords = {finance, deep learning, derivative pricing},
+	read = {1},
+	title = {Neural Options Pricing},
+	year = {2021},
+	Bdsk-Url-1 = {https://arxiv.org/abs/2105.13320},
+	Bdsk-Url-2 = {https://arxiv.org/pdf/2105.13320.pdf},
+	Bdsk-Url-3 = {https://github.com/google-research/torchsde}}
 
 @article{kaissis2021end,
 	author = {Kaissis, Georgios and Ziller, Alexander and Passerat-Palmbach, Jonathan and Ryffel, Th{\'e}o and Usynin, Dmitrii and Trask, Andrew and Lima, Ion{\'e}sio and Mancuso, Jason and Jungmann, Friederike and Steinborn, Marc-Matthias and others},
