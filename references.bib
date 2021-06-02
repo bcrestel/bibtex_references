@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Ben Crestel at 2021-05-26 15:56:22 -0400 
+%% Created for Benjamin Crestel at 2021-06-02 09:34:28 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -11,12 +11,33 @@
 
 
 
+@article{delise2021neural,
+	abstract = {This research investigates pricing financial options based on the traditional martingale theory of arbitrage pricing applied to neural SDEs. We treat neural SDEs
+as universal It{\^o} process approximators. In this way we can lift all assumptions on
+the form of the underlying price process, and compute theoretical option prices
+numerically. We propose a variation of the SDE-GAN approach by implementing
+the Wasserstein distance metric as a loss function for training. Furthermore, it is
+conjectured that the error of the option price implied by the learnt model can be
+bounded by the very Wasserstein distance metric that was used to fit the empirical
+data.},
+	archiveprefix = {arXiv},
+	author = {Timothy DeLise},
+	date-added = {2021-05-28 13:07:35 -0400},
+	date-modified = {2021-05-28 13:08:53 -0400},
+	eprint = {2105.13320},
+	keywords = {derivative pricing, finance, neural ODE, sde, **MUST-READ**},
+	primaryclass = {q-fin.MF},
+	title = {Neural Options Pricing},
+	year = {2021},
+	Bdsk-Url-1 = {https://arxiv.org/abs/2105.13320},
+	Bdsk-Url-2 = {https://arxiv.org/pdf/2105.13320.pdf}}
+
 @article{kingma2019introduction,
 	author = {Kingma, Diederik P and Welling, Max},
 	date-added = {2021-05-26 14:43:42 -0400},
-	date-modified = {2021-05-26 14:43:57 -0400},
+	date-modified = {2021-05-28 13:15:33 -0400},
 	journal = {arXiv preprint arXiv:1906.02691},
-	keywords = {generative model, vae},
+	keywords = {generative model, vae, review},
 	title = {An introduction to variational autoencoders},
 	year = {2019},
 	Bdsk-Url-1 = {https://arxiv.org/abs/1906.02691},
@@ -782,6 +803,8 @@ Goal: Find a map g that takes a tractable distribution Z and approximates X. Inp
 
 Latent space can be used to calculate likelihood/evidence of a sample x, using marginalization p(x) = \int p(x|z) p(z) dz, where p(x|z) measures the similarity between g(z) and x (eg, Gaussian for real-valued data, centered at g(z); what is sigma?). But that integral is typically intractable due to high dimension (even for z a univariate Gaussian?!).
 
+One point that eluded me at first is that the form of the likelihood function is a modeling choice. Typically Gaussian for real-valued data and Bernoulli for categorical data. If one uses Gaussian, the variance can be used as a scaler parameter, like with the VAE for instance where the variance can be used to balance out the log-likelihood term and the KL divergence one. The mean is taken to be the output of the generator g(z).
+
 2.2 Testbed Examples
 Introduce the examples used throughout the paper
 
@@ -815,22 +838,33 @@ The problem is that the posterior distribution p(z|x) is typically intractable (
 
 4.1 Evidence Lower Bound Training
 Show how you can derive the Evidence Lower Bound (ELBO) from the likelihood. Split into 2 terms, i) term involving joint p(x,z) and approx posterior, and ii) KL divergence between exact and approx posterior. Since KL. >= 0, and is 0 only when both pdf are equal, we have a lower bound that is tight when the approx posterior is exact.
-You can re-write the term of the ELBO to show that it is the conditional likelihood plus KL divergence between approx posterior and our prior for latent variable.
-They talk about the relation between both terms, and how you can set relative importance for one or the other.
+You can re-write the term of the ELBO to show that it is the conditional likelihood (ie, reconstruction error) plus KL divergence between approx posterior and our prior for latent variable (ie, forcing closeness between both).
+They talk about the relation between both terms, and how you can set relative importance for one or the other if you have a Gaussian likelihood. In the case of Bernoulli (categorical), there is not much you can do, unless you decide to change the formulation completely (and add an extra parameter in front of 1 term in the loss).
 
 4.2 Example: Gaussian Posterior
+The modeler set the form of the approximate posterior. Typically, people choose Gaussian, ie, encoder network output mean and covariance matrix (typically only diagonal terms).
+What's interesting is that given the previous parts, we know understand better the relation between encoder p(z|x) and decoder p(x|z).
+They discuss reparametrization trick to differentiate through random samples. Instead of using z~N(mu,sigma), use z = mu + sigma*eps, where eps~N(0,1).
+In this section, they show plots of the true posterior. They don't explain how they do it and they actually use a module that directly computes p(z|x). It's not entirely clear how they do it, but p(z|x) \propto p(x|z) p(z), they could use MCMC to sample from p(z|x) then estimates its pdf.
+They do a few experiments about the VAE: 
+They look at the distribution of the approximate posterior for the test data. You can see that it doesn't completely cover the prior, so you could expect some samples to be incorrect (where approx posterior is low). This doesn't appear to be the case with MNIST though.
+Most digits generated by the VAE are blurry
+They interpolate between 2 points in latent space and look at the generated digits. It all appears meaningul.
+
+5 Generative Adversarial Networks
 },
 	archiveprefix = {arXiv},
 	author = {Lars Ruthotto and Eldad Haber},
 	date-added = {2021-03-23 13:53:02 -0400},
-	date-modified = {2021-05-26 15:00:21 -0400},
+	date-modified = {2021-05-30 22:24:12 -0400},
 	eprint = {2103.05180},
-	keywords = {deep learning, generative model, **MUST-READ**, review},
+	keywords = {deep learning, generative model, **MUST-READ**, review, vae, normalizing flows, gan},
 	primaryclass = {cs.LG},
 	title = {An Introduction to Deep Generative Modeling},
 	year = {2021},
 	Bdsk-Url-1 = {https://arxiv.org/abs/2103.05180},
-	Bdsk-Url-2 = {https://arxiv.org/pdf/2103.05180.pdf}}
+	Bdsk-Url-2 = {https://arxiv.org/pdf/2103.05180.pdf},
+	Bdsk-Url-3 = {https://www.borealisai.com/en/blog/tutorial-5-variational-auto-encoders/}}
 
 @article{kofod2012structured,
 	author = {Kofod-Petersen, Anders},
