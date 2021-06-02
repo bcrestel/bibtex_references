@@ -21,16 +21,36 @@ conjectured that the error of the option price implied by the learnt model can b
 bounded by the very Wasserstein distance metric that was used to fit the empirical
 data.},
 	archiveprefix = {arXiv},
-	author = {Timothy DeLise},
-	date-added = {2021-05-28 13:07:35 -0400},
-	date-modified = {2021-05-28 13:08:53 -0400},
 	eprint = {2105.13320},
-	keywords = {derivative pricing, finance, neural ODE, sde, **MUST-READ**},
 	primaryclass = {q-fin.MF},
+	annote = {It's an interesting paper, but it seems to be rather preliminary.
+The idea is to use Neural SDE to model the asset price. They use torchsde to do that.
+They use the Wasserstein-1 distance as a loss function, which does not extend easily to multivariate. So their solution is restricted to derivatives based on a single asset (vaniall European options).
+Then use quantitative finance model to compute the price of the derivative.
+},
+	author = {DeLise, Timothy},
+	date-added = {2021-06-01 11:46:54 -0400},
+	date-modified = {2021-06-01 11:51:55 -0400},
+	journal = {arXiv preprint arXiv:2105.13320},
+	keywords = {finance, deep learning, derivative pricing, neural ode, sde},
+	read = {1},
 	title = {Neural Options Pricing},
 	year = {2021},
 	Bdsk-Url-1 = {https://arxiv.org/abs/2105.13320},
-	Bdsk-Url-2 = {https://arxiv.org/pdf/2105.13320.pdf}}
+	Bdsk-Url-2 = {https://arxiv.org/pdf/2105.13320.pdf},
+	Bdsk-Url-3 = {https://github.com/google-research/torchsde}}
+
+@article{kaissis2021end,
+	author = {Kaissis, Georgios and Ziller, Alexander and Passerat-Palmbach, Jonathan and Ryffel, Th{\'e}o and Usynin, Dmitrii and Trask, Andrew and Lima, Ion{\'e}sio and Mancuso, Jason and Jungmann, Friederike and Steinborn, Marc-Matthias and others},
+	date-added = {2021-06-01 09:20:19 -0400},
+	date-modified = {2021-06-01 09:21:13 -0400},
+	journal = {Nature Machine Intelligence},
+	keywords = {ppml},
+	pages = {1--12},
+	publisher = {Nature Publishing Group},
+	title = {End-to-end privacy preserving deep learning on multi-institutional medical imaging},
+	year = {2021},
+	Bdsk-Url-1 = {https://www.nature.com/articles/s42256-021-00337-8.pdf}}
 
 @article{kingma2019introduction,
 	author = {Kingma, Diederik P and Welling, Max},
@@ -1008,9 +1028,9 @@ Interestingly, they use a duality-approach to transform an arg-max into a simple
 @article{hannun2021measuring,
 	author = {Hannun, Awni and Guo, Chuan and van der Maaten, Laurens},
 	date-added = {2021-02-27 10:04:40 -0500},
-	date-modified = {2021-02-27 10:05:27 -0500},
+	date-modified = {2021-06-01 09:21:35 -0400},
 	journal = {arXiv preprint arXiv:2102.11673},
-	keywords = {privacy, machine learning,},
+	keywords = {machine learning, ppml},
 	title = {Measuring Data Leakage in Machine-Learning Models with Fisher Information},
 	year = {2021},
 	Bdsk-Url-1 = {https://arxiv.org/abs/2102.11673}}
