@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Benjamin Crestel at 2021-06-08 07:28:53 -0400 
+%% Created for Benjamin Crestel at 2021-06-18 22:34:03 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -11,6 +11,263 @@
 
 
 
+@article{lundberg2017unified,
+	author = {Lundberg, Scott and Lee, Su-In},
+	date-added = {2021-06-17 16:03:16 -0400},
+	date-modified = {2021-06-17 16:03:33 -0400},
+	journal = {arXiv preprint arXiv:1705.07874},
+	keywords = {machine learning, xai,},
+	title = {A unified approach to interpreting model predictions},
+	year = {2017},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1705.07874.pdf}}
+
+@inproceedings{li2017scaling,
+	author = {Li, Li Erran and Chen, Eric and Hermann, Jeremy and Zhang, Pusheng and Wang, Luming},
+	booktitle = {International Conference on Predictive Applications and APIs},
+	date-added = {2021-06-17 16:01:08 -0400},
+	date-modified = {2021-06-17 16:01:16 -0400},
+	keywords = {machine learning, mlops},
+	organization = {PMLR},
+	pages = {14--29},
+	title = {Scaling machine learning as a service},
+	year = {2017},
+	Bdsk-Url-1 = {http://proceedings.mlr.press/v67/li17a/li17a.pdf}}
+
+@article{sculley2014machine,
+	author = {Sculley, David and Holt, Gary and Golovin, Daniel and Davydov, Eugene and Phillips, Todd and Ebner, Dietmar and Chaudhary, Vinay and Young, Michael},
+	date-added = {2021-06-17 15:58:51 -0400},
+	date-modified = {2021-06-17 15:59:07 -0400},
+	keywords = {machine learning, mlops, },
+	title = {Machine learning: The high interest credit card of technical debt},
+	year = {2014},
+	Bdsk-Url-1 = {https://storage.googleapis.com/pub-tools-public-publication-data/pdf/43146.pdf}}
+
+@article{bjork2010general,
+	author = {Bjork, Tomas and Murgoci, Agatha},
+	date-added = {2021-06-14 19:30:05 -0400},
+	date-modified = {2021-06-14 19:30:23 -0400},
+	journal = {Available at SSRN 1694759},
+	keywords = {finance, optimal control, stochastic},
+	title = {A general theory of Markovian time inconsistent stochastic control problems},
+	year = {2010},
+	Bdsk-Url-1 = {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.1072.9985&rep=rep1&type=pdf}}
+
+@book{griewank2008evaluating,
+	annote = {Chapter 2 - A Framework for Evaluating Functions
+======================================
+
+function F: R^n -> R^m
+
+Jacobian: F: R^n -> R^(mxn)
+so that grad F(x) = [
+df_1/dx_1, df_1/dx_2,{\ldots}, df_1/dx_n
+df_2 / dx_1, df_2/dx_2,{\ldots}, df_2/dx_n
+{\ldots}
+df_m/dx_1,{\ldots}]
+That means also, F(x+h) = F(x) + grad F(x)^T . h
+The gradient is often taken to be the transpose
+
+
+Chapter 3 - Fundamentals of Forward and Reverse
+=======================================
+
+``In this chapter we calculate first derivative vectors, called tangents and gradi- ents (or normals), in the forward and reverse modes of AD, respectively.''
+
+3.1 Forward Propagation of Tangents
+
+``To calculate the first derivative of the result- ing curve y(t) ≡ F(x(t)), we merely have to differentiate each single statement in the evaluation procedure Table 2.1 and obtain for the lighthouse example the tangent pro- cedure displayed in Table 3.1.''
+
+Chain rule for multivariate functions = product of Jacobians. 
+Easier to derive for composition of 2 functions, then extrapolate
+
+In book, never really consider case map F has multivariate image. 
+Simply split that into multiple functions. Then each function is from R^n to R.
+Can do the same with composed functions.
+
+Not sure I understand the focus on a ``domain tangent''. 
+F is still a function of t; so they just make parameter gamma a function of t, such that only the last steps change (all the rest is identical)
+I think it's a special case, but they want to discuss the general case of grad F(x)^T . h, where h is their domain tangent
+
+Basic Complexity Results for Tangent Propagations:
+Discuss evaluation of derivaties for multi-variate functions. 
+Couldn't understand what their proposed approach is
+
+3.2 Reverse Propagation of Gradients
+
+Personal note:
+we have 
+y = F(x)
+\dot{y} = F'(x) . \dot{x}
+and \bar{x}^T = \bar{y}^T . F'(x) = (F'(x)^T . \bar{y})^T
+\dot{x}, \dot{y} = tangent vectors, and F'(x) maps \dot{x} onto \dot{y}
+\bar{x}, \bar{y} = normal vectors, and F'(x)^T maps \bar{y} onto \bar{x}
+
+In both cases, you compute a vector. In the first one, you compute the right-action of a vector on F'(x), in the second case, you compute the left action of a vector onto F'(x).
+Also, if we define \dot{y} = F'(x) \dot{x}, then we can left-multiply by \bar{y}^T to get
+\bar{y}^T . \dot{y} = \bar{y}^T . F'(x) . \dot{x} = \bar{x}^T . \dot{x}
+So basically, what we are really trying to compute is \bar{y}^T . \dot{y} = \bar{x}^T . \dot{x}.
+
+
+``The cost of evaluating derivatives by propagating them forward through the evaluation procedure will increase linearly with p, the number of domain directions x ̇ along which we want to differentiate.''
+But when F is scalar-valued (or if you care about the gradient of a linear combination of all components of F), you can compute its entire gradient for the cost of one function evaluation. 
+
+``Here, \bar{y} is a fixed vector that plays a dual role to the domain direction \dot{x} considered in section 3.1''
+
+Incremental and Nonincremental Recursion:
+In Table 3.5, ``The zeroing out of the v ̄i after their appearance on the right-hand side has been omitted for the sake of simplicity.''
+reverse sweep = forward sweep + return sweep
+
+Adjoint Values as Lagrange Multipliers:
+Show connection with constrained optimization, which will come up in book later again.
+Objective function is \bar{y}^T.y
+
+3.3 Cheap Gradient Principle with Examples
+
+Calling Sequences for Reverse Propagation:
+``Generally, the user should be aware that there is no agreemment between various AD tools as to the status of y and by on exit from  an adjoint code''
+
+3.4 Approximate Error Analysis
+
+Claimed everything is alright :)
+
+3.5 Summary and Discussion
+
+Reverse mode AD is not optimal, and algorithmic cost can be undercut (see exercise 3.5d)
+
+The Pyramid Example:
+
+Chapter 4 --- Memory Issues and Complexity Bounds
+========================================
+},
+	author = {Griewank, Andreas and Walther, Andrea},
+	date-added = {2021-06-14 14:13:15 -0400},
+	date-modified = {2021-06-15 22:27:38 -0400},
+	keywords = {algorithmic differentiation},
+	publisher = {SIAM},
+	title = {Evaluating derivatives: principles and techniques of algorithmic differentiation},
+	year = {2008}}
+
+@book{martens2016second,
+	author = {Martens, James},
+	date-added = {2021-06-10 14:22:31 -0400},
+	date-modified = {2021-06-10 14:22:46 -0400},
+	keywords = {deep learning, optimization, Hessian},
+	publisher = {University of Toronto (Canada)},
+	title = {Second-order optimization for neural networks},
+	year = {2016},
+	Bdsk-Url-1 = {http://www.cs.toronto.edu/~jmartens/docs/thesis_phd_martens.pdf}}
+
+@article{lipton2015critical,
+	author = {Lipton, Zachary C and Berkowitz, John and Elkan, Charles},
+	date-added = {2021-06-10 14:20:46 -0400},
+	date-modified = {2021-06-10 14:20:59 -0400},
+	journal = {arXiv preprint arXiv:1506.00019},
+	keywords = {rnn, review, sequence},
+	title = {A critical review of recurrent neural networks for sequence learning},
+	year = {2015},
+	Bdsk-Url-1 = {https://arxiv.org/abs/1506.00019},
+	Bdsk-Url-2 = {https://arxiv.org/pdf/1506.00019.pdf}}
+
+@article{zhang2020learning,
+	author = {Zhang, Dongkun and Guo, Ling and Karniadakis, George Em},
+	date-added = {2021-06-10 14:18:54 -0400},
+	date-modified = {2021-06-10 14:19:43 -0400},
+	journal = {SIAM Journal on Scientific Computing},
+	keywords = {deep learning, sde, pde, pinn},
+	number = {2},
+	pages = {A639--A665},
+	publisher = {SIAM},
+	title = {Learning in modal space: Solving time-dependent stochastic PDEs using physics-informed neural networks},
+	volume = {42},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1905.01205.pdf}}
+
+@article{yao2018hessian,
+	author = {Yao, Zhewei and Gholami, Amir and Lei, Qi and Keutzer, Kurt and Mahoney, Michael W},
+	date-added = {2021-06-10 14:16:45 -0400},
+	date-modified = {2021-06-10 14:17:08 -0400},
+	journal = {arXiv preprint arXiv:1802.08241},
+	keywords = {deep learning, Hessian},
+	title = {Hessian-based analysis of large batch training and robustness to adversaries},
+	year = {2018},
+	Bdsk-Url-1 = {https://arxiv.org/abs/1802.08241},
+	Bdsk-Url-2 = {https://arxiv.org/pdf/1802.08241.pdf}}
+
+@article{fan2016overview,
+	author = {Fan, Jianqing and Liao, Yuan and Liu, Han},
+	date-added = {2021-06-10 14:13:18 -0400},
+	date-modified = {2021-06-10 14:14:20 -0400},
+	journal = {The Econometrics Journal},
+	keywords = {numerical linear algebra, covariance matrix, statistics},
+	number = {1},
+	pages = {C1--C32},
+	publisher = {Oxford University Press Oxford, UK},
+	title = {An overview of the estimation of large covariance and precision matrices},
+	volume = {19},
+	year = {2016},
+	Bdsk-Url-1 = {https://arxiv.org/pdf/1504.02995.pdf}}
+
+@article{koren2015advances,
+	author = {Koren, Yehuda and Bell, Robert},
+	date-added = {2021-06-10 14:08:13 -0400},
+	date-modified = {2021-06-10 14:08:33 -0400},
+	journal = {Recommender systems handbook},
+	keywords = {recommender systems, collaborative filtering, review},
+	pages = {77--118},
+	publisher = {Springer},
+	title = {Advances in collaborative filtering},
+	year = {2015},
+	Bdsk-Url-1 = {https://datajobs.com/data-science-repo/Collaborative-Filtering-%5BKoren-and-Bell%5D.pdf}}
+
+@article{bell2007lessons,
+	author = {Bell, Robert M and Koren, Yehuda},
+	date-added = {2021-06-10 14:06:26 -0400},
+	date-modified = {2021-06-10 14:06:47 -0400},
+	journal = {Acm Sigkdd Explorations Newsletter},
+	keywords = {recommender systems, },
+	number = {2},
+	pages = {75--79},
+	publisher = {ACM New York, NY, USA},
+	title = {Lessons from the netflix prize challenge},
+	volume = {9},
+	year = {2007},
+	Bdsk-Url-1 = {https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.401.8553&rep=rep1&type=pdf}}
+
+@inproceedings{cornish2019scalable,
+	author = {Cornish, Rob and Vanetti, Paul and Bouchard-C{\^o}t{\'e}, Alexandre and Deligiannidis, George and Doucet, Arnaud},
+	booktitle = {International Conference on Machine Learning},
+	date-added = {2021-06-10 14:01:29 -0400},
+	date-modified = {2021-06-10 14:02:07 -0400},
+	keywords = {mcmc, bayesian, big data, metropolis-hastings},
+	organization = {PMLR},
+	pages = {1351--1360},
+	title = {Scalable Metropolis-Hastings for exact Bayesian inference with large datasets},
+	year = {2019},
+	Bdsk-Url-1 = {http://proceedings.mlr.press/v97/cornish19a/cornish19a.pdf}}
+
+@article{hore2010bayesian,
+	author = {Hore, Satadru and Johannes, Michael and Lopes, Hedibert and McCulloch, Robert and Polson, Nicholas},
+	date-added = {2021-06-10 14:00:10 -0400},
+	date-modified = {2021-06-10 14:00:35 -0400},
+	journal = {Frontiers of Statistical Decision Making and Bayesian Analysis},
+	keywords = {bayesian, finance, statistics, **MUST-READ**},
+	pages = {383--396},
+	publisher = {Citeseer},
+	title = {Bayesian computation in finance},
+	year = {2010},
+	Bdsk-Url-1 = {http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.636.3714&rep=rep1&type=pdf}}
+
+@unpublished{haugh2016stochastic,
+	author = {Martin Haugh},
+	date-added = {2021-06-08 15:35:17 -0400},
+	date-modified = {2021-06-13 16:49:03 -0400},
+	keywords = {sde, class notes},
+	note = {IEOR E4706: Foundations of Financial Engineering},
+	read = {1},
+	title = {A Brief Introduction to Stochastic Calculus},
+	year = {2016},
+	Bdsk-Url-1 = {http://www.columbia.edu/~mh2078/FoundationsFE/IntroStochCalc.pdf}}
+
 @book{achdou2005computational,
 	annote = {Preface
 ======
@@ -18,10 +275,38 @@ Book covers analysis of PDE (ch.2,6), numerical methods (ch.3,4,5), and inverse 
 
 Ch.1 Option Pricing
 ===============
+
+1.2 A Brief Introduction to Options
+
+1.2.1 The European Vanilla Call Option
+Present basics of option
+payoff = how much money the holder of an option will make at maturity (not, how much it will cost to buy/sell the underlying, ie the strike price)
+
+1.2.2 Option Pricing: The Black-Scholes Model
+Introduce notations and definitions of stochastic calculus, along with the Black-Scholes model for asset pricing dynamics.
+Also introduce option pricing based on Black-Scholes formula. Present the method based on pay-off discount under the risk-free measure, 
+which differs from the method presented in the original BS paper. That latter version is defined in the Wikipedia article: https://en.wikipedia.org/wiki/Black--Scholes_equation
+
+S_t exp(- int_0^t r(tau) dtau is a martingale under the measure P^*
+When the volatility is a function of t and St, we will speak of local volatility.
+
+1.2.3 Other European Options
+* European Vanilla put option: Pricing similar to European Vanilla Call option; just replace payoff with (K - S_T)_+
+* Put-Call parity: Relation between prices of a call and a put of a European Vanilla option: C_t - P_t = S_t - K exp(-int_t^T r(tau) dtau)
+* Dividends: in the framework above, stock assumed to yield no dividend. Dividents addressed in chapter 2
+* General European Options: under some conditions, can use any payoff function in methodology above to price European option
+* Barrier Options: options for which payoff non-zero only when the price remains within certain bounds. If bounds are time-independent, payoff can be expressed in the same way as before, and option can be priced with B-S framework
+* European Options on a Basket of Assets: framework can still be applied. Assume each asset are correlated with each other through independent BM, but follow same dynamics as before. Then can price option the same way.
+
+1.3 Constant Coefficients. The Black-Scholes Formula
+(1.12) Use the fact that i) r=cst, ii) S_t exp(-r.t) is a martingale under P^* so has no drift and closed-form solution given by classical log-Normal dynamic (with drift=0), iii) with closed-form solution everything is known at time t so conditional expectation not conditional anymore
+(1.13) Under P^*, (W_T - W_t) ~ N(0, T-t), then can apply Law of unconscious statistician (https://en.wikipedia.org/wiki/Law_of_the_unconscious_statistician)
+
+1.4 Monte-Carlo methods
 },
 	author = {Achdou, Yves and Pironneau, Olivier},
 	date-added = {2021-06-08 06:21:36 -0400},
-	date-modified = {2021-06-08 06:55:16 -0400},
+	date-modified = {2021-06-18 15:10:08 -0400},
 	keywords = {finance, derivative pricing, pde, textbook},
 	publisher = {SIAM},
 	title = {Computational methods for option pricing},
@@ -182,9 +467,9 @@ processes on datasets including CIFAR-100.},
 @article{raissi2019physics,
 	author = {Raissi, Maziar and Perdikaris, Paris and Karniadakis, George E},
 	date-added = {2021-05-20 22:33:27 -0400},
-	date-modified = {2021-05-20 22:33:43 -0400},
+	date-modified = {2021-06-10 14:20:00 -0400},
 	journal = {Journal of Computational Physics},
-	keywords = {deep learning, pde, **MUST-READ**},
+	keywords = {deep learning, pde, **MUST-READ**, pinn},
 	pages = {686--707},
 	publisher = {Elsevier},
 	title = {Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations},
