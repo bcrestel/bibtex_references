@@ -1,7 +1,7 @@
 %% This BibTeX bibliography file was created using BibDesk.
 %% https://bibdesk.sourceforge.io/
 
-%% Created for Benjamin Crestel at 2021-06-18 22:34:03 -0400 
+%% Created for Benjamin Crestel at 2021-07-02 14:40:13 -0400 
 
 
 %% Saved with string encoding Unicode (UTF-8) 
@@ -10,6 +10,63 @@
 @comment{jabref-meta: databaseType:bibtex;}
 
 
+
+@article{pathak2020using,
+	abstract = {Simulation of turbulent flows at high Reynolds number is a computationally challenging task relevant to a large number of engineering and scientific applications in diverse fields such as climate
+science, aerodynamics, and combustion. Turbulent flows are typically modeled by the Navier-Stokes
+equations. Direct Numerical Simulation (DNS) of the Navier-Stokes equations with sufficient numerical resolution to capture all the relevant scales of the turbulent motions can be prohibitively expensive. Simulation at lower-resolution on a coarse-grid introduces significant errors. We introduce
+a machine learning (ML) technique based on a deep neural network architecture that corrects the
+numerical errors induced by a coarse-grid simulation of turbulent flows at high-Reynolds numbers,
+while simultaneously recovering an estimate of the high-resolution fields. Our proposed simulation strategy is a hybrid ML-PDE solver that is capable of obtaining a meaningful high-resolution
+solution trajectory while solving the system PDE at a lower resolution. The approach has the potential to dramatically reduce the expense of turbulent flow simulations. As a proof-of-concept, we
+demonstrate our ML-PDE strategy on a two-dimensional turbulent (Rayleigh Number Ra = 109
+)
+Rayleigh-B´enard Convection (RBC) problem.},
+	author = {Pathak, Jaideep and Mustafa, Mustafa and Kashinath, Karthik and Motheau, Emmanuel and Kurth, Thorsten and Day, Marcus},
+	date-added = {2021-07-02 14:37:11 -0400},
+	date-modified = {2021-07-02 14:39:09 -0400},
+	journal = {arXiv preprint arXiv:2010.00072},
+	keywords = {pde, deep learning, pinn, borealisai},
+	title = {Using machine learning to augment coarse-grid computational fluid dynamics simulations},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/abs/2010.00072},
+	Bdsk-Url-2 = {https://arxiv.org/pdf/2010.00072.pdf}}
+
+@article{um2020solver,
+	author = {Um, Kiwon and Brand, Robert and Holl, Philipp and Thuerey, Nils and others},
+	date-added = {2021-07-02 14:33:55 -0400},
+	date-modified = {2021-07-02 14:36:37 -0400},
+	journal = {arXiv preprint arXiv:2007.00016},
+	keywords = {pde, deep learning, pinn, borealisai},
+	title = {Solver-in-the-loop: Learning from differentiable physics to interact with iterative PDE-solvers},
+	year = {2020},
+	Bdsk-Url-1 = {https://arxiv.org/abs/2007.00016},
+	Bdsk-Url-2 = {https://arxiv.org/pdf/2007.00016.pdf}}
+
+@article{kochkov2021machine,
+	author = {Kochkov, Dmitrii and Smith, Jamie A and Alieva, Ayya and Wang, Qing and Brenner, Michael P and Hoyer, Stephan},
+	date-added = {2021-06-29 23:51:11 -0400},
+	date-modified = {2021-07-02 14:39:48 -0400},
+	journal = {Proceedings of the National Academy of Sciences},
+	keywords = {pinn, deep learning, pde, borealisai},
+	number = {21},
+	publisher = {National Acad Sciences},
+	title = {Machine learning--accelerated computational fluid dynamics},
+	volume = {118},
+	year = {2021},
+	Bdsk-Url-1 = {https://www.pnas.org/content/pnas/118/21/e2101784118.full.pdf}}
+
+@book{hull2003options,
+	annote = {``What are futures and what are the risks?'' https://www.thestreet.com/investing/futures/what-are-futures-14763379
+Quote about closing futurs: ``While closing out can limit your losses on a future contract that looks like it will expire out of the money, it has limits. To close out your contract you must find a broker willing to sell you an equal-but-opposite contract. For imminent expiration dates or tenuous market positions, this may be difficult.''
+
+},
+	author = {Hull, John C},
+	date-added = {2021-06-22 19:15:29 -0400},
+	date-modified = {2021-06-22 19:15:48 -0400},
+	publisher = {Pearson Education India},
+	title = {Options futures and other derivatives},
+	year = {2003}}
 
 @article{lundberg2017unified,
 	author = {Lundberg, Scott and Lee, Su-In},
@@ -138,10 +195,13 @@ The Pyramid Example:
 
 Chapter 4 --- Memory Issues and Complexity Bounds
 ========================================
+
+4.1 Memory Allocation and Overwrites
+
 },
 	author = {Griewank, Andreas and Walther, Andrea},
 	date-added = {2021-06-14 14:13:15 -0400},
-	date-modified = {2021-06-15 22:27:38 -0400},
+	date-modified = {2021-06-27 21:55:48 -0400},
 	keywords = {algorithmic differentiation},
 	publisher = {SIAM},
 	title = {Evaluating derivatives: principles and techniques of algorithmic differentiation},
@@ -2785,9 +2845,9 @@ pipelines that are intended for real-world deployment in any domain.},
 @article{li2020fourier,
 	author = {Li, Zongyi and Kovachki, Nikola and Azizzadenesheli, Kamyar and Liu, Burigede and Bhattacharya, Kaushik and Stuart, Andrew and Anandkumar, Anima},
 	date-added = {2020-12-07 09:25:37 -0500},
-	date-modified = {2021-03-18 17:19:11 -0400},
+	date-modified = {2021-06-29 23:52:13 -0400},
 	journal = {arXiv preprint arXiv:2010.08895},
-	keywords = {pde, deep learning},
+	keywords = {pde, deep learning, pinn},
 	title = {Fourier Neural Operator for Parametric Partial Differential Equations},
 	year = {2020},
 	Bdsk-Url-1 = {https://arxiv.org/pdf/2010.08895.pdf},
